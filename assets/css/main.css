@@ -1,4 +1,10 @@
- /* Styles pour le header */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+ 
+ /* Styles pour le header */ 
  header {
     display: flex;
     align-items: center;
@@ -42,4 +48,9 @@
     background-color: #007bff;
     color: #fff;
     text-decoration: none;
+}
+
+h1{
+    font-size: 2em;
+    margin: 20px;
 }

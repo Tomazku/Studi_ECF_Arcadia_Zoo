@@ -1,8 +1,6 @@
 <head>
-    <link rel="stylesheet" href="./css/main.css">
+    <!-- <link rel="stylesheet" href="../css/main.css"> -->
 </head>
-
-<body>
     <header>
         <div class="logo"></div>
         <nav>
@@ -32,5 +30,3 @@
         </nav>
         <a href="#" class="contact-button">Contact</a>
     </header>
-</body>
-</html>
