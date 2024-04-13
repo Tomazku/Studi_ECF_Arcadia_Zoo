@@ -2,54 +2,21 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    --color-primary: #7F9172;
+    --color-secondary: #08415C;
+    --color-text: #FF9F1C;
+    --color-background: #FBFBFF; 
  }
  
  /* Styles pour le header */ 
- header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #6c5528;
-}
+ 
+    header {
+        background-color: var(--color-primary);
+        color: var(--color-text);
+        padding: 1rem;
+        text-align: center;
+    }
 
-.logo {
-    width: 200px;
-    height: 100px;
-    /* background-image: url('/assets/images/logo.png'); */
-    background-size: cover;
-}
 
-.menu {
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    font-size: 2rem;
+
     
-}
-
-.menu ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    padding: 0;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.menu:hover ul {
-    display: block;
-}
-
-.menu li {
-    list-style: none;
-    padding: 10px;
-}
-
-.contact-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
-}
-
