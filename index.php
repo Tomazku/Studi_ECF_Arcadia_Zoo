@@ -11,6 +11,12 @@
     <?php include 'assets/includes/header.php'; ?>
 
     <h1>Bienvenue au zoo de Arcadia</h1>
+
     
+
+
+
+    <?php include 'assets/includes/footer.php'; ?>
+<script src="/assets/scripts/script.js"></script>
 </body>
 </html>
