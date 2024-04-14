@@ -146,6 +146,7 @@ body {
     justify-content: space-around;
     align-items: center;
     background-color: var(--color-secondary);
+    color:var(--color-background);
     padding: 20px;
     position: fixed;
     bottom: 0;
@@ -153,6 +154,7 @@ body {
   }
   
   .footer-section {
+    display: flex;
     text-align: center;
   }
   
@@ -163,8 +165,8 @@ body {
   }
 
   .footer-svg {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
   }
   
   .quick-links {
@@ -185,7 +187,7 @@ body {
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 60px; /* Ajustez la hauteur selon vos besoins */
+    height: 500px; /* Ajustez la hauteur selon vos besoins */
     z-index: 1000;
   }
   
