@@ -1,28 +1,35 @@
 <footer class="footer">
-    <div class="footer-section1">
-        <svg class="footer-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <!-- Votre fichier SVG ici pour la première section -->
-        </svg>
-        <h2>Liens rapides</h2>
-        <ul>
-            <li><a href="#">Lien 1</a></li>
-            <li><a href="#">Lien 2</a></li>
-            <!-- Ajoutez autant de liens que nécessaire -->
-        </ul>
+  <div class="footer-section">
+    <svg class="footer-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <img src="/assets/SVG/quick_linkliens_rapide.svg" alt="">    
+    </svg>
+    <h3>Liens rapides</h3>
+    <div class="quick-links">
+      <div class="links-column">
+        <a href="#">Lien 1</a>
+        <a href="#">Lien 2</a>
+        <a href="#">Lien 3</a>
+      </div>
+      <div class="links-column">
+        <a href="#">Lien 4</a>
+        <a href="#">Lien 5</a>
+        <a href="#">Lien 6</a>
+      </div>
     </div>
-    <hr class="separator">
-    <div class="footer-section2">
-        <svg class="footer-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <!-- Votre fichier SVG ici pour la deuxième section -->
-        </svg>
-        <h2>Adresse</h2>
-        <p>123 rue de l'Arcadia<br>Ville, Pays<br>Code postal</p>
-    </div>
-    <div class="footer-section3">
-        <svg class="footer-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <!-- Votre fichier SVG ici pour la troisième section -->
-        </svg>
-        <h2>Besoin d'aide</h2>
-        <p>Email: contact@arcadia.com</p>
-    </div>
+  </div>
+  <div class="footer-divider"></div>
+  <div class="footer-section">
+    <svg class="footer-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Insérez le code SVG ici -->
+    </svg>
+    <h3>Adresse</h3>
+    <p>Votre adresse ici</p>
+  </div>
+  <div class="footer-section">
+    <svg class="footer-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Insérez le code SVG ici -->
+    </svg>
+    <h3>Besoin d'aide</h3>
+    <p>Votre adresse email ici</p>
+  </div>
 </footer>

@@ -3,6 +3,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    --color-primary: #7F9172;
+    --color-secondary: #08415C;
+    --color-text: #FF9F1C;
+    --color-background: #FBFBFF;
 }
 
 /* Import de la police Raleway depuis Google Fonts */
@@ -11,12 +15,12 @@
 /* Style de base pour le corps de la page */
 body {
     font-family: 'Raleway', sans-serif; /* Utilisation de la police Raleway pour le texte */
-    background-color: #FBFBFF; /* Couleur de fond de la page */
+    background-color: var(--color-background); /* Couleur de fond de la page */
 }
 
 /* Style pour le conteneur du header */
 .container-header {
-    background-color: #7F9172; /* Couleur de fond du header */
+    background-color: var(--color-primary); /* Couleur de fond du header */
     width: 100%; /* Largeur du header */
     height: 120px; /* Hauteur du header */
     display: flex; /* Utilisation de flexbox pour aligner les éléments */
@@ -109,7 +113,7 @@ body {
 }
 
 .connexion button {
-    background-color: #FF9F1C; /* Couleur de fond du bouton */
+    background-color: var(--color-text); /* Couleur de fond du bouton */
     color: #08415C; /* Couleur du texte du bouton */
     border: none; /* Suppression de la bordure */
     padding: 5px 30px; /* Espacement intérieur du bouton */
@@ -119,8 +123,56 @@ body {
 
 /* Style pour le survol du bouton de connexion */
 .connexion button:hover {
-    background-color: #08415C; /* Changement de couleur de fond au survol */
-    color: #FF9F1C; /* Changement de couleur du texte au survol */
+    background-color: var(--color-secondary); /* Changement de couleur de fond au survol */
+    color: var(--color-text); /* Changement de couleur du texte au survol */
 }
 
 
+/* footer */
+.footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    width: 500px;
+    background-color: var(--color-secondary);
+    color: var(--color-background);
+  }
+  
+  .footer-section {
+    text-align: center;
+  }
+  
+  .footer-svg {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .quick-links {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .links-column {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .footer-divider {
+    grid-column: 1 / -1;
+    height: 1px;
+    background-color: #000;
+    margin: 20px 0;
+  }
+  
+  .footer-bottom {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footer-bottom a {
+    margin-left: 10px;
+  }
+  
