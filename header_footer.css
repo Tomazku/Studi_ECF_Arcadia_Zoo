@@ -1,0 +1,200 @@
+/* Réinitialisation des marges, paddings et utilisation de box-sizing pour le modèle de boîte border-box */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --color-primary: #7F9172;
+    --color-secondary: #08415C;
+    --color-text: #FF9F1C;
+    --color-background: #FBFBFF;
+}
+
+/* Import de la police Raleway depuis Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Style de base pour le corps de la page */
+body {
+    font-family: 'Raleway', sans-serif; /* Utilisation de la police Raleway pour le texte */
+    background-color: var(--color-background); /* Couleur de fond de la page */
+}
+
+/* Style pour le conteneur du header */
+.container-header {
+    background-color: var(--color-primary); /* Couleur de fond du header */
+    width: 100%; /* Largeur du header */
+    height: 120px; /* Hauteur du header */
+    display: flex; /* Utilisation de flexbox pour aligner les éléments */
+    padding: 0 5%; /* Ajout de padding sur les côtés */
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+/* .container-header.scrolled {
+    top: -120px; /* Masque le header en le déplaçant vers le haut */
+   
+.header{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    position: fixed;
+    z-index: 1000;
+}
+
+/* Style pour le logo */
+.logo img {
+    width: 130px;
+    height: 90px;
+    padding: px 0;
+    }
+
+
+
+.menu ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.menu a{
+    text-decoration: none;
+    color: var(--color-background);
+}
+.menu ul li {
+    margin-right: 20px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.menu li a{
+    text-decoration: none;
+    position: relative;
+}
+
+.menu ul ul{
+    width: 250px;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    padding: 10px;
+    background-color: var(--color-secondary);
+}
+
+.menu ul li:hover > ul{
+    display: block;
+    border-radius: 0 0 10px 10px;
+}
+.menu ul li a:hover{
+    text-decoration: none;
+    margin-bottom: 2px;
+}
+
+.menu ul li a:hover::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 20px);
+    height: 2px;
+    background-color: var(--color-text);
+}
+
+/* Style pour les images des sous-menus */
+.menu li ul li img {
+    border-radius: 50%; /* Bordure arrondie pour créer une forme circulaire */
+    width: 30px; /* Largeur de l'image */
+    height: 30px; /* Hauteur de l'image */
+    margin-right: 10px; /* Marge à droite pour séparer l'image du texte */
+    margin-top: 5px; /* Marge au-dessus pour aligner verticalement */
+    vertical-align: middle; /* Alignement vertical */
+}
+
+/* Style pour le bouton de connexion */
+.connexion {
+    margin-left: 20px; /* Marge à gauche du bouton */
+    
+}
+
+.connexion button {
+    background-color: var(--color-text); /* Couleur de fond du bouton */
+    color: var(--color-secondary); /* Couleur du texte du bouton */
+    size: 2rem; /* Taille du texte */
+    border: none; /* Suppression de la bordure */
+    padding: 10px 30px; /* Espacement intérieur du bouton */
+    border-radius: 20px; /* Bordure arrondie */
+    cursor: pointer; /* Curseur de type pointer au survol */
+    
+}
+
+/* Style pour le survol du bouton de connexion */
+.connexion button:hover {
+    background-color: var(--color-secondary); /* Changement de couleur de fond au survol */
+    color: var(--color-text); /* Changement de couleur du texte au survol */
+}
+
+
+/* footer */
+.footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--color-secondary);
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .footer-section {
+    text-align: center;
+  }
+  
+  .separator {
+    width: 90%;
+    border-top: 1px solid var(--color-background);
+    margin: 20px 0;
+  }
+
+  .footer-svg {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .quick-links {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .links-column {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .bottom-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px; /* Ajustez la hauteur selon vos besoins */
+    z-index: 1000;
+  }
+  
+  .bottom-left,
+  .bottom-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .bottom-center {
+    text-align: center;
+  }

@@ -1,35 +1,56 @@
 <footer class="footer">
   <div class="footer-section">
     <svg class="footer-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <img src="/assets/SVG/quick_linkliens_rapide.svg" alt="">    
+      <img src="/assets/SVG/quick_linkliens_rapide.svg" alt="">
     </svg>
     <h3>Liens rapides</h3>
     <div class="quick-links">
       <div class="links-column">
-        <a href="#">Lien 1</a>
-        <a href="#">Lien 2</a>
-        <a href="#">Lien 3</a>
+        <a href="#">Accueil</a>
+        <a href="#">Habitats</a>
+        <a href="#">Horaires</a>
       </div>
       <div class="links-column">
-        <a href="#">Lien 4</a>
-        <a href="#">Lien 5</a>
-        <a href="#">Lien 6</a>
+        <a href="#">Animaux</a>
+        <a href="#">Services</a>
+        <a href="#">Avis</a>
       </div>
     </div>
   </div>
-  <div class="footer-divider"></div>
   <div class="footer-section">
     <svg class="footer-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <!-- Insérez le code SVG ici -->
+      <img src="/assets/SVG/find_us.svg" alt="">
     </svg>
     <h3>Adresse</h3>
-    <p>Votre adresse ici</p>
+    <p>Zoo ARCADIA</p>
+    <p>15 rue des Animaux heureux</p>
+    <p>75000 Paris, France</p> 
   </div>
   <div class="footer-section">
     <svg class="footer-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <!-- Insérez le code SVG ici -->
+      <img src="/assets/SVG/mail.svg" alt="">
     </svg>
     <h3>Besoin d'aide</h3>
-    <p>Votre adresse email ici</p>
+    <p>mail@arcadia.com</p>
   </div>
 </footer>
+
+<div class="bottom-footer">
+  <div class="bottom-left">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+      <!-- Icône de Facebook SVG ici -->
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+      <!-- Icône de TikTok SVG ici -->
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+      <!-- Icône d'Instagram SVG ici -->
+    </svg>
+  </div>
+  <div class="bottom-center">
+    Arcadia - Tous droits réservés
+  </div>
+  <div class="bottom-right">
+    ARCADIA
+  </div>
+</div>
