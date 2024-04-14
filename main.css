@@ -1,131 +1,114 @@
- * {
+/* Réinitialisation des marges, paddings et utilisation de box-sizing pour le modèle de boîte border-box */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    --color-primary: #7F9172;
-    --color-secondary: #08415C;
-    --color-text: #FF9F1C;
-    --color-background: #FBFBFF;
- }
-
- @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-
-    body {
-        font-family: 'Raleway', sans-serif;
-        background-color: var(--color-background);
-    }
- 
- /* Styles pour le header */ 
- .container-header {
-        background-color: var(--color-primary);
-        width: 100%;
-        height: 120px;
-        display: flex;
-    }
-
-.header{
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
+/* Import de la police Raleway depuis Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Style de base pour le corps de la page */
+body {
+    font-family: 'Raleway', sans-serif; /* Utilisation de la police Raleway pour le texte */
+    background-color: #FBFBFF; /* Couleur de fond de la page */
+}
+
+/* Style pour le conteneur du header */
+.container-header {
+    background-color: #7F9172; /* Couleur de fond du header */
+    width: 100%; /* Largeur du header */
+    height: 120px; /* Hauteur du header */
+    display: flex; /* Utilisation de flexbox pour aligner les éléments */
+    justify-content: space-between; /* Alignement des éléments sur l'axe horizontal */
+    align-items: center; /* Alignement des éléments sur l'axe vertical */
+    padding: 0 5%; /* Ajout de padding sur les côtés */
+}
+
+/* Style pour le logo */
 .logo img {
-    width: 130px;
-    height: 90px;
-    padding: px 0;
-    }
-
-.menu{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 130px; /* Largeur de l'image du logo */
+    height: 90px; /* Hauteur de l'image du logo */
 }
 
-.menu ul{
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+/* Style pour le menu */
+.menu ul {
+    list-style-type: none; /* Suppression des puces de liste */
+    display: flex; /* Utilisation de flexbox pour aligner les éléments */
 }
 
-.menu a{
-    text-decoration: none;
-    color: var(--color-background);
-}
-.menu ul li {
-    margin-right: 20px;
-    position: relative;
-    text-transform: uppercase;
-}
-
-.menu li a{
-    text-decoration: none;
-    position: relative;
+/* Style pour les liens du menu */
+.menu a {
+    text-decoration: none; /* Suppression du soulignement des liens */
+    color: #FBFBFF; /* Couleur du texte des liens */
+    text-transform: uppercase; /* Transformation en majuscules */
+    position: relative; /* Position relative pour le positionnement absolu des sous-menus */
+    margin-right: 20px; /* Marge à droite entre les éléments du menu */
 }
 
-.menu ul ul{
-    width: 250px;
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    padding: 10px;
-    background-color: var(--color-secondary);
+/* Style pour les sous-menus */
+.menu ul ul {
+    width: 250px; /* Largeur des sous-menus */
+    display: none; /* Masquage des sous-menus par défaut */
+    position: absolute; /* Position absolue pour les déplacer hors du flux */
+    top: 100%; /* Position en dessous des éléments parent */
+    left: 0; /* Positionnement à gauche par rapport au conteneur parent */
+    padding: 10px; /* Espacement à l'intérieur des sous-menus */
+    background-color: #08415C; /* Couleur de fond des sous-menus */
 }
 
-.menu ul li:hover > ul{
+/* Affichage des sous-menus au survol */
+.menu ul li:hover > ul {
     display: block;
-    border-radius: 0 0 10px 10px;
-}
-.menu ul li a:hover{
-    text-decoration: none;
-    margin-bottom: 2px;
+    border-radius: 0 0 10px 10px; /* Arrondi des coins du sous-menu */
 }
 
-.menu ul li a:hover::before{
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% - 20px);
-    height: 2px;
-    background-color: var(--color-text);
+/* Alignement du texte à gauche dans les sous-menus */
+.menu ul li ul li {
+    text-align: left;
 }
 
-
-.menu li ul li img{
-    border-radius: 50%;
-    width: 30px; 
-    height: 30px;
-    margin-right: 10px;
-    margin-top: 5px;
-    vertical-align: middle;
+/* Style pour l'effet de soulignement au survol des liens */
+.menu ul li a:hover::before {
+    content: ''; /* Ajout d'un pseudo-élément pour créer la ligne de soulignement */
+    position: absolute; /* Position absolue par rapport au lien */
+    bottom: 0; /* Positionnement au bas du lien */
+    left: 0; /* Positionnement à gauche du lien */
+    height: 2px; /* Hauteur de la ligne de soulignement */
+    background-color: #FF9F1C; /* Couleur de la ligne de soulignement */
 }
 
-/* Bouton */
+/* Suppression de la ligne de soulignement pour les sous-menus */
+.menu ul li ul li:hover::before {
+    display: none;
+}
 
+/* Style pour les images des sous-menus */
+.menu li ul li img {
+    border-radius: 50%; /* Bordure arrondie pour créer une forme circulaire */
+    width: 30px; /* Largeur de l'image */
+    height: 30px; /* Hauteur de l'image */
+    margin-right: 10px; /* Marge à droite pour séparer l'image du texte */
+    margin-top: 5px; /* Marge au-dessus pour aligner verticalement */
+    vertical-align: middle; /* Alignement vertical */
+}
+
+/* Style pour le bouton de connexion */
 .connexion {
-    margin-left: 20px;
+    margin-left: 20px; /* Marge à gauche du bouton */
 }
 
 .connexion button {
-    background-color: var(--color-text);
-    color: var(--color-secondary);
-    border: none;
-    padding: 5px 30px;
-    border-radius: 20px;
-    cursor: pointer;
+    background-color: #FF9F1C; /* Couleur de fond du bouton */
+    color: #08415C; /* Couleur du texte du bouton */
+    border: none; /* Suppression de la bordure */
+    padding: 5px 30px; /* Espacement intérieur du bouton */
+    border-radius: 20px; /* Bordure arrondie */
+    cursor: pointer; /* Curseur de type pointer au survol */
 }
 
+/* Style pour le survol du bouton de connexion */
 .connexion button:hover {
-    background-color: var(--color-secondary);
-    color: var(--color-text);
+    background-color: #08415C; /* Changement de couleur de fond au survol */
+    color: #FF9F1C; /* Changement de couleur du texte au survol */
 }
-
-
