@@ -22,7 +22,7 @@ body {
 .container-header {
     background-color: var(--color-primary); /* Couleur de fond du header */
     width: 100%; /* Largeur du header */
-    height: 120px; /* Hauteur du header */
+    height: 110px; /* Hauteur du header */
     display: flex; /* Utilisation de flexbox pour aligner les éléments */
     padding: 0 5%; /* Ajout de padding sur les côtés */
     align-items: center;
@@ -45,7 +45,7 @@ body {
 /* Style pour le logo */
 .logo img {
     width: 130px;
-    height: 90px;
+    height: 80px;
     padding: px 0;
     }
 
