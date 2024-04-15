@@ -18,19 +18,38 @@ body {
 }
 
 .welcome-section {
+    position: relative;
+    overflow: hidden;
     background-image: url('assets/images/Main.jpg'); /* Ajouter l'image en arrière-plan */
     background-size: cover; /* Assurer que l'image couvre toute la section */
     background-position: center; /* Centrer l'image */
     padding: 50px; /* Ajouter un peu de marge intérieure */
-    color: white; /* Couleur du texte */
+    color: var(--color-background); /* Couleur du texte */
     height: 500px;
   }
   
   .welcome-text {
-    width: 40%; /* Largeur du texte */
+    width: 35%; /* Largeur du texte */
+    
+  }
+
+  .welcome-text h1 {
+    font-size: 2rem; /* Taille de la police */
+    margin-bottom: 30px; /* Ajouter un peu d'espace en bas */
+    margin-left: 100px;
+    line-height: 1.5; /* Espacement des lignes */
   }
   
   .arcadia-text {
     color: orange; /* Couleur orange pour le texte "ARCADIA" */
   }
   
+  .welcome-section:after{
+    content:'';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top left, transparent 50%, rgba(0, 0, 0, 0.7) 50%);
+  }
