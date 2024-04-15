@@ -23,10 +23,11 @@ body {
     background-position: center; /* Centrer l'image */
     padding: 50px; /* Ajouter un peu de marge intérieure */
     color: white; /* Couleur du texte */
+    height: 500px;
   }
   
   .welcome-text {
-    width: 50%; /* Largeur du texte */
+    width: 40%; /* Largeur du texte */
   }
   
   .arcadia-text {
