@@ -27,18 +27,19 @@ body {
     padding: 0 5%; /* Ajout de padding sur les côtés */
     align-items: center;
     justify-content: flex-start;
+
   }
 
-/* .container-header.scrolled {
-    top: -120px; /* Masque le header en le déplaçant vers le haut */
-   
+.container-header {
+    top: -120px; /* Masque le header en le déplaçant vers le haut*/
+}
+
 .header{
     width: 90%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: auto;
-    position: fixed;
     z-index: 1000;
 }
 
@@ -95,16 +96,6 @@ body {
     margin-bottom: 2px;
 }
 
-.menu ul li a:hover::before{
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% - 20px);
-    height: 2px;
-    background-color: var(--color-text);
-}
 
 /* Style pour les images des sous-menus */
 .menu li ul li img {
@@ -143,8 +134,6 @@ body {
 /* footer */
 .footer {
   background-color: var(--color-secondary);
-  position: fixed;
-  bottom: 0;
   width: 100%;
   color: var(--color-background);
 
