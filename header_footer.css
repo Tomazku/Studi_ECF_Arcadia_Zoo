@@ -217,3 +217,7 @@ body {
 .footer__socials path {
   fill: #FF9F1C; /* Couleur orange pour les SVG */
 }
+
+hr{
+  max-width: 90%;
+}

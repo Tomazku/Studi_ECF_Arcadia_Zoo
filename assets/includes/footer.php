@@ -42,6 +42,7 @@
         </div>
       </div>
     </div>
+    <hr>
     <div class="footer__bottom flux">
       <a href="./index.html" class="footer__logo"><span>Arcadia</span></a>
       <div class="footer__copyright">

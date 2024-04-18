@@ -57,21 +57,71 @@
     </div>
   </div>
 </div>    
-
-<!-- section animaux -->
 </section>
 
-<section class="animaux">
-  <div class="container-animaux">
-  <H2>Découvrez nos <span class="orange-text">Animaux</span></H2>
-        <div class="grid-autruche ">
-          <img class="large-img" src="assets/images/Autruche.jpg" alt="">
-          <h4 class="title-animaux">Autruche</h4>
-        </div>
-  </div>
-    </section>
+<!-- section animaux -->
 
-   
+<section class="container-animaux">
+  <h1 class="title">Découvrez nos <span class="orange-text">animaux</span></h1>
+  
+  <div class="animals">
+    <div class="animal autruche">
+      <img src="assets/images/Autruche.jpg" alt="Autruche">
+      <p>Autruches</p>
+    </div>
+    <div class="animal ">
+      <img src="assets/images/Elephant.jpg" alt="Éléphant">
+      <p>Éléphants</p>
+    </div>
+    <div class="animal">
+      <img src="assets/images/Tigre.jpg" alt="Tigre">
+      <p>Tigres</p>
+    </div>
+  </div>
+
+  <div class="lower-animals">
+    <div class="animal">
+      <img src="assets/images/Singe.jpg" alt="Singe">
+      <p>Singes</p>
+    </div>
+    <div class="animals-footer">
+    <p>Et bien d’autres encore vous attendes !</p>
+    <button class="button">Découvrez nos animaux</button>
+  </div>
+    <div class="animal crocodile">
+      <img src="assets/images/Crocodile.jpg" alt="Crocodile">
+      <p>Crocodiles</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="services">
+ <div class="container-services">
+    <h1 class="title">Découvez nos <span class="orange-text">services</span></h1>
+    <p>Profitez d'une expérience inoubliable au Zoo Arcadia avec nos services exclusifs, conçus pour rendre votre visite aussi agréable et confortable que possible.</p>
+
+    <div class="service-card">
+      <div class="service-content">
+        <img src="assets/images/Restaurant.jpg" alt="">
+        <p class="text-content">
+        Plongez dans une expérience culinaire exceptionnelle au restaurant de qualité d'Arcadia. Avec une cuisine mettant en avant des produits locaux frais, notre restaurant offre une vue panoramique sur les paysages enchanteurs du zoo, vous promettant une expérience gastronomique mémorable.        
+        </p>
+        <button class="button">Découvrez nos restaurants</button>
+      </div>
+
+      <div class="service-content">
+        <p class="text-content">
+        Explorez les splendeurs de la faune aux côtés de nos guides experts lors de visites guidées gratuites au Zoo Arcadia. Laissez-vous guider à travers une aventure captivante où vous découvrirez les habitats naturels de nos résidents, en apprendrez davantage sur la vie sauvage et aurez l'opportunité d'observer de près certains des animaux les plus fascinants de la planète.
+      </p>
+      <button class="button">Découvrez nos services</button>
+        <img src="assets/images/petit_train.jpg" alt="">
+      </div>
+    </div>      
+ </div>
+
+      </section>
+
 
 <?php include 'assets/includes/footer.php'; ?>
 <script src="/assets/scripts/script.js"></script>

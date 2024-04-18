@@ -71,7 +71,7 @@ body {
     color: var(--color-secondary); /* Couleur du texte du bouton */
     margin: 30px auto;
     size: 2rem; /* Taille du texte */
-    border: none; /* Suppression de la bordure */
+    border: 1px var(--color-text) solid; /* Suppression de la bordure */
     padding: 10px 30px; /* Espacement intérieur du bouton */
     border-radius: 20px; /* Bordure arrondie */
     cursor: pointer; /* Curseur de type pointer au survol */
@@ -133,55 +133,138 @@ body {
   }
   
 /* Section animaux */
-.animaux{
+.container-animaux {
   width: 100%;
   margin: auto;
-  background-color: var(--color-secondary);  
+  background-color: var(--color-secondary);
 }
 
-.animaux h2{
+.title {
   text-align: center;
-  font-size: 2rem;
   margin: 30px;
-  padding-top: 30px;
+  padding-top: 10px;
+  color: var(--color-background);
 }
 
-.container-animaux{
+.animals {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
   width: 90%;
   margin: auto;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
 }
 
-.title-animaux {
-  width: 275px;
-  margin: auto;
+.animal {
+  width: 30%;
+  text-align: center;
+  background-color: var(--color-background);
+  border-radius: 20px;
 }
-.title-animaux:hover {
+
+.animal img {
+  width: 100%;
+  border: 4px solid white;
+  border-radius: 20px;
+}
+
+.animal img:hover {
+  transform: scale(1.4);
+}
+
+.animal p {
+  margin: 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.animal p:hover {
   text-decoration: underline;
 }
 
-.grid-autruche{
-  grid-area: 1 / 1 / 3 / 2;;
-  
-  height: auto;
-  width: 300px;
-  background: white;
-  margin: 0 auto;
+.autruche{
+  width: 25%;
 }
 
-.large-img {
-  width: 275px;
-  height: 80%;
-  object-fit: cover;
-  background-size: cover;
+.crocodile{
+  border: 1px var(--color-secondary) solid;
 }
-.small-img {
-  width: 275px;
-  height: 70%;
-  object-fit: cover;
-  background-size: cover;
+
+.lower-animals {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  width: 90%;
+  margin: auto;
 }
+
+.lower-animals .animal {
+  width: 30%;
+  text-align: center;
+}
+
+.lower-animals .animal img {
+  width: 100%;
+  border: 4px solid white;
+  border-radius: 8px;
+}
+
+.lower-animals .animal p {
+  margin-top: 10px;
+}
+
+.animals-footer {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.animals-footer p {
+  color: var(--color-background);
+  font-size: 2rem;
+}
+
+/* Section services */
+
+.services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.services .title{
+  margin: 30px;
+  padding-top: 10px;
+  color: var(--color-secondary);
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espacement entre les cartes */
+  width: 90%;
+  margin: 30px auto ;
+}
+
+.service-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.service-content img {
+  max-width: 50%;
+  border-radius: 20px;
+}
+
+.text-content{
+  text-align: center;
+  margin-top: 10px;
+}
+
+.text-content button{
+  padding: 10px ;
+}
+
