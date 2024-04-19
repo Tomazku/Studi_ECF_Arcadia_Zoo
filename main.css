@@ -168,8 +168,8 @@ body {
   border-radius: 20px;
 }
 
-.animal img:hover {
-  transform: scale(1.4);
+.animal:hover {
+  transform: scale(1.2);
 }
 
 .animal p {
@@ -268,3 +268,50 @@ body {
   padding: 10px ;
 }
 
+/* section opinions */
+
+.opinion {
+  text-align: center;
+  background-color: var(--color-secondary);
+  color: var(--color-background);
+  padding: 20px 0;
+}
+
+.opinion .title {
+  margin: 30px;
+  padding-top: 10px;
+  color: var(--color-background);
+}
+
+.opinion p {
+  margin: 10px 0;
+}
+
+.container-opinion {
+  width: 90%;
+  margin: auto;
+}
+
+.opinion-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.opinion-content {
+  width: calc(33.33% - 20px); /* Répartir sur 3 colonnes avec un espacement de 20px */
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--color-secondary);
+  border: 1px solid var(--color-text);
+}
+
+.text-content {
+  text-align: center;
+}
+
+.author {
+  text-align: center;
+  margin-top: 10px;
+}

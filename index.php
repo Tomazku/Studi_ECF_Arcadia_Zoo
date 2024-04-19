@@ -105,21 +105,50 @@
       <div class="service-content">
         <img src="assets/images/Restaurant.jpg" alt="">
         <p class="text-content">
-        Plongez dans une expérience culinaire exceptionnelle au restaurant de qualité d'Arcadia. Avec une cuisine mettant en avant des produits locaux frais, notre restaurant offre une vue panoramique sur les paysages enchanteurs du zoo, vous promettant une expérience gastronomique mémorable.        
-        </p>
+        Plongez dans une expérience culinaire exceptionnelle au restaurant de qualité d'Arcadia. Avec une cuisine mettant en avant des produits locaux frais, notre restaurant offre une vue panoramique sur les paysages enchanteurs du zoo, vous promettant une expérience gastronomique mémorable. 
+        <br>       
         <button class="button">Découvrez nos restaurants</button>
+        </p>
       </div>
 
       <div class="service-content">
         <p class="text-content">
         Explorez les splendeurs de la faune aux côtés de nos guides experts lors de visites guidées gratuites au Zoo Arcadia. Laissez-vous guider à travers une aventure captivante où vous découvrirez les habitats naturels de nos résidents, en apprendrez davantage sur la vie sauvage et aurez l'opportunité d'observer de près certains des animaux les plus fascinants de la planète.
+        <br>
+        <button class="button">Découvrez nos services</button>
       </p>
-      <button class="button">Découvrez nos services</button>
         <img src="assets/images/petit_train.jpg" alt="">
       </div>
     </div>      
  </div>
 
+      </section>
+      <section class="opinion">
+        <div class="container-opinion">
+          <h1 class="title">Ce qu'ils <span class="orange-text">disent de nous</span></h1>
+          <p>Les visiteurs du Zoo Arcadia partagent leur expérience inoubliable et leurs moments magiques passés au zoo.</p>
+          <div class="opinion-card">
+            <div class="opinion-content">
+              <p class="text-content">
+              "Une expérience incroyable! J'ai adoré chaque instant passé au Zoo Arcadia. Les animaux étaient magnifiques et les habitats étaient si bien conçus. Je recommande vivement une visite à tous les amoureux de la nature!"</p>
+              <p class="author">- Alice</p>
+            </div>
+            <div class="opinion-content">
+              <p class="text-content">
+              "Le Zoo Arcadia est un endroit magique où la nature et les animaux se rencontrent. J'ai été impressionné par la variété d'animaux et la qualité des installations. C'était une journée inoubliable pour toute la famille!"</p>
+              <p class="author">- Marc</p>
+            </div>
+            <div class="opinion-content">
+              <p class="text-content">
+              "Une expérience incroyable! J'ai adoré chaque instant passé au Zoo Arcadia. Les animaux étaient magnifiques et les habitats étaient si bien conçus. Je recommande vivement une visite à tous les amoureux de la nature!"</p>
+              <p class="author">- Sophie</p>
+            </div>
+            <div class="opinion-content">
+              <p class="text-content">
+              Voir plus</p>
+            </div>
+          </div>
+        </div>
       </section>
 
 
