@@ -30,7 +30,7 @@
   
 <div class="card-container">
   <div class="card">
-      <img src="assets/images/Jungle.jpg" alt="">
+      <img src="assets/images/Jungle.webp" alt="">
     <div class="card-content">
       <p class="text-carte">
       Plongez au cœur de la luxuriante jungle tropicale au Zoo Arcadia, où les arbres majestueux et la végétation dense abritent une multitude de créatures exotiques, des singes espiègles aux oiseaux aux couleurs vives.
@@ -45,11 +45,11 @@
       Dans la vaste savane, vous serez émerveillé par la vue des éléphants majestueux errant paisiblement parmi les hautes herbes, tandis que les lions paresseux se prélassent sous le soleil chaud.      </p>
       <button class="button">Découvrez la savane</button>
     </div>
-      <img src="assets/images/Savane.jpg" alt="">
+      <img src="assets/images/Savane.webp" alt="">
   </div>
 
   <div class="card">
-      <img src="assets/images/Marais.jpg" alt="">
+      <img src="assets/images/Marais.webp" alt="">
     <div class="card-content">
       <p class="text-carte">
       Plongez au cœur de la luxuriante jungle tropicale au Zoo Arcadia, où les arbres majestueux et la végétation dense abritent une multitude de créatures exotiques, des singes espiègles aux oiseaux aux couleurs vives.      </p>
@@ -66,22 +66,22 @@
   
   <div class="animals">
     <div class="animal autruche">
-      <img src="assets/images/Autruche.jpg" alt="Autruche">
+      <img src="assets/images/Autruche.webp" alt="Autruche">
       <p>Autruches</p>
     </div>
     <div class="animal ">
-      <img src="assets/images/Elephant.jpg" alt="Éléphant">
+      <img src="assets/images/Elephant.webp" alt="Éléphant">
       <p>Éléphants</p>
     </div>
     <div class="animal">
-      <img src="assets/images/Tigre.jpg" alt="Tigre">
+      <img src="assets/images/Tigre.webp" alt="Tigre">
       <p>Tigres</p>
     </div>
   </div>
 
   <div class="lower-animals">
     <div class="animal">
-      <img src="assets/images/Singe.jpg" alt="Singe">
+      <img src="assets/images/Singe.webp" alt="Singe">
       <p>Singes</p>
     </div>
     <div class="animals-footer">
@@ -89,7 +89,7 @@
     <button class="button">Découvrez nos animaux</button>
   </div>
     <div class="animal crocodile">
-      <img src="assets/images/Crocodile.jpg" alt="Crocodile">
+      <img src="assets/images/Crocodile.webp" alt="Crocodile">
       <p>Crocodiles</p>
     </div>
   </div>
@@ -103,7 +103,7 @@
 
     <div class="service-card">
       <div class="service-content">
-        <img src="assets/images/Restaurant.jpg" alt="">
+        <img src="assets/images/Restaurant.webp" alt="">
         <p class="text-content">
         Plongez dans une expérience culinaire exceptionnelle au restaurant de qualité d'Arcadia. Avec une cuisine mettant en avant des produits locaux frais, notre restaurant offre une vue panoramique sur les paysages enchanteurs du zoo, vous promettant une expérience gastronomique mémorable. 
         <br>       
@@ -117,7 +117,7 @@
         <br>
         <button class="button">Découvrez nos services</button>
       </p>
-        <img src="assets/images/petit_train.jpg" alt="">
+        <img src="assets/images/petit_train.webp" alt="">
       </div>
     </div>      
  </div>
