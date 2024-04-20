@@ -7,3 +7,17 @@ router.get('/', function(req, res, next) {
 });
 
 module.exports = router;
+
+// routes/index.js
+
+const express = require('express');
+const router = express.Router();
+
+// Route pour incrémenter les consultations d'un animal
+router.post('/increment/:Truche', (req, res) => {
+    const animalName = req.params.animalName;
+    // Logique pour incrémenter les consultations de l'animal
+    res.status(200).send(`Les consultations pour ${animalName} ont été incrémentées.`);
+});
+
+module.exports = router;
