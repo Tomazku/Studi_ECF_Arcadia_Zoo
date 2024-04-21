@@ -1,7 +1,7 @@
 // Importer les modules nécessaires
 const express = require('express');
 const router = express.Router();
-const Animal = require('../models/animalModel');
+const Animal = require('./animal.js');
 
 // Route pour incrémenter les consultations pour un animal spécifique
 router.post('/increment-consultations/:animalId', async (req, res, next) => {

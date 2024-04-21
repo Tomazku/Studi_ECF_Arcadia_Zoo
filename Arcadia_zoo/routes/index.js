@@ -23,7 +23,8 @@ router.post('/increment/:Truche', (req, res) => {
 module.exports = router;
 
 // Importez le router des routes de consultation
-const consultationRoutes = require('./routes/consultationRoutes');
+const consultationRoutes = require('./consultationsRoutes.js');
 
 // Utilisez le router pour les routes de consultation
 app.use('/consultations', consultationRoutes);
+router.use('/consultations', consultationsRoutes);
