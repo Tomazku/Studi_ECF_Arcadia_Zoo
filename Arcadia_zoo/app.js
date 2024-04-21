@@ -22,27 +22,33 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-// catch 404 and forward to error handler
+// Middleware pour la gestion des erreurs non trouvées (404)
 app.use(function(req, res, next) {
   next(createError(404));
 });
 
-// error handler
+// Middleware pour la gestion des erreurs globales
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+  // Si une erreur de connexion à MongoDB
+  if (err.name === 'MongoError') {
+    console.error('Erreur de connexion à MongoDB :', err);
+    err.message = 'Erreur de connexion à la base de données';
+    err.status = 500; // Ou un autre code d'erreur approprié
+  }
 
-  // render the error page
+  // Rendu de la page d'erreur
   res.status(err.status || 500);
-  res.render('error');
+  res.render('error', { error: err });
 });
 
-module.exports = app;
-
-//connection à MongoDB
+// Connexion à MongoDB
 const mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost:27017/Arcadia_zoo', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie'))
   .catch((err) => console.error('Erreur de connexion à MongoDB', err));
+
+// Middleware pour la gestion des erreurs de connexion à MongoDB
+mongoose.connection.on('error', (err) => {
+  console.error('Erreur de connexion à MongoDB :', err);
+});
