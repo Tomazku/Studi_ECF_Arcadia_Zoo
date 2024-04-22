@@ -44,7 +44,7 @@ app.use(function(err, req, res, next) {
 // Connexion à MongoDB
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/Arcadia_zoo', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb://localhost:27017/Arcadia_zoo')
   .then(() => console.log('Connexion à MongoDB réussie'))
   .catch((err) => console.error('Erreur de connexion à MongoDB', err));
 
@@ -52,3 +52,6 @@ mongoose.connect('mongodb://localhost:27017/Arcadia_zoo', { useNewUrlParser: tru
 mongoose.connection.on('error', (err) => {
   console.error('Erreur de connexion à MongoDB :', err);
 });
+
+module.exports = app;
+// Path: Arcadia_zoo/routes/animal.js
