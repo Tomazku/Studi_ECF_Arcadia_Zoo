@@ -38,7 +38,7 @@
             </nav>
         </div>
             <div class="connexion">
-                <button onclick="window.location.href=''">Connexion</button>
-            </div>
+            <button onclick="window.location.href='./Back-end/Connexion/login.php';">Connexion</button>            
+        </div>
     </div>
 </header>
