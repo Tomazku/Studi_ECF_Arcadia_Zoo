@@ -1,34 +1,47 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Interface</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <h1>Créer un nouveau compte</h1>
+<?php
+// Connexion à la base de données
+$pdo = new PDO('mysql:host=localhost;dbname=arcadia_zoo', 'root', '');
+
+// Vérification des informations de connexion
+if(isset($_POST['mail']) && isset($_POST['motDePasse'])) {
+    // Récupération des données saisies
+    $email = $_POST['mail'];
+    $mot_de_passe = $_POST['motDePasse'];
     
-    <h2>Employé</h2>
-    <form action="creation_employe.php" method="post">
-        <label for="employe_email">Courriel :</label>
-        <input type="email" id="employe_email" name="employe_email" required>
-        
-        <label for="employe_password">Mot de passe :</label>
-        <input type="password" id="employe_password" name="employe_password" required>
-        
-        <button type="submit">Créer compte employé</button>
-    </form>
+    // Requête pour vérifier les informations d'identification
+    $query = "SELECT * FROM administrateurs WHERE email = :email AND motDePasse = :motDePasse";
+    $statement = $pdo->prepare($query);
+    $statement->execute(array(
+        ':mail' => $mail,
+        ':motDePasse' => $motDePasse
+    ));
     
-    <h2>Vétérinaire</h2>
-    <form action="create_veterinaire.php" method="post">
-        <label for="veterinaire_email">Courriel :</label>
-        <input type="email" id="veterinaire_email" name="veterinaire_email" required>
-        
-        <label for="veterinaire_password">Mot de passe :</label>
-        <input type="password" id="veterinaire_password" name="veterinaire_password" required>
-        
-        <button type="submit">Créer compte vétérinaire</button>
-    </form>
-</body>
-</html>
+    // Vérification du résultat de la requête
+    $admin = $statement->fetch(PDO::FETCH_ASSOC);
+    if($admin) {
+        // Connexion réussie, rediriger vers la zone d'administration
+        header('Location: interface_admin.php');
+        exit();
+    } else {
+        // Informations d'identification incorrectes, afficher un message d'erreur
+        $erreur = "Identifiants incorrects";
+    }
+}
+?>
+
+<!-- Formulaire de connexion -->
+<link rel="stylesheet" href="back-end.css">
+<form method="post" action="interface_admin.php">
+    <label for="email">E-mail :</label>
+    <input type="email" id="email" name="email" required><br>
+    <label for="mot_de_passe">Mot de passe :</label>
+    <input type="password" id="mot_de_passe" name="mot_de_passe" required><br>
+    <input type="submit" value="Se connecter">
+</form>
+
+<?php
+// Afficher un message d'erreur s'il y en a un
+if(isset($erreur)) {
+    echo "<p>$erreur</p>";
+}
+?>
