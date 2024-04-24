@@ -1,21 +1,69 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <h2>Connexion</h2>
-        <form action="login_process.php" method="POST">
-            <label for="email">Adresse Email</label>
-            <input type="email" id="email" name="email" required>
-            <label for="password">Mot de passe</label>
-            <input type="password" id="password" name="password" required>
-            <button type="submit">Se Connecter</button>
-        </form>
-    </div>
-</body>
-</html>
+<?php
+// Connexion à la base de données
+require_once('./pages/Includes/config.php');
+
+// Vérification des informations de connexion
+if(isset($_POST['email']) && isset($_POST['motDePasse'])) {
+    // Récupération des données saisies
+    $email = $_POST['email'];
+    $mot_de_passe = $_POST['motDePasse'];
+    
+    // Requête pour vérifier les informations d'identification
+    $query = "SELECT * FROM utilisateurs WHERE email = :email AND motDePasse = :motDePasse";
+    $statement = $pdo->prepare($query);
+    $statement->execute(array(
+        ':email' => $email,
+        ':motDePasse' => $motDePasse
+    ));
+    
+    // Vérification du résultat de la requête
+    $admin = $statement->fetch(PDO::FETCH_ASSOC);
+    if($admin) {
+        // Connexion réussie, rediriger vers la zone d'administration
+        header('Location: interface_admin.php');
+        exit();
+    } else {
+        // Informations d'identification incorrectes, afficher un message d'erreur
+        $erreur = "Identifiants incorrects";
+    }
+
+
+// Après avoir vérifié les identifiants de connexion et récupéré les données de l'utilisateur
+if($admin) {
+    // Récupérer le rôle de l'utilisateur à partir de la base de données
+    $role = $admin['role'];
+    
+    // Redirection vers l'interface appropriée en fonction du rôle de l'utilisateur
+    switch($role) {
+        case 'admin':
+            header('Location: interface_admin.php');
+            exit();
+        case 'veterinaire':
+            header('Location: interface_veterinaire.php');
+            exit();
+        // Ajoutez d'autres cas pour d'autres rôles si nécessaire
+        default:
+            // Redirection vers une page par défaut si le rôle n'est pas reconnu
+            header('Location: interface_employe.php');
+            exit();
+    }
+}
+}
+?>
+
+<!-- Formulaire de connexion -->
+<link rel="stylesheet" href="back-end.css">
+<form method="post" action="login.php">
+    <label for="email">E-mail :</label>
+    <input type="email" id="email" name="email" required><br>
+    <label for="mot_de_passe">Mot de passe :</label>
+    <input type="password" id="mot_de_passe" name="mot_de_passe" required><br>
+    <input type="submit" value="Se connecter">
+</form>
+
+<?php
+// Afficher un message d'erreur s'il y en a un
+if(isset($erreur)) {
+    echo "<p>$erreur</p>";
+}
+?>
