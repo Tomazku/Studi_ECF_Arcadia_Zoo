@@ -1,18 +1,18 @@
 <?php
 // Connexion à la base de données
-$pdo = new PDO('mysql:host=localhost;dbname=arcadia_zoo', 'root', '');
+require_once('./pages/Includes/config.php');
 
 // Vérification des informations de connexion
-if(isset($_POST['mail']) && isset($_POST['motDePasse'])) {
+if(isset($_POST['email']) && isset($_POST['motDePasse'])) {
     // Récupération des données saisies
-    $email = $_POST['mail'];
+    $email = $_POST['email'];
     $mot_de_passe = $_POST['motDePasse'];
     
     // Requête pour vérifier les informations d'identification
-    $query = "SELECT * FROM administrateurs WHERE email = :email AND motDePasse = :motDePasse";
+    $query = "SELECT * FROM utilisateurs WHERE email = :email AND motDePasse = :motDePasse";
     $statement = $pdo->prepare($query);
     $statement->execute(array(
-        ':mail' => $mail,
+        ':email' => $email,
         ':motDePasse' => $motDePasse
     ));
     
@@ -26,12 +26,34 @@ if(isset($_POST['mail']) && isset($_POST['motDePasse'])) {
         // Informations d'identification incorrectes, afficher un message d'erreur
         $erreur = "Identifiants incorrects";
     }
+
+
+// Après avoir vérifié les identifiants de connexion et récupéré les données de l'utilisateur
+if($admin) {
+    // Récupérer le rôle de l'utilisateur à partir de la base de données
+    $role = $admin['role'];
+    
+    // Redirection vers l'interface appropriée en fonction du rôle de l'utilisateur
+    switch($role) {
+        case 'admin':
+            header('Location: interface_admin.php');
+            exit();
+        case 'veterinaire':
+            header('Location: interface_veterinaire.php');
+            exit();
+        // Ajoutez d'autres cas pour d'autres rôles si nécessaire
+        default:
+            // Redirection vers une page par défaut si le rôle n'est pas reconnu
+            header('Location: interface_employe.php');
+            exit();
+    }
+}
 }
 ?>
 
 <!-- Formulaire de connexion -->
 <link rel="stylesheet" href="back-end.css">
-<form method="post" action="interface_admin.php">
+<form method="post" action="login.php">
     <label for="email">E-mail :</label>
     <input type="email" id="email" name="email" required><br>
     <label for="mot_de_passe">Mot de passe :</label>
