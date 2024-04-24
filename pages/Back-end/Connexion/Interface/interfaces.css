@@ -1,0 +1,67 @@
+/* Style pour le menu de navigation vertical */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: #333;
+    color: #fff;
+    padding-top: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px 20px;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Style pour le contenu principal */
+.content {
+    margin-left: 220px; /* Assurez-vous que le contenu principal ne soit pas caché derrière le menu */
+    padding: 20px;
+}
+
+.content header h1 {
+    margin-bottom: 20px;
+}
+
+/* Style pour le bouton de déconnexion */
+.btn-logout {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #f00;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Style pour la popup de confirmation de suppression */
+.confirm-popup {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirm-popup-inner {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
