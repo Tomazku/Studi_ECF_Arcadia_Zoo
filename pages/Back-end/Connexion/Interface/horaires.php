@@ -1,5 +1,4 @@
 <?php
-$pdo = new PDO('mysql:host=localhost;dbname=arcadia_zoo', 'root', '');
 
 require_once('auth.php');
 require_once('fonctions_horaires.php');
