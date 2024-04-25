@@ -1,7 +1,7 @@
 <?php
-require_once('auth.php');
 $pdo = new PDO('mysql:host=localhost;dbname=arcadia_zoo', 'root', '');
 
+require_once('auth.php');
 require_once('fonctions_horaires.php');
 
 // Vérifier si le formulaire de mise à jour des horaires a été soumis
