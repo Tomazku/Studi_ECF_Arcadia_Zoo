@@ -1,7 +1,7 @@
 <?php
 
 require_once('auth.php');
-require_once('fonctions_horaires.php');
+require_once('./fonctions_horaires.php');
 
 // Vérifier si le formulaire de mise à jour des horaires a été soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
