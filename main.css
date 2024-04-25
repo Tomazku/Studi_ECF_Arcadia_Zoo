@@ -315,3 +315,52 @@ body {
   text-align: center;
   margin-top: 10px;
 }
+
+/* page contact */
+
+.contact_container {
+  width: 90%;
+  margin: 30px auto; /* Ajout de marges autour des conteneurs de contact */
+  padding: 20px;
+  border: 1px solid var(--color-text);
+  border-radius: 20px;
+  background-color: var(--color-background);
+}
+
+.contact_container:first-child {
+  margin-top: 0; /* Suppression de la marge supérieure pour le premier conteneur */
+}
+
+.contact_container:last-child {
+  margin-bottom: 0; /* Suppression de la marge inférieure pour le dernier conteneur */
+}
+
+
+.contact_container form{
+  margin-bottom: 20px;
+
+}
+
+.contact_container label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.contact_container input[type="text"],
+.contact_container input[type="email"],
+.contact_container textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid var(--color-text);
+  border-radius: 20px;
+}
+
+.contact_container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.contact_container ul li {
+  margin-bottom: 5px;
+}
