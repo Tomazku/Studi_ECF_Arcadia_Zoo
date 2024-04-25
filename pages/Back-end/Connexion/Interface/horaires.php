@@ -5,7 +5,11 @@ require_once('auth.php');
 // Vérifier si le formulaire de mise à jour des horaires a été soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Récupérer les données du formulaire et mettre à jour les horaires
-    // ...
+    $id = $_POST["id"];
+    $heure_ouverture = $_POST["heure_ouverture"];
+    $heure_fermeture = $_POST["heure_fermeture"];
+    $ferme = isset($_POST["ferme"]);
+    updateHorairesOuverture($id, $heure_ouverture, $heure_fermeture, $ferme);
 }
 
 // Récupérer les horaires depuis la base de données
@@ -35,6 +39,7 @@ $horaires = getHorairesOuverture();
         <header>
             <h1>Gestion des horaires d'ouverture</h1>
         </header>
+        
         <?php foreach ($horaires as $horaire) : ?>
             <form method="POST">
                 <input type="hidden" name="id" value="<?= $horaire['id'] ?>">
@@ -47,12 +52,12 @@ $horaires = getHorairesOuverture();
                         <th>Actions</th>
                     </tr>
                     <tr>
-                        <td><?= $horaire['jour'] ?></td>
-                        <td><?= $horaire['fermé'] ? 'Fermé' : 'Ouvert' ?></td>
+                        <td><?= $horaire['jour_semaine'] ?></td>
+                        <td><?= $horaire['heure_ouverture'] && $horaire['heure_fermeture'] ? 'Ouvert' : 'Fermé' ?></td>
                         <td><input type="time" name="heure_ouverture" value="<?= $horaire['heure_ouverture'] ?>"></td>
                         <td><input type="time" name="heure_fermeture" value="<?= $horaire['heure_fermeture'] ?>"></td>
                         <td>
-                            <input type="checkbox" name="ferme" <?= $horaire['fermé'] ? 'checked' : '' ?>> Fermé
+                            <input type="checkbox" name="ferme" <?= !$horaire['heure_ouverture'] && !$horaire['heure_fermeture'] ? 'checked' : '' ?>> Fermé
                             <button type="submit">Enregistrer</button>
                         </td>
                     </tr>
