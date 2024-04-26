@@ -11,15 +11,21 @@ function getHorairesOuverture() {
 }
 
 // Fonction pour mettre à jour les horaires d'ouverture dans la base de données
-function updateHorairesOuverture($id, $heure_ouverture, $heure_fermeture, $ferme) {
+function updateHoraires($horaires) {
     global $pdo;
-    $query = "UPDATE horaires_ouverture SET heure_ouverture = :heure_ouverture, heure_fermeture = :heure_fermeture, fermé = :ferme WHERE id = :id";
-    $statement = $pdo->prepare($query);
-    $statement->execute([
-        ':id' => $id,
-        ':heure_ouverture' => $heure_ouverture,
-        ':heure_fermeture' => $heure_fermeture,
-        ':ferme' => $ferme
-    ]);
+    foreach ($horaires as $id => $horaire) {
+        $heure_ouverture = $horaire['heure_ouverture'];
+        $heure_fermeture = $horaire['heure_fermeture'];
+        $ferme = isset($horaire['ferme']) ? 1 : 0; // Convertir en 1 ou 0 pour le stockage dans la base de données
+
+        $query = "UPDATE horaires_ouverture SET heure_ouverture = :heure_ouverture, heure_fermeture = :heure_fermeture, ferme = :ferme WHERE horaire_id = :id";
+        $statement = $pdo->prepare($query);
+        $statement->execute([
+            ':id' => $id,
+            ':heure_ouverture' => $heure_ouverture,
+            ':heure_fermeture' => $heure_fermeture,
+            ':ferme' => $ferme
+        ]);
+    }
 }
 ?>

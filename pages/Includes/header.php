@@ -33,7 +33,7 @@
                                 <img src="assets/images/Marais.jpg" alt="Marais">Marais</a></li>
                         </ul>
                     </li>
-                    <li><a href="contact.php">Contact</a></li>
+                    <li><a href="/pages/Back-end/Connexion/contact.php">Contact</a></li>
                 </ul>
             </nav>
         </div>
