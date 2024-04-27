@@ -17,6 +17,10 @@ function updateHoraires($horaires) {
         $heure_fermeture = $horaire['heure_fermeture'];
         $ferme = isset($horaire['ferme']) ? 1 : 0; // Convertir en 1 ou 0 pour le stockage dans la base de données
 
+        // Ajout de la conversion des heures au format 'HH:MM:SS' pour la base de données
+        $heure_ouverture = date('H:i:s', strtotime($heure_ouverture));
+        $heure_fermeture = date('H:i:s', strtotime($heure_fermeture));
+
         $query = "UPDATE horaires_ouverture SET heure_ouverture = :heure_ouverture, heure_fermeture = :heure_fermeture, ferme = :ferme WHERE horaire_id = :horaire_id";
         $statement = $pdo->prepare($query);
         $statement->execute([
