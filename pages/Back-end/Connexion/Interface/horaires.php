@@ -10,6 +10,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Assurez-vous de traiter la soumission du formulaire ici
     // Par exemple, vous pouvez appeler une fonction pour mettre à jour les horaires
     updateHoraires($_POST['horaires']);
+
+    // Envoyer une réponse JSON pour indiquer que la mise à jour a réussi
+    echo json_encode(["success" => true, "message" => "Les horaires ont été mis à jour avec succès"]);
+    exit; // Arrêter l'exécution du script immédiatement après avoir envoyé la réponse
 }
 
 // Récupérer à nouveau les horaires après éventuelle mise à jour
@@ -40,7 +44,7 @@ $horaires = getHorairesOuverture();
             <h1>Gestion des horaires d'ouverture</h1>
         </header>
 
-        <form method="POST">
+        <form id="horairesForm" method="POST">
             <table>
                 <tr>
                     <th>Jour</th>
@@ -53,10 +57,10 @@ $horaires = getHorairesOuverture();
                     <tr>
                         <td><?= $horaire['jour'] ?></td>
                         <td><?= $horaire['heure_ouverture'] && $horaire['heure_fermeture'] ? 'Ouvert' : 'Fermé' ?></td>
-                        <td><input type="time" name="horaires[<?= $horaire['id'] ?>][heure_ouverture]" value="<?= $horaire['heure_ouverture'] ?>"></td>
-                        <td><input type="time" name="horaires[<?= $horaire['id'] ?>][heure_fermeture]" value="<?= $horaire['heure_fermeture'] ?>"></td>
+                        <td><input type="time" name="horaires[<?= $horaire['horaire_id'] ?>][heure_ouverture]" value="<?= $horaire['heure_ouverture'] ?>"></td>
+                        <td><input type="time" name="horaires[<?= $horaire['horaire_id'] ?>][heure_fermeture]" value="<?= $horaire['heure_fermeture'] ?>"></td>
                         <td>
-                            <input type="checkbox" name="horaires[<?= $horaire['id'] ?>][ferme]" <?= !$horaire['heure_ouverture'] && !$horaire['heure_fermeture'] ? 'checked' : '' ?>> Fermé
+                            <input type="checkbox" name="horaires[<?= $horaire['horaire_id'] ?>][ferme]" <?= !$horaire['heure_ouverture'] && !$horaire['heure_fermeture'] ? 'checked' : '' ?>> Fermé
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -64,5 +68,33 @@ $horaires = getHorairesOuverture();
             <button type="submit">Enregistrer</button>
         </form>
     </div>
+    <!-- Afficher une popup de confirmation -->
+    <div id="confirmationMessage" style="display: none;">Les horaires ont été mis à jour avec succès</div>
+    <script>
+        document.getElementById('horairesForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Empêcher l'envoi du formulaire par défaut
+
+            // Envoyer les données du formulaire en AJAX
+            var formData = new FormData(this);
+            fetch('horaires.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Afficher le message de confirmation
+                    document.getElementById('confirmationMessage').style.display = 'block';
+                } else {
+                    // Afficher une erreur si la requête a échoué
+                    alert('Une erreur s\'est produite. Veuillez réessayer.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Une erreur s\'est produite. Veuillez réessayer.');
+            });
+        });
+    </script>
 </body>
 </html>
