@@ -49,6 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <li><a href="#">Gestion des utilisateurs</a></li>
             <li><a href="#">Gestion des animaux</a></li>
             <li><a href="./horaires.php">Gestion des horaires</a></li>
+            <li><a href="./traitement_avis.php">Gestion des avis</a></li>
             <!-- Ajoutez d'autres liens de navigation ici -->
         </ul>
     </nav>

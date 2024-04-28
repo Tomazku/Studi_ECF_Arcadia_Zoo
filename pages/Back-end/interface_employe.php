@@ -28,6 +28,7 @@ $utilisateurs = getUtilisateurs();
             <li><a href="#">Tableau de bord</a></li>
             <li><a href="#">Gestion des utilisateurs</a></li>
             <li><a href="#">Gestion des animaux</a></li>
+            <li><a href="#">Gestion des avis</a></li>
             <!-- Ajoutez d'autres liens de navigation ici -->
         </ul>
     </nav>

@@ -127,6 +127,10 @@
         <div class="container-opinion">
           <h1 class="title">Ce qu'ils <span class="orange-text">disent de nous</span></h1>
           <p>Les visiteurs du Zoo Arcadia partagent leur expérience inoubliable et leurs moments magiques passés au zoo.</p>
+          <?php foreach ($avis_visibles as $avis) : ?>
+            <li><strong><?= $avis['pseudo'] ?>:</strong> <?= $avis['commentaire'] ?></li>
+        <?php endforeach; ?>
+    </ul>
           <div class="opinion-card">
             <div class="opinion-content">
               <p class="text-content">

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Back-end - Gestion des horaires d'ouverture</title>
+    <link rel="stylesheet" href="interfaces.css">
+</head>
+<body>
+    <!-- Menu de navigation vertical fixe -->
+    <nav class="sidebar">
+        <ul>
+            <li><a href="#">ajout utilisateur</a></li>
+            <li><a href="#">Gestion des utilisateurs</a></li>
+            <li><a href="#">Gestion des animaux</a></li>
+            <li><a href="./horaires.php">Gestion des horaires</a></li>
+            <li><a href="./traitement_avis.php">Gestion des avis</a></li>
+            <!-- Ajoutez d'autres liens de navigation ici -->
+        </ul>
+    </nav>
+    <div class="content">
+        <header>
+            <h1>Gestion des horaires d'ouverture</h1>
+        </header>
+<?php
+// Connexion à la base de données (à adapter selon vos paramètres)
+$pdo = new PDO('mysql:host=localhost;dbname=arcadia_zoo', 'root', '');
+
+
+// Récupération des avis en attente de validation
+$query = "SELECT * FROM avis WHERE isVisible = 0";
+$statement = $pdo->query($query);
+$avis_en_attente = $statement->fetchAll(PDO::FETCH_ASSOC);
+?>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration des avis</title>
+</head>
+<body>
+    <h1>Administration des avis</h1>
+
+    <!-- Liste des avis en attente de validation -->
+    <h2>Avis en attente de validation</h2>
+    <ul>
+        <?php foreach ($avis_en_attente as $avis) : ?>
+            <li>
+                <strong><?= $avis['pseudo'] ?>:</strong> <?= $avis['commentaire'] ?>
+                <form action="valider_avis.php" method="POST">
+                    <input type="hidden" name="avis_id" value="<?= $avis['avis_id'] ?>">
+                    <button type="submit" name="action" value="approuver">Approuver</button>
+                    <button type="submit" name="action" value="rejeter">Rejeter</button>
+                </form>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</body>
+</html>

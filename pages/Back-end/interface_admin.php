@@ -29,6 +29,8 @@ $utilisateurs = getUtilisateurs();
             <li><a href="#">Gestion des utilisateurs</a></li>
             <li><a href="#">Gestion des animaux</a></li>
             <li><a href="./horaires.php">Gestion des horaires</a></li>
+            <li><a href="./traitement_avis.php">Gestion des avis</a></li>
+
             <!-- Ajoutez d'autres liens de navigation ici -->
         </ul>
     </nav>
@@ -60,7 +62,7 @@ $utilisateurs = getUtilisateurs();
     </div>
 
     <!-- Bouton de déconnexion -->
-    <form id="logout-form" action="/pages/Back-end/Connexion/logout.php" method="post">
+    <form id="logout-form" action="/pages/Back-end/logout.php" method="post">
         <button type="submit" class="btn-logout">Déconnexion</button>
     </form>
 </body>
