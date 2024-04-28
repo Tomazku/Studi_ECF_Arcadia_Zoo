@@ -73,45 +73,4 @@ document.getElementById('contactForm').addEventListener('submit', function(event
 </html>
 
 
-    <div class="contact_container">
-        <h1>Contactez-nous</h1>
-        <form id="contactForm" action="./pages/Back-end/Connexion/Interface/traitement.php" method="POST">
-    <!-- Ajoutez des champs de formulaire cachés pour les heures d'ouverture et de fermeture -->
    
-
-    <label for="nom">Nom :</label>
-    <input type="text" id="nom" name="nom" required>
-
-    <label for="email">Email :</label>
-    <input type="email" id="email" name="email" required>
-
-    <label for="message">Message :</label>
-    <textarea id="message" name="message" required></textarea>
-
-    <button id="submitBtn" class="button" type="submit">Envoyer</button>
-</form>
-<div id="confirmationMessage" style="display: none;">
-    Votre message a été envoyé avec succès!
-</div>
-    </div> 
-<?php include 'assets/includes/footer.php'; ?>
-
-
-<script>
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Empêcher l'envoi du formulaire par défaut
-
-    // Récupérer les valeurs des horaires d'ouverture depuis le formulaire de horaires.php
-    var heureOuverture = document.querySelector('[name="horaires[heure_ouverture]"]').value;
-    var heureFermeture = document.querySelector('[name="horaires[heure_fermeture]"]').value;
-
-    // Mettre à jour les champs de formulaire cachés avec les valeurs récupérées
-    document.getElementById('heure_ouverture').value = heureOuverture;
-    document.getElementById('heure_fermeture').value = heureFermeture;
-
-    // Soumettre le formulaire de contact avec les données des horaires d'ouverture
-    this.submit();
-});
-</script>
-</body>
-</html>

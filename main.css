@@ -325,6 +325,7 @@ body {
   border: 1px solid var(--color-text);
   border-radius: 20px;
   background-color: var(--color-background);
+  height: 1vh;
 }
 
 .contact_container:first-child {
@@ -350,6 +351,7 @@ body {
 .contact_container input[type="email"],
 .contact_container textarea {
   width: 100%;
+  height: 150px;
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid var(--color-text);

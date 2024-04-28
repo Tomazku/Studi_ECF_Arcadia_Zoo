@@ -135,7 +135,8 @@ body {
   background-color: #000;
   width: 100%;
   color: var(--color-background);
-
+  margin-top: 50px;
+  
 }
 
 .footer__flex {

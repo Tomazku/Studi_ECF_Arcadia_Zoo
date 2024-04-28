@@ -70,11 +70,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <tr>
                         <td><?= $horaire['jour'] ?></td>
                         <td><?= $horaire['heure_ouverture'] && $horaire['heure_fermeture'] ? 'Ouvert' : 'Fermé' ?></td>
-                        <td><input type="time" name="horaires[<?= $horaire['horaire_id'] ?>][heure_ouverture]" value="<?= $horaire['heure_ouverture'] ? date('H:i', strtotime($horaire['heure_ouverture'])) : '' ?>" min="00:00" max="23:59"></td>
-                        <td><input type="time" name="horaires[<?= $horaire['horaire_id'] ?>][heure_fermeture]" value="<?= $horaire['heure_fermeture'] ? date('H:i', strtotime($horaire['heure_fermeture'])) : '' ?>" min="00:00" max="23:59"></td>
+                        <td><input type="time" name="horaires[<?= $horaire['horaires_id'] ?>][heure_ouverture]" value="<?= $horaire['heure_ouverture'] ? date('H:i', strtotime($horaire['heure_ouverture'])) : '' ?>" min="00:00" max="23:59"></td>
+                        <td><input type="time" name="horaires[<?= $horaire['horaires_id'] ?>][heure_fermeture]" value="<?= $horaire['heure_fermeture'] ? date('H:i', strtotime($horaire['heure_fermeture'])) : '' ?>" min="00:00" max="23:59"></td>
 
                         <td>
-                            <input type="checkbox" name="horaires[<?= $horaire['horaire_id'] ?>][ferme]" <?= !$horaire['heure_ouverture'] && !$horaire['heure_fermeture'] ? 'checked' : '' ?>> Fermé
+                            <input type="checkbox" name="horaires[<?= $horaire['horaires_id'] ?>][ferme]" <?= !$horaire['heure_ouverture'] && !$horaire['heure_fermeture'] ? 'checked' : '' ?>> Fermé
                         </td>
                     </tr>
                 <?php endforeach; ?>
