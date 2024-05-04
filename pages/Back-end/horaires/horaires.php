@@ -1,11 +1,7 @@
 <?php
-
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-require_once('fonctions_horaires.php');
-require_once('auth.php');
+// Inclure le fichier de connexion à la base de données et les fonctions pour les horaires
+require_once('./pages/Back-end/horaires/fonctions_horaires.php');
+require_once('./pages/Back-end/auth.php');
 
 // Récupérer les horaires depuis la base de données
 $horaires = getHorairesOuverture();
@@ -16,8 +12,14 @@ $updateSuccess = false;
 // Vérifier si le formulaire de mise à jour des horaires a été soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Assurez-vous de traiter la soumission du formulaire ici
-    // Par exemple, vous pouvez appeler une fonction pour mettre à jour les horaires
+    // Par exemple, vous pouvez appeler une fonction pour mettre à jour les horaires existants
     if (updateHoraires($_POST['horaires'])) {
+        $updateSuccess = true;
+    }
+    
+    // Vérifier si de nouveaux horaires ont été ajoutés
+    if (isset($_POST['nouveaux_horaires'])) {
+        insertNouveauxHoraires($_POST['nouveaux_horaires']);
         $updateSuccess = true;
     }
 
@@ -29,8 +31,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo json_encode(["success" => $updateSuccess, "horaires" => $horaires]);
     exit; // Arrêter l'exécution du script immédiatement après avoir envoyé la réponse
 }
-
-// Si la requête n'est pas une requête POST AJAX, afficher normalement le formulaire HTML
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Back-end - Gestion des horaires d'ouverture</title>
-    <link rel="stylesheet" href="interfaces.css">
+    <link rel="stylesheet" href="/pages/Back-end/interfaces.css">
 </head>
 <body>
     <!-- Menu de navigation vertical fixe -->
@@ -79,6 +79,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </td>
                     </tr>
                 <?php endforeach; ?>
+                <!-- Ajoutez une ligne pour permettre à l'utilisateur d'ajouter de nouveaux horaires -->
+                <tr>
+                    <td>Nouveau jour</td>
+                    <td>Ouvert</td>
+                    <td><input type="time" name="nouveaux_horaires[heure_ouverture]" min="00:00" max="23:59"></td>
+                    <td><input type="time" name="nouveaux_horaires[heure_fermeture]" min="00:00" max="23:59"></td>
+                    <td><input type="checkbox" name="nouveaux_horaires[ferme]"> Fermé</td>
+                </tr>
             </table>
             <button type="submit">Enregistrer</button>
         </form>
