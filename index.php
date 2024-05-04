@@ -138,7 +138,7 @@ $avis_visibles = $statement->fetchAll(PDO::FETCH_ASSOC);
           <h1 class="title">Ce qu'ils <span class="orange-text">disent de nous</span></h1>
           <p>Les visiteurs du Zoo Arcadia partagent leur expérience inoubliable et leurs moments magiques passés au zoo.</p>
           <?php foreach ($avis_visibles as $avis) : ?>
-            <li><strong><?= $avis['pseudo'] ?>:</strong> <?= $avis['commentaire'] ?></li>
+            <li class="avis"><strong><?= $avis['pseudo'] ?>:</strong> <?= $avis['commentaire'] ?></li>
         <?php endforeach; ?>
     </ul>
     

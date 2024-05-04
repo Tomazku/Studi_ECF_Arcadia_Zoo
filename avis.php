@@ -47,23 +47,23 @@ $avis_visibles = $statement_visibles->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <?php include 'assets/includes/header.php'; ?>
-    
-    <h1>Laisser un avis</h1>
-    <form id="avisForm" action="avis.php" method="POST">
-        <label for="pseudo">Pseudo :</label>
+    <div class="container_form_avis">
+    <h1 class="titre_avis">Laisser un avis</h1>
+    <form id="avisForm" action="avis.php" method="POST" class="avis_form">
+        <label for="pseudo" class="avis_pseudo">Pseudo :</label>
         <input type="text" id="pseudo" name="pseudo" required><br><br>
-        <label for="commentaire">Commentaire :</label><br>
+        <label for="commentaire" class="avis_commentaire">Commentaire :</label><br>
         <textarea id="commentaire" name="commentaire" rows="4" cols="50" required></textarea><br><br>
-        <button type="submit">Soumettre l'avis</button>
+        <button type="submit" class="button">Soumettre l'avis</button>
     </form>
-
+    </div>
     <section class="opinion">
-        <div class="container-opinion">
+        <div class="container_avis">
             <h1 class="title">Ce qu'ils <span class="orange-text">disent de nous</span></h1>
             <p>Les visiteurs du Zoo Arcadia partagent leur expérience inoubliable et leurs moments magiques passés au zoo.</p>
-            <ul>
+            <ul class="avis_container">
                 <?php foreach ($avis_visibles as $avis) : ?>
-                    <li><strong><?= $avis['pseudo'] ?>:</strong> <?= $avis['commentaire'] ?></li>
+                    <li class="avis"><strong><?= $avis['pseudo'] ?>:</strong> <?= $avis['commentaire'] ?></li>
                 <?php endforeach; ?>
             </ul>
         </div>

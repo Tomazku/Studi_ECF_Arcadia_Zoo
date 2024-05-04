@@ -366,3 +366,53 @@ body {
 .contact_container ul li {
   margin-bottom: 5px;
 }
+
+/* Styles pour le formulaire d'avis */
+.container_form_avis {
+  width: 90%;
+  margin: auto;
+  display: flex;
+}
+
+.titre_avis{
+  text-align: center;
+  margin: 30px;
+  padding-top: 10px;
+  color: var(--color-secondary);
+}
+
+.avis_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid var(--color-text);
+  border-radius: 5px;
+}
+
+.avis_form label {
+  margin-bottom: 10px;
+}
+
+.avis_form textarea {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100px;
+  resize: vertical;
+  margin-bottom: 10px;
+}
+
+/* Styles pour la liste des avis */
+.avis_container {
+  list-style: none;
+  padding: 0;
+}
+
+.avis {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
