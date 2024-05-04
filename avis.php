@@ -1,3 +1,40 @@
+<?php
+// Connexion à la base de données (à adapter selon vos paramètres)
+$pdo = new PDO('mysql:host=localhost;dbname=arcadia_zoo', 'root', '');
+
+// Traitement de l'avis soumis depuis le formulaire
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Vérifiez d'abord que les données du formulaire existent et ne sont pas vides
+    if (isset($_POST['pseudo'], $_POST['commentaire']) && !empty($_POST['pseudo']) && !empty($_POST['commentaire'])) {
+        // Récupérez les données du formulaire
+        $pseudo = $_POST['pseudo'];
+        $commentaire = $_POST['commentaire'];
+
+        // Préparez la requête SQL pour insérer l'avis dans la base de données
+        $query = "INSERT INTO avis (pseudo, commentaire, isVisible) VALUES (:pseudo, :commentaire, 0)";
+        $statement = $pdo->prepare($query);
+
+        // Exécutez la requête SQL en liant les valeurs des paramètres
+        $statement->execute(array(':pseudo' => $pseudo, ':commentaire' => $commentaire));
+
+        // Afficher une boîte de dialogue modale (popup) après la soumission du formulaire
+        echo "<script>
+                if (confirm('Votre avis a été soumis avec succès. Il est en cours de validation.')) {
+                    window.location.href = 'avis.php'; // Actualiser la page pour afficher les avis mis à jour
+                }
+            </script>";
+    } else {
+        // Si des données sont manquantes, vous pouvez gérer le cas ici
+        echo "Erreur : Tous les champs du formulaire doivent être remplis.";
+    }
+}
+
+// Récupération des avis visibles
+$query_visibles = "SELECT * FROM avis WHERE isVisible = 1";
+$statement_visibles = $pdo->query($query_visibles);
+$avis_visibles = $statement_visibles->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -9,16 +46,38 @@
     <link rel="shortcut icon" href="assets/images/fav_icon.png" type="image/x-icon">
 </head>
 <body>
-<?php include 'assets/includes/header.php'; ?>
+    <?php include 'assets/includes/header.php'; ?>
+    
     <h1>Laisser un avis</h1>
-    <form action="./pages/Back-end/traitement_avis.php" method="POST">
+    <form id="avisForm" action="avis.php" method="POST">
         <label for="pseudo">Pseudo :</label>
         <input type="text" id="pseudo" name="pseudo" required><br><br>
         <label for="commentaire">Commentaire :</label><br>
         <textarea id="commentaire" name="commentaire" rows="4" cols="50" required></textarea><br><br>
         <button type="submit">Soumettre l'avis</button>
     </form>
+
+    <section class="opinion">
+        <div class="container-opinion">
+            <h1 class="title">Ce qu'ils <span class="orange-text">disent de nous</span></h1>
+            <p>Les visiteurs du Zoo Arcadia partagent leur expérience inoubliable et leurs moments magiques passés au zoo.</p>
+            <ul>
+                <?php foreach ($avis_visibles as $avis) : ?>
+                    <li><strong><?= $avis['pseudo'] ?>:</strong> <?= $avis['commentaire'] ?></li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    </section>
+
     <?php include 'assets/includes/footer.php'; ?>
+
+    <script>
+        // Afficher une boîte de dialogue modale (popup) après la soumission du formulaire
+        document.getElementById('avisForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Empêcher l'envoi du formulaire par défaut
+            document.getElementById('avisForm').submit(); // Soumettre le formulaire
+        });
+    </script>
 
 </body>
 </html>

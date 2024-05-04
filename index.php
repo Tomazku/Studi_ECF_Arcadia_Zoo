@@ -1,3 +1,13 @@
+<?php
+$pdo = new PDO('mysql:host=localhost;dbname=arcadia_zoo', 'root', '');
+
+$avis_submit = isset($_GET['avis_submit']) && $_GET['avis_submit'] == true;
+
+$query = "SELECT * FROM avis WHERE isVisible = 1";
+$statement = $pdo->query($query);
+$avis_visibles = $statement->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -131,6 +141,7 @@
             <li><strong><?= $avis['pseudo'] ?>:</strong> <?= $avis['commentaire'] ?></li>
         <?php endforeach; ?>
     </ul>
+    
           <div class="opinion-card">
             <div class="opinion-content">
               <p class="text-content">
