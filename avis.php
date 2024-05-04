@@ -47,8 +47,8 @@ $avis_visibles = $statement_visibles->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <?php include 'assets/includes/header.php'; ?>
+    <h1 class="titre_avis">Laisser un <span class="orange-text">avis</span></h1>
     <div class="container_form_avis">
-    <h1 class="titre_avis">Laisser un avis</h1>
     <form id="avisForm" action="avis.php" method="POST" class="avis_form">
         <label for="pseudo" class="avis_pseudo">Pseudo :</label>
         <input type="text" id="pseudo" name="pseudo" required><br><br>
@@ -57,7 +57,7 @@ $avis_visibles = $statement_visibles->fetchAll(PDO::FETCH_ASSOC);
         <button type="submit" class="button">Soumettre l'avis</button>
     </form>
     </div>
-    <section class="opinion">
+    <section class="avis_confirmed">
         <div class="container_avis">
             <h1 class="title">Ce qu'ils <span class="orange-text">disent de nous</span></h1>
             <p>Les visiteurs du Zoo Arcadia partagent leur expérience inoubliable et leurs moments magiques passés au zoo.</p>

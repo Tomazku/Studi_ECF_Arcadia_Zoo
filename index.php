@@ -133,38 +133,17 @@ $avis_visibles = $statement->fetchAll(PDO::FETCH_ASSOC);
  </div>
 
       </section>
-      <section class="opinion">
-        <div class="container-opinion">
-          <h1 class="title">Ce qu'ils <span class="orange-text">disent de nous</span></h1>
-          <p>Les visiteurs du Zoo Arcadia partagent leur expérience inoubliable et leurs moments magiques passés au zoo.</p>
-          <?php foreach ($avis_visibles as $avis) : ?>
-            <li class="avis"><strong><?= $avis['pseudo'] ?>:</strong> <?= $avis['commentaire'] ?></li>
-        <?php endforeach; ?>
-    </ul>
-    
-          <div class="opinion-card">
-            <div class="opinion-content">
-              <p class="text-content">
-              "Une expérience incroyable! J'ai adoré chaque instant passé au Zoo Arcadia. Les animaux étaient magnifiques et les habitats étaient si bien conçus. Je recommande vivement une visite à tous les amoureux de la nature!"</p>
-              <p class="author">- Alice</p>
-            </div>
-            <div class="opinion-content">
-              <p class="text-content">
-              "Le Zoo Arcadia est un endroit magique où la nature et les animaux se rencontrent. J'ai été impressionné par la variété d'animaux et la qualité des installations. C'était une journée inoubliable pour toute la famille!"</p>
-              <p class="author">- Marc</p>
-            </div>
-            <div class="opinion-content">
-              <p class="text-content">
-              "Une expérience incroyable! J'ai adoré chaque instant passé au Zoo Arcadia. Les animaux étaient magnifiques et les habitats étaient si bien conçus. Je recommande vivement une visite à tous les amoureux de la nature!"</p>
-              <p class="author">- Sophie</p>
-            </div>
-            <div class="opinion-content">
-              <p class="text-content">
-              Voir plus</p>
-            </div>
-          </div>
+      <section class="avis_confirmed">
+        <div class="container_avis">
+            <h1 class="title">Ce qu'ils <span class="orange-text">disent de nous</span></h1>
+            <p>Les visiteurs du Zoo Arcadia partagent leur expérience inoubliable et leurs moments magiques passés au zoo.</p>
+            <ul class="avis_container">
+                <?php foreach ($avis_visibles as $avis) : ?>
+                    <li class="avis"><strong><?= $avis['pseudo'] ?>:</strong> <?= $avis['commentaire'] ?></li>
+                <?php endforeach; ?>
+            </ul>
         </div>
-      </section>
+    </section>
 
 
 <?php include 'assets/includes/footer.php'; ?>

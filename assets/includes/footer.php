@@ -16,7 +16,7 @@
             <div class="footer__info-container">
               <a href="#animaux" class="footer__column-info">Animaux</a>
               <a href="./pages/services/restauration.html" class="footer__column-info">Services</a>
-              <a href="#avis" class="footer__column-info">Avis</a>
+              <a href="avis.php" class="footer__column-info">Avis</a>
             </div>
           </div>
         </div>
