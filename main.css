@@ -318,14 +318,15 @@ body {
 
 /* page contact */
 
+/* Styles généraux pour le conteneur de contact */
 .contact_container {
   width: 90%;
-  margin: 30px auto; /* Ajout de marges autour des conteneurs de contact */
+  margin: 30px auto; /* Centrage et espacement vertical */
   padding: 20px;
   border: 1px solid var(--color-text);
   border-radius: 20px;
   background-color: var(--color-background);
-  height: 1vh;
+  box-sizing: border-box; /* Inclut padding et border dans la largeur définie */
 }
 
 .contact_container:first-child {
@@ -336,35 +337,28 @@ body {
   margin-bottom: 0; /* Suppression de la marge inférieure pour le dernier conteneur */
 }
 
-
-.contact_container form{
-  margin-bottom: 20px;
-
+.contact_container form {
+  margin-bottom: 20px; /* Espace au-dessous du formulaire pour éviter le chevauchement avec le footer */
 }
 
 .contact_container label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 10px; /* Espace suffisant après chaque label */
 }
 
 .contact_container input[type="text"],
 .contact_container input[type="email"],
 .contact_container textarea {
   width: 100%;
-  height: 150px;
   padding: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 10px; /* Espace entre les champs */
   border: 1px solid var(--color-text);
-  border-radius: 20px;
+  border-radius: 10px;
+  box-sizing: border-box; /* S'assure que le padding ne déborde pas la largeur */
 }
 
-.contact_container ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.contact_container ul li {
-  margin-bottom: 5px;
+.contact_container textarea {
+  height: 150px; /* Hauteur fixe pour le champ de texte */
 }
 
 /* Styles pour le formulaire d'avis */
@@ -459,3 +453,61 @@ body {
   margin: 0;
 }
 
+/* Gestion des services */
+.service_title{
+  text-align: center;
+  margin: 30px ;
+}
+.service-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espacement entre les cartes */
+  width: 90%;
+  margin: auto ;
+}
+
+
+/* Styles pour le conteneur de service */
+.service_subtitle{
+  text-align: center;
+  margin-top: 30px;
+  font-weight: bold;
+
+}
+
+.service_content {
+  display: flex; 
+  align-items: center; /* Centrage vertical des éléments */
+  justify-content: center; /* Centrage horizontal des éléments */
+  border: 2px solid var(--color-text); /* Bordure autour du conteneur */
+  padding: 20px; /* Espacement à l'intérieur du conteneur */
+  margin: 20px auto; /* Centrage du conteneur dans la page et espacement autour */
+  max-width: 90%; /* Largeur maximale pour une meilleure apparence */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Ombre pour un effet élégant */
+  border-radius: 20px; 
+}
+
+.service_content:hover {
+  transform: scale(1.05); /* Zoom sur le conteneur au survol */
+}
+
+.text_content {
+  flex: 1; /* Permet au contenu textuel de remplir l'espace restant */
+  padding: 10px 20px; /* Espacement à l'intérieur de la zone de texte */
+}
+
+.service_image {
+  flex: 0 0 300px; 
+  height: 100%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.service_image img {
+  max-width: 100%; /* S'assure que l'image ne dépasse pas son conteneur */
+  max-height: 100%; /* Hauteur maximale pour garder l'aspect ratio */
+  object-fit: cover; /* S'assure que l'image couvre bien la zone dédiée sans déformation */
+  border-radius: 10px;
+
+}

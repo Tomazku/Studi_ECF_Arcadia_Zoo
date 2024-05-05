@@ -28,8 +28,8 @@ $utilisateurs = getUtilisateurs();
             <li><a href="#">Tableau de bord</a></li>
             <li><a href="#">Gestion des utilisateurs</a></li>
             <li><a href="#">Gestion des animaux</a></li>
-            <li><a href="./horaires.php">Gestion des horaires</a></li>
-            <li><a href="./traitement_avis.php">Gestion des avis</a></li>
+            <li><a href="../Back-end/horaires/horaires.php">Gestion des horaires</a></li>
+            <li><a href="../Back-end/avis/administration_avis.php">Gestion des avis</a></li>
 
             <!-- Ajoutez d'autres liens de navigation ici -->
         </ul>

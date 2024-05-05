@@ -1,5 +1,5 @@
 <?php
-require_once('./pages/Back-end/horaires/fonctions_horaires.php'); // Inclure le fichier de fonctions pour les horaires
+require_once('./pages/Back-end/fonctions_horaires.php'); // Inclure le fichier de fonctions pour les horaires
 $horaires = getHorairesOuverture(); // Récupérer les horaires d'ouverture depuis la base de données
 ?>
 
@@ -17,6 +17,11 @@ $horaires = getHorairesOuverture(); // Récupérer les horaires d'ouverture depu
     <?php include 'assets/includes/header.php'; ?>
     <div class="contact_container">
         <h2>Horaires d'ouverture :</h2>
+        <ul>
+    <?php foreach ($horaires as $horaire) : ?>
+        <li><strong><?= $horaire['jour'] ?>:</strong> <?= $horaire['heure_ouverture'] ?> - <?= $horaire['heure_fermeture'] ?></li>
+    <?php endforeach; ?>
+    </ul>
     </div>
 
     <div class="contact_container">

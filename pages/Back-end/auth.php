@@ -27,7 +27,7 @@ function authenticate($email, $motDePasse) {
 function check_authentication() {
     if (!isset($_SESSION['utilisateur_id'])) {
         // Rediriger vers la page de connexion
-        header('Location: ./login.php');
+        header('Location: login.php');
         exit();
     }
 }
@@ -49,15 +49,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Rediriger l'utilisateur en fonction de son rôle
         switch ($utilisateur['role']) {
             case 'admin':
-                header('Location: interface/interface_admin.php');
+                header('Location: interface_admin.php');
                 exit();
             case 'veterinaire':
-                header('Location: interface/interface_veterinaire.php');
+                header('Location: interface_veterinaire.php');
                 exit();
             // Ajoutez d'autres cas pour d'autres rôles si nécessaire
             default:
                 // Rediriger vers une page par défaut si le rôle n'est pas reconnu
-                header('Location: interface/interface_employe.php');
+                header('Location: interface_employe.php');
                 exit();
         }
     } else {

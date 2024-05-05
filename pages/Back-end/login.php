@@ -20,20 +20,20 @@ if(isset($_POST['email']) && isset($_POST['motDePasse'])) {
     $admin = $statement->fetch(PDO::FETCH_ASSOC);
     if($admin) {
         // Récupérer le rôle de l'utilisateur à partir de la base de données
-        $role = $admin['role'];
+        $_SESSION['utilisateur_id'] = $admin['id'];
         
         // Redirection vers l'interface appropriée en fonction du rôle de l'utilisateur
-        switch($role) {
+        switch($admin['role']) {
             case 'admin':
-                header('Location: interface/interface_admin.php');
+                header('Location: interface_admin.php');
                 exit();
             case 'veterinaire':
-                header('Location: interface/interface_veterinaire.php');
+                header('Location: interface_veterinaire.php');
                 exit();
             // Ajoutez d'autres cas pour d'autres rôles si nécessaire
             default:
                 // Redirection vers une page par défaut si le rôle n'est pas reconnu
-                header('Location: interface/interface_employe.php');
+                header('Location: interface_employe.php');
                 exit();
         }
     } else {
