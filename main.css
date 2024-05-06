@@ -454,42 +454,84 @@ body {
 }
 
 /* Gestion des services */
-.service_title{
+.service_title {
   text-align: center;
-  margin: 30px ;
+  margin: 30px 0; /* Espacement vertical ajouté pour un meilleur alignement */
 }
+
 .service-card {
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Espacement entre les cartes */
-  width: 90%;
-  margin: auto ;
+  gap: 20px; /* Espacement entre les sections de catégorie */
+  width: 100%;
+  margin: auto;
+}
+
+/* Styles pour chaque catégorie de services */
+
+.categorie-title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./assets/images/bg_services.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Empêche le défilement de l'image */
+  filter: blur(2px); /* Ajoute un flou à l'image */
+  z-index: -1; /* Place l'image en arrière-plan */
 }
 
 
-/* Styles pour le conteneur de service */
-.service_subtitle{
+.categorie-title {
+  position: relative; /* Permet de positionner correctement le pseudo-élément */
+  color: white; /* Couleur du texte */
+  text-align: center; /* Centrage du texte */
+  padding: 40px 0; /* Espacement autour du texte */
+}
+
+
+#categorie-restaurants, #categorie-activites, #categorie-animations {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espacement entre chaque service */
+}
+
+
+.service_subtitle {
   text-align: center;
-  margin-top: 30px;
-  font-weight: bold;
-
+  margin-top: 20px;
+  font-size: 1.2rem; 
+  text-decoration: underline;
+  font-weight: lighter;
 }
 
-.service_content {
-  display: flex; 
+.service-content {
+  display: flex;
+  flex-direction: row; /* Assure que le texte et l'image sont côte à côte */
+  width: 90%;
   align-items: center; /* Centrage vertical des éléments */
-  justify-content: center; /* Centrage horizontal des éléments */
+  justify-content: space-between; /* Espacement entre le texte et l'image */
   border: 2px solid var(--color-text); /* Bordure autour du conteneur */
   padding: 20px; /* Espacement à l'intérieur du conteneur */
   margin: 20px auto; /* Centrage du conteneur dans la page et espacement autour */
-  max-width: 90%; /* Largeur maximale pour une meilleure apparence */
+  max-width: 100%; /* Largeur maximale pour une meilleure apparence */
   box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Ombre pour un effet élégant */
-  border-radius: 20px; 
+  border-radius: 20px;
 }
 
-.service_content:hover {
-  transform: scale(1.05); /* Zoom sur le conteneur au survol */
+.service-content:nth-child(even) {
+  flex-direction: row-reverse; /* Inversion de l'ordre des éléments pour les rangées impaires */
 }
+
+
+.service-content:hover {
+  transform: scale(1.05); /* Zoom sur le conteneur au survol */
+  transition: transform 0.3s ease-in-out; /* Animation fluide pour le zoom */
+}
+
 
 .text_content {
   flex: 1; /* Permet au contenu textuel de remplir l'espace restant */
@@ -497,8 +539,8 @@ body {
 }
 
 .service_image {
-  flex: 0 0 300px; 
-  height: 100%; 
+  flex: 0 0 300px; /* Largeur fixe pour les images */
+  height: 200px; /* Hauteur fixe pour une présentation uniforme */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -509,5 +551,4 @@ body {
   max-height: 100%; /* Hauteur maximale pour garder l'aspect ratio */
   object-fit: cover; /* S'assure que l'image couvre bien la zone dédiée sans déformation */
   border-radius: 10px;
-
 }

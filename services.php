@@ -1,11 +1,18 @@
 <?php
 $pdo = new PDO('mysql:host=localhost;dbname=arcadia_zoo', 'root', '');
 
-$sql = "SELECT nom, description, image_service FROM service";
+// Modifier la requête pour inclure la catégorie et trier par catégorie
+$sql = "SELECT nom, description, image_service, categorie FROM service ORDER BY categorie, nom";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$groupedResults = [];
+
+// Grouper les résultats par catégorie
+foreach ($results as $row) {
+    $groupedResults[$row['categorie']][] = $row;
+}
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +23,6 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <title>Liste des Services - Arcadia Zoo</title>
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="header_footer.css">
-    <link rel="stylesheet" href="main.css">
     <link rel="shortcut icon" href="assets/images/fav_icon.png" type="image/x-icon">
 </head>
 <body>
@@ -24,15 +30,20 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <h1 class="service_title">Services disponibles au <span class="orange-text">Zoo Arcadia</span></h1>
 <div class="service-card">
-    <?php if ($results) : ?>
-        <?php foreach ($results as $row) : ?>
-            <div class="service_subtitle"><?= htmlspecialchars($row['nom']) ?></div>
-        <div class="service_content">
-            <div class="text_content"><?= htmlspecialchars($row['description']) ?></div>
-            <div class="service_image">
-                <img src="./pages/Back-end/uploads/<?= htmlspecialchars($row['image_service']) ?>" alt="Image de <?= htmlspecialchars($row['nom']) ?>">
+    <?php if (!empty($groupedResults)) : ?>
+        <?php foreach ($groupedResults as $categorie => $services) : ?>
+            <h2 class="categorie-title"><?= htmlspecialchars($categorie); ?></h2>
+            <div id="categorie-<?= strtolower(str_replace(' ', '-', $categorie)); ?>" class="categorie-section">
+                <?php foreach ($services as $service) : ?>
+                    <h3 class="service_subtitle"><?= htmlspecialchars($service['nom']); ?></h3>
+                    <div class="service-content">
+                        <div class="text_content"><?= htmlspecialchars($service['description']); ?></div>
+                        <div class="service_image">
+                            <img src="./pages/Back-end/uploads/<?= htmlspecialchars($service['image_service']); ?>" alt="Image de <?= htmlspecialchars($service['nom']); ?>">
+                        </div>
+                    </div>
+                <?php endforeach; ?>
             </div>
-        </div>
         <?php endforeach; ?>
     <?php else : ?>
         <p>Aucun service disponible.</p>

@@ -5,12 +5,13 @@ $pdo = new PDO('mysql:host=localhost;dbname=arcadia_zoo', 'root', '');
 if (isset($_POST['ajouter'])) {
     $nom = $_POST['nom'];
     $description = $_POST['description'];
+    $categorie = $_POST['categorie'];
     $image = $_FILES['image']['name'];
     $target = "uploads/" . basename($image);
 
     if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
-        $stmt = $pdo->prepare("INSERT INTO service (nom, description, image_service) VALUES (?, ?, ?)");
-        $stmt->execute([$nom, $description, $image]);
+        $stmt = $pdo->prepare("INSERT INTO service (nom, description, image_service, categorie) VALUES (?, ?, ?, ?)");
+        $stmt->execute([$nom, $description, $image, $categorie]);
         header("Location: gestion_services.php");
         exit;
     } else {
@@ -23,19 +24,20 @@ if (isset($_POST['modifier']) && isset($_POST['id'])) {
     $id = $_POST['id'];
     $nom = $_POST['nom'];
     $description = $_POST['description'];
+    $categorie = $_POST['categorie'];
     $image = $_FILES['image']['name'];
     $target = "uploads/" . basename($image);
 
-    if ($image) {
+    if (!empty($image)) {
         if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
-            $stmt = $pdo->prepare("UPDATE service SET nom = ?, description = ?, image_service = ? WHERE service_id = ?");
-            $stmt->execute([$nom, $description, $image, $id]);
+            $stmt = $pdo->prepare("UPDATE service SET nom = ?, description = ?, image_service = ?, categorie = ? WHERE service_id = ?");
+            $stmt->execute([$nom, $description, $image, $categorie, $id]);
         } else {
             echo "Échec de l'upload de l'image.";
         }
     } else {
-        $stmt = $pdo->prepare("UPDATE service SET nom = ?, description = ? WHERE service_id = ?");
-        $stmt->execute([$nom, $description, $id]);
+        $stmt = $pdo->prepare("UPDATE service SET nom = ?, description = ?, categorie = ? WHERE service_id = ?");
+        $stmt->execute([$nom, $description, $categorie, $id]);
     }
     header("Location: gestion_services.php");
     exit;
@@ -51,7 +53,7 @@ if (isset($_POST['supprimer']) && isset($_POST['id'])) {
 }
 
 // Récupération de tous les services pour l'affichage
-$stmt = $pdo->prepare("SELECT * FROM service");
+$stmt = $pdo->prepare("SELECT * FROM service ORDER BY categorie, nom");
 $stmt->execute();
 $services = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -72,6 +74,12 @@ $services = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <form method="post" enctype="multipart/form-data">
     <input type="text" name="nom" placeholder="Nom du service" required>
     <textarea name="description" placeholder="Description du service" required></textarea>
+    <select name="categorie" required>
+        <option value="">-- Sélectionner une catégorie --</option>
+        <option value="Restaurants">Restaurants</option>
+        <option value="Activités">Activités</option>
+        <option value="Animations">Animations</option>
+    </select>
     <input type="file" name="image" required>
     <button type="submit" name="ajouter">Ajouter Service</button>
 </form>
@@ -82,6 +90,7 @@ $services = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <tr>
         <th>Nom</th>
         <th>Description</th>
+        <th>Catégorie</th>
         <th>Image</th>
         <th>Actions</th>
     </tr>
@@ -89,6 +98,7 @@ $services = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <tr>
         <td><?= htmlspecialchars($service['nom']); ?></td>
         <td><?= htmlspecialchars($service['description']); ?></td>
+        <td><?= htmlspecialchars($service['categorie']); ?></td>
         <td><img src="uploads/<?= htmlspecialchars($service['image_service']); ?>" alt="Image" style="width:100px;"></td>
         <td>
             <form method="post" enctype="multipart/form-data">
