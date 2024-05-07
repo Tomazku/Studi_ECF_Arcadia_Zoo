@@ -5,7 +5,7 @@ const animalSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  species: { // Changer 'type' à 'species'
+  species: { 
     type: String,
     required: true
   },
@@ -13,7 +13,7 @@ const animalSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  consultations: { // Changer 'consultationCount' à 'consultations'
+  consultations: { 
     type: Number,
     default: 0
   }
