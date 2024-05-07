@@ -332,7 +332,7 @@ body {
 
 
 .container_droite {
-  width: 50%;
+  width: 60%;
   height: 100vh;
   background-color: var(--color-secondary);
 }
