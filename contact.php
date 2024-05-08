@@ -34,28 +34,31 @@
             </form>
             <div id="successMessage" style="display: none;">Votre message a été envoyé avec succès !
         </div>
+        
 
         </div>
     </div>
     <?php include 'assets/includes/footer.php'; ?>
 
     <script>
-        document.getElementById("contactForm").addEventListener("submit", function(event) {
+        document.getElementById("contactForm").addEventListener("submit", function (event) {
     event.preventDefault();
 
     fetch("../Studi_ECF_Arcadia_Zoo/pages/Back-end/contact_BG.php", {
         method: "POST",
         body: new FormData(this)
     })
-    .then(response => {
-        if (response.ok) {
-            // Affiche le message de succès
-            document.getElementById("successMessage").style.display = "block";
-        }else{
-            console.error("Erreur : " + response.status + " " + response.statusText);
-        }
-    })
-    .catch(error => console.error("Erreur lors de l'envoi du formulaire:", error));
+        .then(response => {
+            if (response.ok) {
+                // Affiche une boîte de dialogue de confirmation
+                alert("Votre message a été envoyé avec succès !");
+                // Vous pouvez également réinitialiser le formulaire si besoin
+                document.getElementById("contactForm").reset();
+            } else {
+                console.error("Erreur : " + response.status + " " + response.statusText);
+            }
+        })
+        .catch(error => console.error("Erreur lors de l'envoi du formulaire:", error));
 });
     </script>
 </body>

@@ -21,9 +21,8 @@ try {
     die("Erreur de connexion : " . $e->getMessage());
 }
 
-// Vérification de la méthode POST
+// Vérifiez si la requête est de type POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Utilisez FILTER_SANITIZE_SPECIAL_CHARS pour nettoyer les entrées
     $nom = filter_input(INPUT_POST, 'nom', FILTER_SANITIZE_SPECIAL_CHARS);
     $prenom = filter_input(INPUT_POST, 'prenom', FILTER_SANITIZE_SPECIAL_CHARS);
     $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
@@ -50,18 +49,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-// Affichage des messages
+// Affichage des messages sous forme de tableau
 try {
-    $sql = "SELECT nom, prenom, email, messages FROM messages";
+    $sql = "SELECT nom, prenom, email, date_time, messages FROM messages ORDER BY date_time DESC";
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
     $messages = $stmt->fetchAll();
 
-    // Affichez les messages de manière sécurisée
+    echo "<table border='1'>";
+    echo "<thead>";
+    echo "<tr><th>Nom</th><th>Prénom</th><th>Email</th><th>Date d'envoi</th><th>Message</th></tr>";
+    echo "</thead>";
+    echo "<tbody>";
     foreach ($messages as $msg) {
-        echo "<p>Nom: " . htmlspecialchars($msg['nom']) . ", Prénom: " . htmlspecialchars($msg['prenom']) . ", Email: " . htmlspecialchars($msg['email']) . ", Message: " . htmlspecialchars($msg['messages']) . "</p>";
+        echo "<tr>";
+        echo "<td>" . htmlspecialchars($msg['nom']) . "</td>";
+        echo "<td>" . htmlspecialchars($msg['prenom']) . "</td>";
+        echo "<td>" . htmlspecialchars($msg['email']) . "</td>";
+        echo "<td>" . htmlspecialchars($msg['date_time']) . "</td>";
+        echo "<td>" . htmlspecialchars($msg['messages']) . "</td>";
+        echo "</tr>";
     }
+    echo "</tbody>";
+    echo "</table>";
+
 } catch (PDOException $e) {
     echo "Erreur : " . $e->getMessage();
 }
 ?>
+
+</body>
+</html>
