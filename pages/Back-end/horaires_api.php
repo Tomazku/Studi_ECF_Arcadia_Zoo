@@ -23,11 +23,13 @@ function getHoraires($pdo) {
 }
 
 // Fonction pour mettre à jour un horaire
-// Fonction pour mettre à jour un horaire
 function updateHoraire($pdo, $data) {
     // Ajoutez un log pour inspecter les données reçues
     error_log("Données reçues par l'API : " . json_encode($data));
-
+    if (!isset($data['horaires_id'])) {
+        error_log("Clé `horaires_id` manquante ou invalide.");
+        return json_encode(["message" => "Clé manquante ou invalide : horaires_id"]);
+    }
     // Vérifiez que toutes les clés nécessaires sont présentes
     $required_keys = ['horaires_id', 'jour', 'heure_ouverture', 'heure_fermeture', 'ferme'];
     foreach ($required_keys as $key) {
