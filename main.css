@@ -323,18 +323,19 @@ body {
   align-items: center;
   width: 100%;
   height: 100vh;
+  background-color: var(--color-secondary);
 }
 
 .container_gauche img{
   width: 100%;
   height: 100%;
+  
 }
 
 
 .container_droite {
   width: 100%;
   height: 100vh;
-  background-color: var(--color-secondary);
 }
 
 .container_droite h2{
@@ -382,43 +383,6 @@ form textarea {
 
 .container_droite .button {
   margin-left: auto;
-}
-
-/* Le Modal (fenêtre modale) */
-.modal {
-  display: none; /* Caché par défaut */
-  position: fixed; /* Fixe la fenêtre */
-  z-index: 1; /* Au-dessus des autres éléments */
-  left: 0;
-  top: 0;
-  width: 100%; /* Largeur totale */
-  height: 100%; /* Hauteur totale */
-  overflow: auto; /* Défilement si nécessaire */
-  background-color: rgba(0, 0, 0, 0.4); /* Transparence du fond */
-}
-
-/* Contenu du Modal */
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* Centré verticalement */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Largeur */
-}
-
-/* Bouton de fermeture */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
 }
 
 
