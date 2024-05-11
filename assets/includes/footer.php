@@ -9,13 +9,13 @@
           <h3 class="footer__column-title">Liens Rapides</h3>
           <div class="footer__info-wrapper">
             <div class="footer__info-container">
-              <a href="" class="footer__column-info">Accueil</a>
+              <a href="index.html" class="footer__column-info">Accueil</a>
               <a href="./pages/habitats/jungle.html" class="footer__column-info">Habitats</a>
               <a href="#engagement" class="footer__column-info">Engagement</a>
             </div>
             <div class="footer__info-container">
               <a href="#animaux" class="footer__column-info">Animaux</a>
-              <a href="./pages/services/restauration.html" class="footer__column-info">Services</a>
+              <a href="services.php" class="footer__column-info">Services</a>
               <a href="avis.php" class="footer__column-info">Avis</a>
             </div>
           </div>

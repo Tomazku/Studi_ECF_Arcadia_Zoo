@@ -49,7 +49,7 @@ $avis_visibles = $statement_visibles->fetchAll(PDO::FETCH_ASSOC);
     <?php include 'assets/includes/header.php'; ?>
     <h1 class="titre_avis">Laisser un <span class="orange-text">avis</span></h1>
     <div class="container_form_avis">
-    <form id="avisForm" action="avis.php" method="POST" class="avis_form">
+    <form class="avisForm" id="avisForm" action="avis.php" method="POST" class="avis_form">
         <label for="pseudo" class="avis_pseudo">Pseudo :</label>
         <input type="text" id="pseudo" name="pseudo" required><br><br>
         <label for="commentaire" class="avis_commentaire">Commentaire :</label><br>

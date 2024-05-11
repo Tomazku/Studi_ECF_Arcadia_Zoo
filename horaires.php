@@ -2,7 +2,14 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Horaires d'Ouverture - Clients</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Découvrez le zoo Arcadia</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="header_footer.css">
+    <link rel="shortcut icon" href="assets/images/fav_icon.png" type="image/x-icon">
+</head>
+<body>
+    <?php include 'assets/includes/header.php'; ?>
     <style>
         table {
             width: 80%;
@@ -18,35 +25,9 @@
             background-color: #f2f2f2;
         }
     </style>
-    <script>
-        // Fonction pour récupérer les horaires et les afficher
-        async function fetchHoraires() {
-            try {
-                const response = await fetch('./pages/Back-end/horaires_api.php');
-                if (!response.ok) throw new Error(`Erreur HTTP: ${response.status}`);
-                const horaires = await response.json();
-                const table = document.getElementById('horaires-table');
-                table.innerHTML = '';
 
-                horaires.forEach(horaire => {
-                    const status = horaire.ferme == 1 ? "Fermé" : `${horaire.heure_ouverture} - ${horaire.heure_fermeture}`;
-                    const row = `<tr>
-                        <td>${horaire.jour}</td>
-                        <td>${status}</td>
-                    </tr>`;
-                    table.innerHTML += row;
-                });
-            } catch (error) {
-                console.error("Erreur lors de la récupération des horaires :", error);
-            }
-        }
-
-        // Charger les horaires lorsque la page est chargée
-        window.onload = fetchHoraires;
-    </script>
-</head>
 <body>
-    <h1 style="text-align: center;">Horaires d'Ouverture</h1>
+    <h1 class="horaire-title">Horaires <span class="orange-text"> d'Ouverture</span></h1>
     <table border="1" align="center">
         <thead>
             <tr>
@@ -54,9 +35,23 @@
                 <th>Horaires</th>
             </tr>
         </thead>
-        <tbody id="horaires-table">
-            <!-- Les horaires seront affichés ici -->
+        <tbody class="horaires-tables" id="horaires-table">
+            <?php
+            // Connexion à la base de données
+            $pdo = new PDO('mysql:host=localhost;dbname=arcadia_zoo', 'root', '');
+            // Requête pour récupérer les horaires
+            $stmt = $pdo->query("SELECT * FROM horaires_ouverture");
+            while ($horaire = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $status = $horaire['ferme'] == 1 ? "Fermé" : "{$horaire['heure_ouverture']} - {$horaire['heure_fermeture']}";
+                echo "<tr>
+                        <td>{$horaire['jour']}</td>
+                        <td>{$status}</td>
+                      </tr>";
+            }
+            ?>
         </tbody>
     </table>
+    <?php include 'assets/includes/footer.php'; ?>
+
 </body>
 </html>

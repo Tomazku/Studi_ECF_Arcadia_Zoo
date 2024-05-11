@@ -38,6 +38,8 @@
 
         </div>
     </div>
+    <div><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d50885.629868508164!2d4.994167828339651!3d47.910332913384075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2spl!4v1715422819287!5m2!1sfr!2spl" width="100%" height="400px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+
     <?php include 'assets/includes/footer.php'; ?>
 
     <script>
@@ -50,9 +52,7 @@
     })
         .then(response => {
             if (response.ok) {
-                // Affiche une boîte de dialogue de confirmation
                 alert("Votre message a été envoyé avec succès !");
-                // Vous pouvez également réinitialiser le formulaire si besoin
                 document.getElementById("contactForm").reset();
             } else {
                 console.error("Erreur : " + response.status + " " + response.statusText);

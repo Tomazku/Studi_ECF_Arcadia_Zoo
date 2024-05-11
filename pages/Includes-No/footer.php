@@ -11,7 +11,8 @@
             <div class="footer__info-container">
               <a href="" class="footer__column-info">Accueil</a>
               <a href="./pages/habitats/jungle.html" class="footer__column-info">Habitats</a>
-              <a href="/contact.php" class="footer__column-info">Contact</a>
+              <a href="/horaires.php" class="footer__column-info">horaires</a>
+              <a href="/contact.php" class="footer__column-info">Contact</a> 
             </div>
             <div class="footer__info-container">
               <a href="#animaux" class="footer__column-info">Animaux</a>
