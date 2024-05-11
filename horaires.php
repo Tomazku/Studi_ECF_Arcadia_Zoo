@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Découvrez le zoo Arcadia</title>
+    <title>Horaires du Zoo Arcadia</title>
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="header_footer.css">
     <link rel="shortcut icon" href="assets/images/fav_icon.png" type="image/x-icon">
@@ -11,8 +11,7 @@
 <body>
     <?php include 'assets/includes/header.php'; ?>
     
-<body>
-    <h1 class="horaire-title">Horaires <span class="orange-text"> d'Ouverture</span></h1>
+        <h1 class="horaire-title">Horaires <span class="orange-text"> d'Ouverture</span></h1>
     <p class="text_horaires">À l'Arcadia Zoo, nous sommes ravis de vous accueillir tout au long de l'année et offrons des horaires d'ouverture adaptés pour garantir une expérience inoubliable à tous nos visiteurs. <strong>Nos portes sont ouvertes du lundi de 12h à 18h, du mardi au vendredi de 10h à 19h et le samedi de 9h à 19h</strong>. Pendant les vacances scolaires et les jours fériés, nous ajustons nos horaires pour mieux vous servir, avec des informations détaillées disponibles sur notre site web et aux entrées du zoo.
     <br>
     Nous offrons une expérience enrichissante pour les groupes scolaires et les visites en groupe de plus de 5 personnes, avec des <strong> préférentiels et la possibilité d'organiser des visites guidées éducatives sur demande</strong>. Que ce soit pour une sortie scolaire ou une visite en famille élargie, l'Arcadia Zoo est le lieu parfait pour explorer, apprendre et créer des souvenirs ensemble.

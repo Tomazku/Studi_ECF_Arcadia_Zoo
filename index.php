@@ -96,7 +96,7 @@ $avis_visibles = $statement->fetchAll(PDO::FETCH_ASSOC);
     </div>
     <div class="animals-footer">
     <p>Et bien d’autres encore vous attendes !</p>
-    <button class="button">Découvrez nos animaux</button>
+    <button class="button"><a href="animaux.php"></a>Découvrez nos animaux</a></button>
   </div>
     <div class="animal crocodile">
       <img src="assets/images/Crocodile.webp" alt="Crocodile">

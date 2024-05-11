@@ -45,6 +45,8 @@ if(isset($_POST['email']) && isset($_POST['motDePasse'])) {
 
 <!-- Formulaire de connexion -->
 <link rel="stylesheet" href="back-end.css">
+<div class="container">
+<h1 class="connexion">Connexion pour les employés</h1>
 <form method="post" action="login.php">
     <label for="email">E-mail :</label>
     <input type="email" id="email" name="email" required><br>
@@ -52,6 +54,7 @@ if(isset($_POST['email']) && isset($_POST['motDePasse'])) {
     <input type="password" id="motDePasse" name="motDePasse" required><br>
     <input type="submit" value="Se connecter">
 </form>
+</div>
 
 <?php
 // Afficher un message d'erreur s'il y en a un
