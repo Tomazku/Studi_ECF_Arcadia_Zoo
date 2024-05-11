@@ -10,32 +10,25 @@
 </head>
 <body>
     <?php include 'assets/includes/header.php'; ?>
-    <style>
-        table {
-            width: 80%;
-            border-collapse: collapse;
-            margin: 20px auto;
-            text-align: left;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
-
+    
 <body>
     <h1 class="horaire-title">Horaires <span class="orange-text"> d'Ouverture</span></h1>
-    <table border="1" align="center">
+    <p class="text_horaires">À l'Arcadia Zoo, nous sommes ravis de vous accueillir tout au long de l'année et offrons des horaires d'ouverture adaptés pour garantir une expérience inoubliable à tous nos visiteurs. <strong>Nos portes sont ouvertes du lundi de 12h à 18h, du mardi au vendredi de 10h à 19h et le samedi de 9h à 19h</strong>. Pendant les vacances scolaires et les jours fériés, nous ajustons nos horaires pour mieux vous servir, avec des informations détaillées disponibles sur notre site web et aux entrées du zoo.
+    <br>
+    Nous offrons une expérience enrichissante pour les groupes scolaires et les visites en groupe de plus de 5 personnes, avec des <strong> préférentiels et la possibilité d'organiser des visites guidées éducatives sur demande</strong>. Que ce soit pour une sortie scolaire ou une visite en famille élargie, l'Arcadia Zoo est le lieu parfait pour explorer, apprendre et créer des souvenirs ensemble.
+    <br>
+    Pour les réservations de groupe, veuillez nous contacter <strong>au moins deux semaines à l'avance</strong>. Cela nous permettra de préparer au mieux votre accueil et de personnaliser votre visite selon vos besoins spécifiques. Les demandes peuvent être adressées via notre formulaire de contact sur notre site web ou par téléphone, en mentionnant le nombre de visiteurs, l'âge des participants et toute demande spéciale concernant votre programme de visite.
+    <br>
+    Nous sommes impatients de vous accueillir à l'Arcadia Zoo et de vous offrir une journée pleine de découvertes et d'amusement. Pour toute question ou demande spécifique, n'hésitez pas à nous <a href="contact.php" class="orange-text">contacter</a>. <strong>Votre aventure commence ici !</strong></p>
+
+    <table class="horaires-tables">
         <thead>
-            <tr>
+            <tr class="tableau">
                 <th>Jour</th>
                 <th>Horaires</th>
             </tr>
         </thead>
-        <tbody class="horaires-tables" id="horaires-table">
+        <tbody id="horaires-table">
             <?php
             // Connexion à la base de données
             $pdo = new PDO('mysql:host=localhost;dbname=arcadia_zoo', 'root', '');
@@ -44,7 +37,7 @@
             while ($horaire = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 $status = $horaire['ferme'] == 1 ? "Fermé" : "{$horaire['heure_ouverture']} - {$horaire['heure_fermeture']}";
                 echo "<tr>
-                        <td>{$horaire['jour']}</td>
+                        <td class='jour-bold'>{$horaire['jour']}</td>
                         <td>{$status}</td>
                       </tr>";
             }
