@@ -1,11 +1,25 @@
 <?php
-$pdo = new PDO('mysql:host=localhost;dbname=arcadia_zoo', 'root', '');
+try {
+    $pdo = new PDO('mysql:host=localhost;dbname=arcadia_zoo', 'root', '', [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION // Activer le mode d'erreur exception pour mieux gérer les erreurs
+    ]);
 
-$avis_submit = isset($_GET['avis_submit']) && $_GET['avis_submit'] == true;
+    // Section avis
+    $avis_submit = isset($_GET['avis_submit']) && $_GET['avis_submit'] == true;
+    $query = "SELECT * FROM avis WHERE isVisible = 1";
+    $statement = $pdo->query($query);
+    $avis_visibles = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-$query = "SELECT * FROM avis WHERE isVisible = 1";
-$statement = $pdo->query($query);
-$avis_visibles = $statement->fetchAll(PDO::FETCH_ASSOC);
+     // Section habitat
+     $habitats = $pdo->query("SELECT habitat_id, nom, description, image FROM habitat")->fetchAll(PDO::FETCH_ASSOC);
+
+     foreach ($habitats as $key => $habitat) {
+         $habitats[$key]['image'] = '../arcadia-zoo/Studi_ECF_Arcadia_Zoo/pages/Back-end/animals/uploads/' . $habitat['image'];
+     }
+
+} catch (PDOException $e) {
+    die("Erreur de connexion à la base de données: " . $e->getMessage());
+}
 ?>
 
 <!DOCTYPE html>
@@ -19,6 +33,7 @@ $avis_visibles = $statement->fetchAll(PDO::FETCH_ASSOC);
     <link rel="shortcut icon" href="assets/images/fav_icon.png" type="image/x-icon">
 </head>
 <body>
+  <a href=""></a>
     <?php include 'assets/includes/header.php'; ?>
 <!-- Section Héro -->
     <div class="welcome-section">
@@ -29,45 +44,26 @@ $avis_visibles = $statement->fetchAll(PDO::FETCH_ASSOC);
 </div>
 
 <!--Section Habitat-->
-
 <div class="container-habitat">
   <div class="title-habitat">
     <h1>Découvrez nos <span class="orange-text">habitats</span></h1>
     <p>Explorez une variété d'habitats captivants, de la jungle exotique à la vaste savane et aux mystérieux marais, lors de votre visite au Zoo Arcadia.</p>
     <button class='button'>Nos habitats</button>
   </div>
-  </div>
-  
+</div>
+
 <div class="card-container">
+  <?php foreach ($habitats as $habitat): ?>
   <div class="card">
-      <img src="assets/images/Jungle.webp" alt="">
+    <img src="<?= htmlspecialchars($habitat['image']) ?>" alt="Habitat de <?= htmlspecialchars($habitat['nom']) ?>" style="width:200px;">
     <div class="card-content">
-      <p class="text-carte">
-      Plongez au cœur de la luxuriante jungle tropicale au Zoo Arcadia, où les arbres majestueux et la végétation dense abritent une multitude de créatures exotiques, des singes espiègles aux oiseaux aux couleurs vives.
-      </p>
-      <button class="button">Découvrez la jungle</button>
+      <p class="text-carte"><?= htmlspecialchars($habitat['description']); ?></p>
+      <button class="button">Découvrez <?= htmlspecialchars($habitat['nom']); ?></button>
     </div>
   </div>
+  <?php endforeach; ?>
+</div>
 
-  <div class="card">
-    <div class="card-content">
-      <p class="text-carte">
-      Dans la vaste savane, vous serez émerveillé par la vue des éléphants majestueux errant paisiblement parmi les hautes herbes, tandis que les lions paresseux se prélassent sous le soleil chaud.      </p>
-      <button class="button">Découvrez la savane</button>
-    </div>
-      <img src="assets/images/Savane.webp" alt="">
-  </div>
-
-  <div class="card">
-      <img src="assets/images/Marais.webp" alt="">
-    <div class="card-content">
-      <p class="text-carte">
-      Plongez au cœur de la luxuriante jungle tropicale au Zoo Arcadia, où les arbres majestueux et la végétation dense abritent une multitude de créatures exotiques, des singes espiègles aux oiseaux aux couleurs vives.      </p>
-      <button class="button">Découvrez les marais</button>
-    </div>
-  </div>
-</div>    
-</section>
 
 <!-- section animaux -->
 
