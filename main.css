@@ -15,6 +15,7 @@ body {
     background-color: var(--color-background); 
 }
 
+
 .welcome-section {
   position: relative;
     background-image: url('assets/images/Main.svg'); 
@@ -133,6 +134,32 @@ body {
   }
   
 /* Section animaux */
+.slider-animaux{
+    position: relative;
+    background-image: url(./assets/images/slider_animaux.jpg);
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+}
+
+.filtre-animaux{
+margin: auto;
+}
+
+.filtre-animaux select{
+  border-radius: 20px;
+  font-weight: bold;
+  padding: 10px;
+  border: 1px solid var(--color-text);
+}
+
+.title-animaux{
+  text-align: center;
+  margin: 30px;
+
+}
+
 .container-animaux {
   width: 100%;
   margin: auto;
@@ -652,3 +679,200 @@ form textarea {
 .jour-bold{
     font-weight: bold;
 }
+
+/* Page animaux */
+.container-breadcrumb {
+   max-width: 1200px; 
+   margin: auto; 
+  }
+  
+  .breadcrumb { 
+    margin: 20px; 
+  }
+  
+  .breadcrumb a {
+    color: #0275d8; text-decoration: none;
+  }
+  
+  .breadcrumb a:hover { 
+    text-decoration: underline; 
+  }
+        
+  .animal-container { 
+          display: flex; flex-wrap: wrap; justify-content: space-around; }
+        
+  .animal-card { 
+    border: 1px solid var(--color-text); 
+    border-radius: 20px; 
+    padding: 10px; 
+    width: 30%; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+    margin: 20px 0; 
+    cursor: pointer; 
+  }
+        
+  .animal-card img { 
+    width: 100%; 
+    height: 200px; 
+    object-fit: cover; 
+    border-radius: 5px; 
+  }
+        
+  form { 
+    margin-top: 20px; 
+  }
+        
+  select, button { 
+    padding: 10px; 
+    margin-right: 10px; 
+  }
+        
+  .modal { 
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+  }
+        
+  .modal-content { 
+    background-color: var(--color-background);
+     margin: 20% auto; 
+     padding: 40px; 
+     border: 1px solid var(--color-secondary); 
+     width: 50%; 
+     border-radius: 20px;
+    }
+        
+  .close { color: var(--color-primary); 
+    float: right; 
+    font-size: 28px; 
+    font-weight: bold; 
+  }
+        
+  .close:hover, .close:focus { 
+    color: black; 
+    text-decoration: none; 
+    cursor: pointer; 
+  }
+
+  /* Page habitat */
+
+  .slider-habitat{
+    position: relative;
+    background-image: url(./assets/images/slider_habitat_animaux.jpg);
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .habitat-title{
+    text-align: center;
+    margin: 30px;
+  }
+  
+  .habitat-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    height: 50vh;
+}
+
+.habitat-card {
+    width: 320px; 
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.habitat-card:hover {
+    transform: translateY(-10px); 
+}
+
+.habitat-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.habitat-info {
+    padding: 10px;
+}
+
+.section {
+  margin: 20px;
+  padding: 20px;
+  background-color: #f9f9f9; /* Couleur de fond légère */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Ombre légère pour une meilleure profondeur */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+
+.section h2 {
+  margin-bottom: 10px;
+}
+
+.section p {
+  font-size: 16px;
+  line-height: 1.6; 
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: space-between; /* Espacement entre les éléments */
+}
+
+.section-image {
+  flex: 1 1 40%; /* Prend jusqu'à 40% de l'espace disponible */
+  max-width: 40%;
+  height: auto;
+  margin-right: 20px; /* Espacement entre l'image et le texte */
+}
+
+.text-content {
+  flex: 1 1 60%; /* Prend jusqu'à 60% de l'espace disponible */
+  padding: 0 20px; /* Padding pour le texte pour un meilleur rendu */
+}
+
+.section {
+  margin: 20px auto; /* Centre la section horizontalement */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  max-width: 960px; /* Limite la largeur maximale de la section */
+}
+
+.section h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.section p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+

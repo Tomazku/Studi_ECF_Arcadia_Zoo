@@ -15,73 +15,18 @@ $habitats = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <title>Habitats du Zoo</title>
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="header_footer.css">
-    <link rel="shortcut icon" href="assets/images/fav_icon.png" type="image/x-icon">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .breadcrumb {
-            padding: 10px 15px;
-            background-color: #f4f4f4;
-            margin-bottom: 20px;
-            list-style: none;
-        }
-        .breadcrumb-item {
-            display: inline;
-            font-size: 0.9em;
-        }
-        .breadcrumb-item a {
-            color: #0275d8;
-            text-decoration: none;
-        }
-        .breadcrumb-item + .breadcrumb-item::before {
-            content: " > ";
-            padding: 0 5px;
-            color: #666;
-        }
-        .habitat-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            padding: 20px;
-        }
-        .habitat-card {
-            width: 300px;
-            border: 1px solid #ccc;
-            margin: 10px;
-            padding: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .habitat-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        .habitat-info {
-            padding: 10px;
-        }
-        .btn-primary {
-            background-color: #007bff;
-            color: white;
-            padding: 8px 12px;
-            text-decoration: none;
-            border-radius: 4px;
-            display: inline-block;
-        }
-        .btn-primary:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <link rel="shortcut icon" href="assets/images/fav_icon.png" type="image/x-icon">    
 </head>
 <body>
     <?php include 'assets/includes/header.php'; ?>
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.php">Accueil</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Habitats</li>
-        </ol>
-    </nav>
-
+    <div class="container-breadcrumb">
+        <div class="breadcrumb">
+            <a href="index.php">Accueil</a> &gt; <a href="habitats.php">Habitats</a>
+        </div>
+    </div>
+    <div class="slider-habitat">
+    </div>
+    <h1 class="habitat-title">Découvrez nos <span class="orange-text">Habitats</span></h1>
     <div class="habitat-container">
         <?php foreach ($habitats as $habitat): ?>
             <div class="habitat-card">
@@ -89,11 +34,25 @@ $habitats = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <div class="habitat-info">
                     <h2><?= htmlspecialchars($habitat['nom']); ?></h2>
                     <p><?= htmlspecialchars($habitat['description']); ?></p>
-                    <a href="animaux.php?habitat_id=<?= $habitat['habitat_id'] ?>" class="btn-primary">Découvrez les animaux</a>
+                    <a href="animaux.php?habitat_id=<?= $habitat['habitat_id'] ?>" class="button">Découvrez les animaux</a>
                 </div>
             </div>
         <?php endforeach; ?>
     </div>
+    <div class="section importance-nature flex-row">
+    <img src="assets/images/natural-habitat.jpg" alt="Milieu Naturel" class="section-image">
+    <div class="text-content">
+        <h2>Importance d'un milieu naturel</h2>
+        <p>Offrir un habitat qui se rapproche au maximum du milieu naturel des animaux est essentiel pour leur bien-être psychologique et physique. Cela favorise des comportements naturels, essentiels à la santé de chaque espèce.</p>
+    </div>
+</div>
+
+<div class="section conservation">
+    <h2>Conservation et éducation</h2>
+    <p>Chaque habitat est conçu non seulement pour le confort des animaux, mais aussi pour éduquer le public sur les écosystèmes spécifiques et l'importance de la conservation de la biodiversité.</p>
+    <img src="assets/images/conservation.jpg" alt="Conservation de la biodiversité">
+</div>
+
     <?php include 'assets/includes/footer.php'; ?>
 </body>
 </html>

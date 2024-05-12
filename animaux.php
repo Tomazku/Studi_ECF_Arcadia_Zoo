@@ -50,20 +50,7 @@ $animals = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="header_footer.css">
     <link rel="shortcut icon" href="assets/images/fav_icon.png" type="image/x-icon">
     <style>
-        body { font-family: Arial, sans-serif; }
-        .container { max-width: 1200px; margin: auto; }
-        .breadcrumb { margin: 20px; }
-        .breadcrumb a { color: #0275d8; text-decoration: none; }
-        .breadcrumb a:hover { text-decoration: underline; }
-        .animal-container { display: flex; flex-wrap: wrap; justify-content: space-around; }
-        .animal-card { border: 1px solid #ddd; border-radius: 5px; padding: 10px; width: 30%; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px; cursor: pointer; }
-        .animal-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 5px; }
-        form { margin-top: 20px; }
-        select, button { padding: 10px; margin-right: 10px; }
-        .modal { display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4); }
-        .modal-content { background-color: #fefefe; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 50%; }
-        .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; }
-        .close:hover, .close:focus { color: black; text-decoration: none; cursor: pointer; }
+        
     </style>
     <script>
     function openModal(prenom, image, etat, race) {
@@ -83,12 +70,15 @@ $animals = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <?php include 'assets/includes/header.php'; ?>
-    <div class="container">
+    <div class="container-breadcrumb">
         <div class="breadcrumb">
             <a href="index.php">Accueil</a> &gt; <a href="habitats.php">Habitats</a> &gt; Animaux
         </div>
-        <h1>Animaux du Zoo</h1>
-        <form action="animaux.php" method="get">
+    </div>
+    <div class="slider-animaux">
+    </div>
+        <h1 class="title-animaux"><span class="orange-text">Animaux</span> du Zoo</h1>
+        <form class="filtre-animaux" action="animaux.php" method="get">
             Filtrer par Habitat:
             <select name="habitat_id">
                 <option value="">Tous les habitats</option>
@@ -107,7 +97,7 @@ $animals = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </option>
                 <?php endforeach; ?>
             </select>
-            <button type="submit">Appliquer les filtres</button>
+            <button class="button" type="submit">Appliquer les filtres</button>
         </form>
         <div class="animal-container">
             <?php foreach ($animals as $animal): ?>
