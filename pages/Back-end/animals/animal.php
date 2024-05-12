@@ -5,8 +5,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=arcadia_zoo', 'root', '');
 // Gérer les requêtes POST pour l'ajout et la modification des animaux et des rapports
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Ajouter ou modifier des informations sur les animaux
-    // Votre logique existante ici...
-
+    
     // Ajouter un rapport vétérinaire
     if (isset($_POST['ajouter_rapport'])) {
         $animal_id = $_POST['animal_id'];
