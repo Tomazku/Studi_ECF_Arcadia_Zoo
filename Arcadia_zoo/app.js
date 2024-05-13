@@ -3,11 +3,20 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var cors = require('cors');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var animalRouter = require('./routes/animal'); // Assurez-vous d'importer votre router pour les animaux
 
 var app = express();
+
+// Configuration de CORS
+const corsOptions = {
+    origin: 'http://arcadia-zoo', 
+    optionsSuccessStatus: 200 
+};
+app.use(cors(corsOptions)); // Appliquer CORS globalement
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -21,6 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/animal', animalRouter); // Utilisez votre router animal ici
 
 // Middleware pour la gestion des erreurs non trouvées (404)
 app.use(function(req, res, next) {
@@ -29,29 +39,14 @@ app.use(function(req, res, next) {
 
 // Middleware pour la gestion des erreurs globales
 app.use(function(err, req, res, next) {
-  // Si une erreur de connexion à MongoDB
-  if (err.name === 'MongoError') {
-    console.error('Erreur de connexion à MongoDB :', err);
-    err.message = 'Erreur de connexion à la base de données';
-    err.status = 500; // Ou un autre code d'erreur approprié
-  }
+  // Set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // Rendu de la page d'erreur
+  // Provide a title for the error page
+  res.locals.title = "Error Page";
+
+  // render the error page
   res.status(err.status || 500);
-  res.render('error', { error: err });
+  res.render('error');
 });
-
-// Connexion à MongoDB
-const mongoose = require('mongoose');
-
-mongoose.connect('mongodb://localhost:27017/Arcadia_zoo')
-  .then(() => console.log('Connexion à MongoDB réussie'))
-  .catch((err) => console.error('Erreur de connexion à MongoDB', err));
-
-// Middleware pour la gestion des erreurs de connexion à MongoDB
-mongoose.connection.on('error', (err) => {
-  console.error('Erreur de connexion à MongoDB :', err);
-});
-
-module.exports = app;
-// Path: Arcadia_zoo/routes/animal.js

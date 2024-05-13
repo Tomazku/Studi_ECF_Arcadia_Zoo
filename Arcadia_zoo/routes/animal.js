@@ -1,3 +1,4 @@
+// Fichier animal.js
 const mongoose = require('mongoose');
 
 const animalSchema = new mongoose.Schema({

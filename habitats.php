@@ -30,27 +30,29 @@ $habitats = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="habitat-container">
         <?php foreach ($habitats as $habitat): ?>
             <div class="habitat-card">
-                <img src="<?= htmlspecialchars($habitat['image']) ?>" alt="Habitat de <?= htmlspecialchars($habitat['nom']) ?>" class="habitat-image">
+                <img src="http://arcadia-zoo/Studi_ECF_Arcadia_Zoo/pages/Back-end/animals/<?= htmlspecialchars($habitat['image']) ?>" alt="Habitat de <?= htmlspecialchars($habitat['nom']) ?>" class="habitat-image">
                 <div class="habitat-info">
-                    <h2><?= htmlspecialchars($habitat['nom']); ?></h2>
+                    <h2 class="habitat-title"><?= htmlspecialchars($habitat['nom']); ?></h2>
                     <p><?= htmlspecialchars($habitat['description']); ?></p>
-                    <a href="animaux.php?habitat_id=<?= $habitat['habitat_id'] ?>" class="button">Découvrez les animaux</a>
+                    <a href="animaux.php?habitat_id=<?= $habitat['habitat_id'] ?>" class="button habitat-button">Découvrez les animaux</a>
                 </div>
             </div>
         <?php endforeach; ?>
     </div>
-    <div class="section importance-nature flex-row">
+    <div class="section-importance-nature">
     <img src="assets/images/natural-habitat.jpg" alt="Milieu Naturel" class="section-image">
     <div class="text-content">
         <h2>Importance d'un milieu naturel</h2>
         <p>Offrir un habitat qui se rapproche au maximum du milieu naturel des animaux est essentiel pour leur bien-être psychologique et physique. Cela favorise des comportements naturels, essentiels à la santé de chaque espèce.</p>
     </div>
 </div>
-
-<div class="section conservation">
-    <h2>Conservation et éducation</h2>
-    <p>Chaque habitat est conçu non seulement pour le confort des animaux, mais aussi pour éduquer le public sur les écosystèmes spécifiques et l'importance de la conservation de la biodiversité.</p>
-    <img src="assets/images/conservation.jpg" alt="Conservation de la biodiversité">
+<a href="./pages/Back-end/animals/uploads/"></a>
+<div class="section-importance-nature">
+    <div class="text-content">
+        <h2>Conservation et éducation</h2>
+        <p>Chaque habitat est conçu non seulement pour le confort des animaux, mais aussi pour éduquer le public sur les écosystèmes spécifiques et l'importance de la conservation de la biodiversité.</p>
+    </div>
+    <img src="assets/images/conservation.jpg" class="section-image alt="Conservation de la biodiversité">
 </div>
 
     <?php include 'assets/includes/footer.php'; ?>
