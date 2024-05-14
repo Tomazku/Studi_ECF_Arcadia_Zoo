@@ -1,14 +1,16 @@
+<?php
+include('header.php');
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Gestion des messages - Arcadia Zoo</title>
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="header_footer.css">
+    <link rel="stylesheet" href="interfaces.css">
 </head>
 <body>
-
-<h1>Gestion des messages - Arcadia Zoo</h1>
+    
+    <h1>Gestion des messages - Arcadia Zoo</h1>
 
 <?php
 // Connexion à la base de données
@@ -76,6 +78,7 @@ try {
 } catch (PDOException $e) {
     echo "Erreur : " . $e->getMessage();
 }
+include('footer.php');
 ?>
 
 </body>

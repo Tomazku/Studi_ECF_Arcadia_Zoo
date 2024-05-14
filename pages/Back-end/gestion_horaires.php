@@ -1,3 +1,14 @@
+<?php
+include('header.php');
+
+// Vérifiez le rôle
+if (!in_array($role, ['admin', 'veterinaire', 'employe'])) {
+    header('Location: unauthorized.php');
+    exit();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -58,5 +69,9 @@
             return confirm("Êtes-vous sûr de vouloir mettre à jour les horaires?");
         }
     </script>
+<?php
+include('footer.php');
+?>
 </body>
 </html>
+

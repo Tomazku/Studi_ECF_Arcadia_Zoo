@@ -1,5 +1,7 @@
 <?php
 session_start();
+include('../header.php');
+
 try {
     $pdo = new PDO('mysql:host=localhost;dbname=arcadia_zoo', 'root', '', [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
@@ -44,6 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Gestion des Habitats</title>
+    <link rel="stylesheet" href="../interfaces.css">
 </head>
 <body>
 <h1>Gestion des Habitats</h1>
@@ -59,6 +62,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button type="submit" name="update_description">Mettre à jour</button>
         </form>
     </div>
-<?php endforeach; ?>
+<?php endforeach; 
+include('../footer.php');
+?>
 </body>
 </html>

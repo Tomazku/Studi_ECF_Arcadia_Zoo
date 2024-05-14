@@ -17,7 +17,7 @@ body {
     background-color: var(--color-background); /* Couleur de fond de la page */
 }
 
-.container {
+.container-connexion {
     max-width: 400px;
     margin: 50px auto;
     padding: 20px;

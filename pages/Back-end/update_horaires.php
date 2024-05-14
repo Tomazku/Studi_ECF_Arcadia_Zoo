@@ -1,4 +1,6 @@
 <?php
+
+include('header.php');
 $pdo = new PDO('mysql:host=localhost;dbname=arcadia_zoo', 'root', '');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -14,4 +16,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header('Location: ./gestion_horaires.php');
     exit;
 }
+include('footer.php');
 ?>

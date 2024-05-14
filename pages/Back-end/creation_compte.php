@@ -1,12 +1,9 @@
+
 <?php
+include('header.php');
 require_once('auth.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Traitement de la création de compte ici
-    // Assurez-vous d'ajouter la logique appropriée pour créer un nouveau compte
-    // Une fois le compte créé avec succès, vous pouvez rediriger l'utilisateur vers une autre page ou afficher un message de succès
-    // Par exemple, vous pouvez utiliser header('Location: interface_admin.php'); pour rediriger l'utilisateur
-    // Ou vous pouvez afficher un message de succès et un lien pour revenir à l'interface admin
     exit();
 }
 ?>
@@ -38,5 +35,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button type="submit">Créer compte</button>
         </form>
     </header>
+<?php
+include('footer.php');
+?>
 </body>
 </html>

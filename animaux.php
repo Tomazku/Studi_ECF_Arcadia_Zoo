@@ -40,6 +40,11 @@ if ($race_id > 0) {
 
 $stmt->execute();
 $animals = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Vérifiez si des résultats ont été retournés
+if (!$animals) {
+    echo "<p>Aucun animal trouvé.</p>";
+}
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +60,7 @@ $animals = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
     </style>
     <script>
-function openModal(prenom, image, etat, race, animalId) {
+function openModal(prenom, image, etat, race) {
     var modal = document.getElementById('myModal');
     document.getElementById('modalPrenom').textContent = prenom;
     document.getElementById('modalImage').src = image;
@@ -64,26 +69,13 @@ function openModal(prenom, image, etat, race, animalId) {
     modal.style.display = "block";
 
     // Envoyer la requête pour incrémenter les consultations
-    incrementConsultations(animalId);
+    incrementConsultations(prenom);
 }
 
 // Envoyer la requête pour récupérer les consultations
-fetch(`http://localhost:3000/consultations/get-consultations/${animalId}`)
-      .then(response => response.json())
-      .then(data => {
-          document.getElementById('modalConsultations').textContent = 'Consultations: ' + data.consultations;
-      })
-      .catch(error => {
-          console.error('Erreur lors de la récupération des consultations', error);
-          document.getElementById('modalConsultations').textContent = 'Consultations: Non disponible';
-      });
-
-    incrementConsultations(animalId); // Cette fonction incrémente le compteur, assurez-vous qu'elle fonctionne correctement.
-
-
-function incrementConsultations(animalId) {
+function incrementConsultations(animalName) {
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://localhost:3000/consultations/increment-consultations/" + animalId, true);
+    xhr.open("POST", "http://localhost:3000/consultations/increment-consultations/" + animalName, true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send();
 
@@ -94,6 +86,16 @@ function incrementConsultations(animalId) {
             console.error('Erreur lors de la mise à jour des consultations');
         }
     };
+
+    fetch("http://localhost:3000/consultations/get-consultations/" + animalName)
+      .then(response => response.json())
+      .then(data => {
+          document.getElementById('modalConsultations').textContent = 'Consultations: ' + data.consultations;
+      })
+      .catch(error => {
+          console.error('Erreur lors de la récupération des consultations', error);
+          document.getElementById('modalConsultations').textContent = 'Consultations: Non disponible';
+      });
 }
 
 function closeModal() {
@@ -135,29 +137,31 @@ function closeModal() {
             <button class="button" type="submit">Appliquer les filtres</button>
         </form>
         <div class="animal-container">
-            <?php foreach ($animals as $animal): ?>
-                <div class="animal-card" onclick="openModal('<?= htmlspecialchars($animal['prenom']) ?>', '<?= $baseImagePath . htmlspecialchars($animal['image']) ?>', '<?= htmlspecialchars($animal['etat']) ?>', '<?= htmlspecialchars($animal['race']) ?>', <?= $animal['animal_id'] ?>)">
-                    <img class="img-animal" src="<?= $baseImagePath . htmlspecialchars($animal['image']) ?>" alt="Image of <?= htmlspecialchars($animal['prenom']) ?>">
-                    <h4><?= htmlspecialchars($animal['prenom']) ?></h4>
-                    <p>Race: <?= htmlspecialchars($animal['race']) ?></p>
-                    <p>Habitat: <?= htmlspecialchars($animal['habitat']) ?></p>
-                </div>
-
-
-            <?php endforeach; ?>
+            <?php if (!empty($animals) && is_array($animals)): ?>
+                <?php foreach ($animals as $animal): ?>
+                    <div class="animal-card" onclick="openModal('<?= htmlspecialchars($animal['prenom']) ?>', '<?= $baseImagePath . htmlspecialchars($animal['image']) ?>', '<?= htmlspecialchars($animal['etat']) ?>', '<?= htmlspecialchars($animal['race']) ?>')">
+                        <img class="img-animal" src="<?= $baseImagePath . htmlspecialchars($animal['image']) ?>" alt="Image of <?= htmlspecialchars($animal['prenom']) ?>">
+                        <h4><?= htmlspecialchars($animal['prenom']) ?></h4>
+                        <p>Race: <?= htmlspecialchars($animal['race']) ?></p>
+                        <p>Habitat: <?= htmlspecialchars($animal['habitat']) ?></p>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p>Aucun animal trouvé.</p>
+            <?php endif; ?>
         </div>
     </div>
     <!-- Fenêtre modal -->
     <div id="myModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img id="modalImage" class="img-modal-animal" src="" alt="">
-        <h2 id="modalPrenom"></h2>
-        <p id="modalEtat"></p>
-        <p id="modalRace"></p>
-        <p id="modalConsultations">Consultations : chargement...</p>  <!-- Ligne ajoutée pour les consultations -->
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" class="img-modal-animal" src="" alt="">
+            <h2 id="modalPrenom"></h2>
+            <p id="modalEtat"></p>
+            <p id="modalRace"></p>
+            <p id="modalConsultations">Consultations : chargement...</p>  <!-- Ligne ajoutée pour les consultations -->
+        </div>
     </div>
-</div>
     <?php include 'assets/includes/footer.php'; ?>
 </body>
 </html>

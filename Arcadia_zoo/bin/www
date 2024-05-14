@@ -4,8 +4,8 @@
  * Module dependencies.
  */
 
-var app = require('../app');
-var debug = require('debug')('your-application-name:server');
+var app = require('../app'); // Assurez-vous que ce chemin est correct et correspond à l'endroit où se trouve votre app.js
+var debug = require('debug')('your-project-name:server'); // Remplacez 'your-project-name' par le nom de votre projet
 var http = require('http');
 
 /**

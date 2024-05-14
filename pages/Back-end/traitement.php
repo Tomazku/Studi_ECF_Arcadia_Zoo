@@ -1,5 +1,5 @@
 <?php
-// Inclure le fichier de connexion à la base de données
+include('header.php');
 $pdo = new PDO('mysql:host=localhost;dbname=arcadia_zoo', 'root', '');
 
 // Vérifiez si le formulaire a été soumis
@@ -19,4 +19,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo json_encode(["success" => true, "message" => "Votre message a été envoyé avec succès!"]);
     exit; // Assurez-vous d'utiliser exit() après avoir envoyé la réponse
 }
+include('footer.php');
 ?>

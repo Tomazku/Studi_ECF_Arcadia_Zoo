@@ -1,18 +1,24 @@
-// Importer les modules nécessaires
 const express = require('express');
 const router = express.Router();
-const Animal = require('./animal'); // Assurez-vous que le chemin d'accès est correct
-
-// D'autres routes peuvent être ici
+const Animal = require('../models/animal');
+const mysqlPool = require('../config/mysqlConnection');
 
 // Route pour incrémenter les consultations pour un animal spécifique
-router.post('/increment-consultations/:animalId', async (req, res, next) => {
+router.post('/increment-consultations/:animalName', async (req, res, next) => {
+  const { animalName } = req.params;
+
   try {
-    const { animalId } = req.params;
-    const animal = await Animal.findById(animalId);
+    // Vérifiez d'abord dans MySQL
+    const [results] = await mysqlPool.query('SELECT * FROM animal WHERE prenom = ?', [animalName]);
+
+    if (results.length === 0) {
+      return res.status(404).json({ message: 'Animal non trouvé dans MySQL' });
+    }
+
+    // Si l'animal existe dans MySQL, procédez dans MongoDB en utilisant le prénom
+    const animal = await Animal.findOne({ name: animalName });
     if (!animal) {
-      res.status(404).json({ message: 'Animal non trouvé' });
-      return;
+      return res.status(404).json({ message: 'Animal non trouvé dans MongoDB' });
     }
     animal.consultations++;
     await animal.save();
@@ -23,5 +29,28 @@ router.post('/increment-consultations/:animalId', async (req, res, next) => {
   }
 });
 
-// Assurez-vous d'exporter le router à la fin du fichier
+// Route pour obtenir le nombre de consultations pour un animal spécifique
+router.get('/get-consultations/:animalName', async (req, res) => {
+  const { animalName } = req.params;
+
+  try {
+    // Vérifiez d'abord dans MySQL
+    const [results] = await mysqlPool.query('SELECT * FROM animal WHERE prenom = ?', [animalName]);
+
+    if (results.length === 0) {
+      return res.status(404).json({ message: 'Animal non trouvé dans MySQL' });
+    }
+
+    // Si l'animal existe dans MySQL, procédez dans MongoDB en utilisant le prénom
+    const animal = await Animal.findOne({ name: animalName });
+    if (!animal) {
+      return res.status(404).json({ message: 'Animal non trouvé dans MongoDB' });
+    }
+    res.json({ consultations: animal.consultations });
+  } catch (error) {
+    console.error('Erreur lors de la récupération des consultations:', error);
+    res.status(500).json({ message: 'Erreur interne du serveur' });
+  }
+});
+
 module.exports = router;

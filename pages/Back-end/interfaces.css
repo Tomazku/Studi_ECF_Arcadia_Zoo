@@ -1,12 +1,76 @@
-/* Style pour le menu de navigation vertical */
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container-connexion {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+h1.connexion {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #5cb85c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #4cae4c;
+}
+
+p {
+    color: red;
+    font-weight: bold;
+}
+
+/* Sidebar Styles */
 .sidebar {
+    width: 200px;
+    background-color: #333;
     position: fixed;
     top: 0;
     left: 0;
-    width: 200px;
-    height: 100vh;
-    background-color: #333;
-    color: #fff;
+    height: 100%;
     padding-top: 20px;
 }
 
@@ -16,52 +80,45 @@
 }
 
 .sidebar ul li {
-    padding: 10px 20px;
+    padding: 8px;
+    text-align: center;
 }
 
 .sidebar ul li a {
-    color: #fff;
+    color: white;
     text-decoration: none;
+    display: block;
 }
 
-/* Style pour le contenu principal */
+.sidebar ul li a:hover {
+    background-color: #575757;
+}
+
+.sidebar ul li a.active {
+    background-color: #4CAF50;
+}
+
+/* Page login */
 .content {
-    margin-left: 220px; /* Assurez-vous que le contenu principal ne soit pas caché derrière le menu */
+    margin-left: 220px;
     padding: 20px;
 }
 
-.content header h1 {
-    margin-bottom: 20px;
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
 }
 
-/* Style pour le bouton de déconnexion */
-.btn-logout {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: #f00;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-/* Style pour la popup de confirmation de suppression */
-.confirm-popup {
-    background-color: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    top: 0;
-    left: 0;
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    position: absolute;
+    bottom: 0;
     width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.confirm-popup-inner {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 0 0 10px 10px;
 }

@@ -1,4 +1,6 @@
 <?php
+include('header.php');
+
 $pdo = new PDO('mysql:host=localhost;dbname=arcadia_zoo', 'root', '');
 
 // Ajout d'un service
@@ -113,6 +115,9 @@ $services = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </tr>
     <?php endforeach; ?>
 </table>
+<?php
+include('footer.php');
+?>
 
 </body>
 </html>

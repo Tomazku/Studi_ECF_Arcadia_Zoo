@@ -1,5 +1,6 @@
 <?php
 session_start();
+include('../header.php');
 $pdo = new PDO('mysql:host=localhost;dbname=arcadia_zoo', 'root', '');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['image'])) {
@@ -38,6 +39,7 @@ $habitats = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <title>Ajouter un animal</title>
+    <link rel="stylesheet" href="../interfaces.css">
 </head>
 <body>
     <h1>Ajouter un nouvel animal</h1>
@@ -67,5 +69,8 @@ $habitats = $stmt->fetchAll(PDO::FETCH_ASSOC);
         Image: <input type="file" name="image" required><br>
         <input type="submit" value="Ajouter">
     </form>
+    <?php
+include('../footer.php');
+?>
 </body>
 </html>
