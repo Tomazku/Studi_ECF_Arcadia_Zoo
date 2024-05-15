@@ -11,28 +11,8 @@
             <nav>
                 <ul>
                     <li><a href="index.php">Accueil</a></li>
-                    <li>
-                        <a href="services.php">Services</a>
-                        <ul>
-                            <li><a href="services.php#restauration">
-                                <img src="assets/images/Restaurant.jpg" alt="Restauration">Restauration</a></li>
-                            <li><a href="services.php#animations">
-                                <img src="assets/images/Zoo_tour.jpg" alt="Animations">Animations</a></li>
-                            <li><a href="services.php#activites">
-                                <img src="assets/images/petit_train.jpg" alt="Activités">Activités</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="habitats.php">Habitats</a>
-                        <ul>
-                            <li><a href="habitats.php#savane">
-                                <img src="assets/images/Savane.jpg" alt="Savane">Savane</a></li>
-                            <li><a href="habitats.php#jungle">
-                                <img src="assets/images/Jungle.jpg" alt="Jungle">Jungle</a></li>
-                            <li><a href="habitats.php#marais">
-                                <img src="assets/images/Marais.jpg" alt="Marais">Marais</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="services.php">Services</a> </li>
+                    <li><a href="habitats.php">Habitats</a></li>
                     <li><a href="horaires.php">Horaires</a></li>
                     <li><a href="contact.php">Contact</a></li>
                 </ul>

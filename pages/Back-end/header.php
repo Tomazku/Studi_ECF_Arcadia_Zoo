@@ -26,24 +26,23 @@ $role = getUserRole();
     <nav class="sidebar">
         <ul>
             <?php if ($role == 'admin'): ?>
-                <li><a href="./creation_compte.php">Gestion des utilisateurs</a></li>
-                <li><a href="../Back-end/animals/addAnimal.php">Ajout d'animaux</a></li>
-                <li><a href="./animal.php">Gestion des animaux</a></li>
-                <li><a href="./animals/habitats.php">Gestion des habitats</a></li>
-                <li><a href="./gestion_horaires.php">Gestion des horaires</a></li>
+                <li><a href="/Studi_ECF_Arcadia_Zoo/pages/Back-end/creation_compte.php">Gestion des utilisateurs</a></li>
+                <li><a href="/Studi_ECF_Arcadia_Zoo/pages/Back-end/animals/addAnimal.php">Ajout d'animaux</a></li>
+                <li><a href="/Studi_ECF_Arcadia_Zoo/pages/Back-end/animals/animal.php">Gestion des animaux</a></li>
+                <li><a href="/Studi_ECF_Arcadia_Zoo/pages/Back-end/animals/habitats.php">Gestion des habitats</a></li>
+                <li><a href="/Studi_ECF_Arcadia_Zoo/pages/Back-end/gestion_horaires.php">Gestion des horaires</a></li>
                 <li><a href=".//avis/administration_avis.php">Gestion des avis</a></li>
-                <li><a href="./contact_BG.php">Contact</a></li>
+                <li><a href="/Studi_ECF_Arcadia_Zoo/pages/Back-end/contact_BG.php">Contact</a></li>
             <?php elseif ($role == 'veterinaire'): ?>
-                <li><a href="./animals/addAnimal.php">Ajout d'animaux</a></li>
-                <li><a href="./animals/animal.php">Gestion des animaux</a></li>
-                <li><a href="./animals/habitats.php">Gestion des habitats</a></li>
-                <li><a href="./gestion_horaires.php">Gestion des horaires</a></li>
+                <li><a href="/Studi_ECF_Arcadia_Zoo/pages/Back-end/animals/addAnimal.php">Ajout d'animaux</a></li>
+                <li><a href="/Studi_ECF_Arcadia_Zoo/pages/Back-end/animals/animal.php">Gestion des animaux</a></li>                
+                <li><a href="/Studi_ECF_Arcadia_Zoo/pages/Back-end/animals/habitats.php">Gestion des habitats</a></li>
             <?php elseif ($role == 'employe'): ?>
-                <li><a href="./animals/animal.php">Gestion des animaux</a></li>
-                <li><a href="./gestion_horaires.php">Gestion des horaires</a></li>
-                <li><a href="./administration_avis.php">Gestion des avis</a></li>
-                <li><a href="./contact_BG.php">Contact</a></li>
+                <li><a href="/Studi_ECF_Arcadia_Zoo/pages/Back-end/animals/animal.php">Gestion des animaux</a></li>
+                <li><a href="/Studi_ECF_Arcadia_Zoo/pages/Back-end/gestion_horaires.php">Gestion des horaires</a></li>
+                <li><a href=".//avis/administration_avis.php">Gestion des avis</a></li>
+                <li><a href="/Studi_ECF_Arcadia_Zoo/pages/Back-end/contact_BG.php">Contact</a></li>
             <?php endif; ?>
-            <li><a href="logout.php">Déconnexion</a></li>
+            <li><a href="/pages/Back-end/logout.php">Déconnexion</a></li>
         </ul>
     </nav>

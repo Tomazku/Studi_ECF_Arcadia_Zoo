@@ -1,28 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --color-primary: #7F9172;
+    --color-secondary: #08415C;
+    --color-text: #FF9F1C;
+    --color-background: #FBFBFF;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 /* Global Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    font-family: 'Raleway', sans-serif; 
+    background-color: var(--color-background);
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .container-connexion {
-    background-color: #ffffff;
+    background-color: var(--color-background);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 500px;
     text-align: center;
 }
 
 h1.connexion {
     font-size: 24px;
     margin-bottom: 20px;
-    color: #333;
+    color: var(--color-secondary);
 }
 
 label {
@@ -30,7 +43,7 @@ label {
     text-align: left;
     margin-bottom: 5px;
     font-weight: bold;
-    color: #333;
+    color: var(--color-secondary);
 }
 
 input[type="email"],
@@ -38,24 +51,24 @@ input[type="password"] {
     width: calc(100% - 20px);
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--color-secondary);
     border-radius: 5px;
     box-sizing: border-box;
 }
 
 input[type="submit"] {
-    background-color: #5cb85c;
+    background-color: var(--color-secondary);
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     padding: 10px;
     cursor: pointer;
-    width: 100%;
+    width: 90%;
     font-size: 16px;
 }
 
 input[type="submit"]:hover {
-    background-color: #4cae4c;
+    background-color: var(--color-text);
 }
 
 p {
@@ -66,7 +79,7 @@ p {
 /* Sidebar Styles */
 .sidebar {
     width: 200px;
-    background-color: #333;
+    background-color: var(--color-secondary);
     position: fixed;
     top: 0;
     left: 0;
@@ -95,7 +108,7 @@ p {
 }
 
 .sidebar ul li a.active {
-    background-color: #4CAF50;
+    background-color: var(--color-text);
 }
 
 /* Page login */
@@ -104,21 +117,608 @@ p {
     padding: 20px;
 }
 
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-    border-radius: 10px 10px 0 0;
-}
+
 
 footer {
     text-align: center;
     padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    position: absolute;
+    background-color: var(--color-secondary);
+    color: var(--color-background);
+    position: relative;
     bottom: 0;
+    position: fixed;
     width: 100%;
     border-radius: 0 0 10px 10px;
+}
+
+/* Gestion des utilisateurs */
+.creation_compte_header {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    max-width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    margin-top: 20%;
+}
+
+.nouveaux_comptes h1 {
+    margin-bottom: 20px;
+}
+
+.nouveaux_comptes form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nouveaux_comptes label {
+    font-weight: bold;
+    color: var(--color-background);
+    text-align: left;
+}
+
+.nouveaux_comptes input[type="email"],
+.nouveaux_comptes input[type="password"],
+.nouveaux_comptes select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--color-background);
+    border-radius: 5px;
+}
+
+.nouveaux_comptes button[type="submit"] {
+    background-color: var(--color-secondary);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.nouveaux_comptes button[type="submit"]:hover {
+    background-color: var(--color-text);
+}
+
+/* Section des utilisateurs ajoutés */
+.utilisateurs-ajoutes {
+    background-color: var(--color-background);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 800px;
+}
+
+.utilisateurs-ajoutes h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--color-secondary);
+    text-align: center;
+}
+
+.utilisateurs-ajoutes table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.utilisateurs-ajoutes th,
+.utilisateurs-ajoutes td {
+    border: 1px solid var(--color-secondary);
+    padding: 10px;
+    text-align: left;
+}
+
+.utilisateurs-ajoutes th {
+    background-color: var(--color-secondary);
+    color: var(--color-background);
+}
+
+.utilisateurs-ajoutes td {
+    background-color: var(--color-background);
+    color: var(--color-secondary);
+}
+
+.utilisateurs-ajoutes .supprimer-btn {
+    background-color: var(--color-text);
+    color: var(--color-background);
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.utilisateurs-ajoutes .supprimer-btn:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-background);
+}
+
+/*Page ajout animal */
+.add-animal-container {
+    background-color: var(--color-background);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    margin-top: 20%;
+}
+
+.add-animal-container h1 {
+    color: var(--color-secondary);
+    margin-bottom: 20px;
+}
+
+.add-animal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.add-animal-form label {
+    font-weight: bold;
+    color: var(--color-secondary);
+    text-align: left;
+}
+
+.add-animal-form input[type="text"],
+.add-animal-form select,
+.add-animal-form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--color-secondary);
+}
+
+.add-animal-form input[type="submit"] {
+    background-color: var(--color-secondary);
+    color: var(--color-background);
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.add-animal-form input[type="submit"]:hover {
+    background-color: var(--color-text);
+}
+
+/* Styles pour les messages de succès ou d'erreur */
+.success-message {
+    color: green;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Styles pour la liste des animaux */
+.animal-management-container {
+    padding: 20px;
+    max-width: 80%;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+h1, h2 {
+    color: var(--color-secondary);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.filter-form, .edit-form, .report-form, .delete-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-form label, .edit-form label, .report-form label {
+    font-weight: bold;
+    color: var(--color-secondary);
+    text-align: left;
+}
+
+.filter-form input[type="text"],
+.filter-form select,
+.edit-form input[type="text"],
+.edit-form select,
+.report-form textarea,
+.edit-form button,
+.filter-form button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--color-secondary);
+}
+
+.filter-form button,
+.edit-form button,
+.report-form button,
+.delete-form button {
+    background-color: var(--color-secondary);
+    color: var(--color-background);
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.filter-form button:hover,
+.edit-form button:hover,
+.report-form button:hover,
+.delete-form button:hover {
+    background-color: var(--color-text);
+}
+
+.success-message {
+    color: green;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.animal-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+}
+
+.animal-card {
+    background-color: var(--color-background);
+    border: 1px solid var(--color-secondary);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+}
+
+.animal-card img.animal-image {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.rapport-container {
+    margin-top: 20px;
+}
+
+.rapport-container h3 {
+    color: var(--color-secondary);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.rapport-card {
+    background-color: var(--color-background);
+    border: 1px solid var(--color-secondary);
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.rapport-card p {
+    margin-top: 5px;
+}
+
+/* Gestion des habitats */
+
+.habitat-management-container {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: var(--color-background);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.habitat-management-container h1 {
+    color: var(--color-secondary);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.habitat-card {
+    background-color: var(--color-background);
+    border: 1px solid var(--color-secondary);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.habitat-card h2 {
+    color: var(--color-secondary);
+    margin-bottom: 10px;
+}
+
+.habitat-image {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.habitat-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.habitat-card label {
+    font-weight: bold;
+    color: var(--color-secondary);
+    margin-bottom: 5px;
+}
+
+.habitat-card textarea,
+.habitat-card input[type="file"],
+.habitat-card button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--color-secondary);
+}
+
+.habitat-card button {
+    background-color: var(--color-secondary);
+    color: var(--color-background);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.habitat-card button:hover {
+    background-color: var(--color-text);
+}
+
+/* Gestion des horaires */
+
+.schedule-management-container {
+    max-width: 800px;
+    margin: 20% auto;
+    padding: 20px;
+    background-color: var(--color-background);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.schedule-management-container h1 {
+    color: var(--color-secondary);
+    margin-bottom: 20px;
+}
+
+.schedule-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.schedule-table th, .schedule-table td {
+    border: 1px solid var(--color-secondary);
+    padding: 10px;
+    text-align: left;
+}
+
+.schedule-table th {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+}
+
+.schedule-table td {
+    background-color: var(--color-background);
+    color: var(--color-secondary);
+}
+
+.schedule-table input[type="time"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid var(--color-secondary);
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.schedule-table input[type="checkbox"] {
+    margin: 0 auto;
+    display: block;
+}
+
+.form-footer {
+    margin-top: 20px;
+}
+
+.schedule-form button {
+    background-color: var(--color-secondary);
+    color: var(--color-background);
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.schedule-form button:hover {
+    background-color: var(--color-text);
+}
+
+/* Gestion des avis */
+.review-management-container {
+    max-width: 800px;
+    margin: 20% auto;
+    padding: 20px;
+    background-color: var(--color-background);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.review-management-container h1,
+.review-management-container h2 {
+    color: var(--color-secondary);
+    margin-bottom: 20px;
+}
+
+.success-message {
+    color: green;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pending-reviews {
+    list-style-type: none;
+    padding: 0;
+}
+
+.review-item {
+    background-color: var(--color-background);
+    border: 1px solid var(--color-secondary);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+.review-action-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.approve-btn,
+.reject-btn {
+    background-color: var(--color-secondary);
+    color: var(--color-background);
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.approve-btn:hover {
+    background-color: var(--color-primary);
+}
+
+.reject-btn:hover {
+    background-color: #E74C3C; /* Rouge pour le bouton de rejet */
+}
+
+.review-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.review-table th, .review-table td {
+    border: 1px solid var(--color-secondary);
+    padding: 10px;
+    text-align: left;
+}
+
+.review-table th {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+}
+
+.review-table td {
+    background-color: var(--color-background);
+    color: var(--color-secondary);
+}
+
+/* Gestion des messages */
+.message-management-container {
+    max-width: 800px;
+    margin: 10% auto;
+    padding: 20px;
+    background-color: var(--color-background);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.message-management-container h1 {
+    color: var(--color-secondary);
+    margin-bottom: 20px;
+}
+
+.success-message {
+    color: green;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.message-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.message-table th, .message-table td {
+    border: 1px solid var(--color-secondary);
+    padding: 10px;
+    text-align: left;
+}
+
+.message-table th {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+}
+
+.message-table td {
+    background-color: var(--color-background);
+    color: var(--color-secondary);
+}
+
+.delete-form {
+    display: inline;
+}
+
+.delete-btn {
+    background-color: var(--color-secondary);
+    color: var(--color-background);
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: #E74C3C; /* Rouge pour le bouton de suppression */
 }
