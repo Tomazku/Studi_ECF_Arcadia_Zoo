@@ -10,11 +10,10 @@ var usersRouter = require('./routes/users');
 var consultationsRouter = require('./routes/consultationsRoutes'); // Ajoutez ceci si ce n'est pas déjà fait
 
 var app = express();
-
 // Configuration de CORS
 const corsOptions = {
-    origin: 'http://arcadia-zoo', // Remplacez par l'origine exacte de votre frontend
-    optionsSuccessStatus: 200 // Pour les navigateurs hérités qui ne gèrent pas les codes de statut 204
+    origin: 'http://arcadia-zoo', 
+    optionsSuccessStatus: 200 
 };
 app.use(cors(corsOptions)); // Appliquer CORS globalement
 

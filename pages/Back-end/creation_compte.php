@@ -1,12 +1,8 @@
 <?php
 include('header.php');
+include('./pdo.php');
 
-// Connexion à la base de données
-$pdo = new PDO('mysql:host=localhost;dbname=arcadia_zoo', 'root', '', [
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-]);
 
-// Initialiser les variables de message
 $successMessage = '';
 $errorMessage = '';
 

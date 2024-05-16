@@ -30,8 +30,8 @@ if (!in_array($role, ['admin', 'veterinaire', 'employe'])) {
                 </thead>
                 <tbody>
                     <?php
-                    $pdo = new PDO('mysql:host=localhost;dbname=arcadia_zoo', 'root', '');
-                    $stmt = $pdo->query("SELECT * FROM horaires_ouverture");
+include('./pdo.php');
+$stmt = $pdo->query("SELECT * FROM horaires_ouverture");
                     while ($horaire = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
                         <tr>
                             <td><?= htmlspecialchars($horaire['jour']) ?></td>

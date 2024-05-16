@@ -1,6 +1,6 @@
 <?php
 session_start();
-$pdo = new PDO('mysql:host=localhost;dbname=arcadia_zoo', 'root', '');
+include('./pages/Back-end/pdo.php');
 
 // Récupérer tous les habitats
 $stmt = $pdo->query("SELECT habitat_id, nom, description, image FROM habitat");
@@ -30,7 +30,7 @@ $habitats = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="habitat-container">
         <?php foreach ($habitats as $habitat): ?>
             <div class="habitat-card">
-                <img src="http://arcadia-zoo/Studi_ECF_Arcadia_Zoo/pages/Back-end/animals/<?= htmlspecialchars($habitat['image']) ?>" alt="Habitat de <?= htmlspecialchars($habitat['nom']) ?>" class="habitat-image">
+                <img src="./pages/Back-end/animals/<?= htmlspecialchars($habitat['image']) ?>" alt="Habitat de <?= htmlspecialchars($habitat['nom']) ?>" class="habitat-image">
                 <div class="habitat-info">
                     <h2 class="habitat-title"><?= htmlspecialchars($habitat['nom']); ?></h2>
                     <p><?= htmlspecialchars($habitat['description']); ?></p>

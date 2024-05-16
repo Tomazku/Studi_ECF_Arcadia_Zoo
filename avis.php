@@ -1,6 +1,6 @@
 <?php
 // Connexion à la base de données (à adapter selon vos paramètres)
-$pdo = new PDO('mysql:host=localhost;dbname=arcadia_zoo', 'root', '');
+include('./pages/Back-end/pdo.php');
 
 // Traitement de l'avis soumis depuis le formulaire
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

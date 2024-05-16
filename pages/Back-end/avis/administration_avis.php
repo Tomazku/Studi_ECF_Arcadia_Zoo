@@ -1,7 +1,6 @@
 <?php
 include('../header.php');
-
-$pdo = new PDO('mysql:host=localhost;dbname=arcadia_zoo', 'root', '');
+include('../pdo.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['action'])) {
     $avis_id = $_POST['avis_id'];

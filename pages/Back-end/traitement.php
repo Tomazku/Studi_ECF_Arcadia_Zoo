@@ -1,6 +1,6 @@
 <?php
 include('header.php');
-$pdo = new PDO('mysql:host=localhost;dbname=arcadia_zoo', 'root', '');
+include('./pdo.php');
 
 // Vérifiez si le formulaire a été soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

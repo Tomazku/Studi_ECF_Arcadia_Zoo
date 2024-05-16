@@ -1,5 +1,5 @@
 <?php
-$pdo = new PDO('mysql:host=localhost;dbname=arcadia_zoo', 'root', '');
+include('./pages/Back-end/pdo.php');
 
 // Modifier la requête pour inclure la catégorie et trier par catégorie
 $sql = "SELECT nom, description, image_service, categorie FROM service ORDER BY categorie, nom";
@@ -35,11 +35,11 @@ foreach ($results as $row) {
             <h2 class="categorie-title"><?= htmlspecialchars($categorie); ?></h2>
             <div id="categorie-<?= strtolower(str_replace(' ', '-', $categorie)); ?>" class="categorie-section">
                 <?php foreach ($services as $service) : ?>
-                    <h3 class="service_subtitle"><?= htmlspecialchars($service['nom']); ?></h3>
+                    <h3 class="service_subtitle"><?= ($service['nom']); ?></h3>
                     <div class="service-content">
-                        <div class="text_content"><?= htmlspecialchars($service['description']); ?></div>
+                        <div class="text_content"><?= ($service['description']); ?></div>
                         <div class="service_image">
-                            <img src="./pages/Back-end/uploads/<?= htmlspecialchars($service['image_service']); ?>" alt="Image de <?= htmlspecialchars($service['nom']); ?>">
+                            <img src="./pages/Back-end/uploads/<?= ($service['image_service']); ?>" alt="Image de <?= ($service['nom']); ?>">
                         </div>
                     </div>
                 <?php endforeach; ?>

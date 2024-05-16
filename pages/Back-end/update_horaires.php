@@ -1,7 +1,7 @@
 <?php
 
 include('header.php');
-$pdo = new PDO('mysql:host=localhost;dbname=arcadia_zoo', 'root', '');
+include('./pdo.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     foreach ($_POST['heure_ouverture'] as $id => $heure_ouverture) {

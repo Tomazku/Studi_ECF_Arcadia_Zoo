@@ -722,3 +722,86 @@ h1, h2 {
 .delete-btn:hover {
     background-color: #E74C3C; /* Rouge pour le bouton de suppression */
 }
+
+/* Gestion des services */
+.service-management-container h1, .service-management-container h2 {
+    color: var(--color-secondary);
+    margin-bottom: 20px;
+}
+
+.service-form, .action-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.service-form input[type="text"],
+.service-form textarea,
+.service-form select,
+.action-form input[type="text"],
+.action-form textarea,
+.action-form input[type="file"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--color-secondary);
+}
+
+.service-form button, .modify-btn, .delete-btn {
+    background-color: var(--color-secondary);
+    color: var(--color-background);
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.service-form button:hover, .modify-btn:hover, .delete-btn:hover {
+    background-color: var(--color-text);
+}
+
+.service-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.service-table th, .service-table td {
+    border: 1px solid var(--color-secondary);
+    padding: 10px;
+    text-align: left;
+}
+
+.service-table th {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+}
+
+.service-table td {
+    background-color: var(--color-background);
+    color: var(--color-secondary);
+}
+
+.service-image {
+    width: 100px;
+    height: auto;
+}
+
+.action-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.action-form .modify-btn {
+    background-color: var(--color-primary);
+}
+
+.action-form .delete-btn {
+    background-color: #E74C3C; 
+}
+
+.action-form .delete-btn:hover {
+    background-color: var(--color-text);
+}

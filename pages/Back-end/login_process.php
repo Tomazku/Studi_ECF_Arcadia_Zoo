@@ -1,6 +1,5 @@
 <?php
-// Inclure le fichier de configuration de la base de données
-$pdo = new PDO('mysql:host=localhost;dbname=arcadia_zoo', 'root', '');
+include('./pdo.php');
 
 // Vérifier si le formulaire de connexion a été soumis
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

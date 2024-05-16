@@ -1,8 +1,6 @@
 <?php
-try {
-    $pdo = new PDO('mysql:host=localhost;dbname=arcadia_zoo', 'root', '', [
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION // Activer le mode d'erreur exception pour mieux gérer les erreurs
-    ]);
+include('./pages/Back-end/pdo.php');
+
 
     // Section avis
     $avis_submit = isset($_GET['avis_submit']) && $_GET['avis_submit'] == true;
@@ -132,6 +130,5 @@ try {
     </section>
 
     <?php include 'assets/includes/footer.php'; ?>
-    <script src="/assets/scripts/script.js"></script>
 </body>
 </html>

@@ -4,12 +4,8 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-try {
-    $pdo = new PDO('mysql:host=localhost;dbname=arcadia_zoo', 'root', '');
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Erreur de connexion à la base de données: " . $e->getMessage());
-}
+include('./pdo.php');
+
 
 function authenticate($email, $motDePasse) {
     global $pdo;

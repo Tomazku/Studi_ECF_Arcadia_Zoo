@@ -1,10 +1,10 @@
-const mysql = require('mysql2');
+const mysql = require('mysql2/promise');
 
-const pool = mysql.createPool({
+const mysqlPool = mysql.createPool({
   host: 'localhost',
   user: 'root',
-  password: '', 
+  password: '',
   database: 'arcadia_zoo'
 });
 
-module.exports = pool.promise(); 
+module.exports = mysqlPool;

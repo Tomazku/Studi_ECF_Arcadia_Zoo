@@ -1,7 +1,6 @@
 <?php
 include('header.php');
-
-$pdo = new PDO('mysql:host=localhost;dbname=arcadia_zoo', 'root', '');
+include('./pdo.php');
 
 // Ajout d'un service
 if (isset($_POST['ajouter'])) {
@@ -64,16 +63,15 @@ $services = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <title>Gestion des Services - Arcadia Zoo</title>
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="header_footer.css">
+    <link rel="stylesheet" href="interfaces.css">
 </head>
 <body>
-
+<div class="service-management-container">
 <h1>Gestion des Services - Arcadia Zoo</h1>
 
 <!-- Formulaire pour ajouter un nouveau service -->
 <h2>Ajouter un nouveau service</h2>
-<form method="post" enctype="multipart/form-data">
+<form class="service-form" method="post" enctype="multipart/form-data">
     <input type="text" name="nom" placeholder="Nom du service" required>
     <textarea name="description" placeholder="Description du service" required></textarea>
     <select name="categorie" required>
@@ -88,7 +86,7 @@ $services = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <!-- Liste des services existants -->
 <h2>Liste des Services</h2>
-<table>
+<table class="service-table">
     <tr>
         <th>Nom</th>
         <th>Description</th>
@@ -103,7 +101,7 @@ $services = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <td><?= htmlspecialchars($service['categorie']); ?></td>
         <td><img src="uploads/<?= htmlspecialchars($service['image_service']); ?>" alt="Image" style="width:100px;"></td>
         <td>
-            <form method="post" enctype="multipart/form-data">
+            <form method="post" enctype="multipart/form-data" class="action-form">
                 <input type="hidden" name="id" value="<?= $service['service_id']; ?>">
                 <input type="text" name="nom" value="<?= $service['nom']; ?>" required>
                 <input type="text" name="description" value="<?= $service['description']; ?>" required>
@@ -114,6 +112,7 @@ $services = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </td>
     </tr>
     <?php endforeach; ?>
+    </div>
 </table>
 <?php
 include('footer.php');

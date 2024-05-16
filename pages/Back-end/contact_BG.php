@@ -13,15 +13,8 @@ include('header.php');
         <h1>Gestion des messages - Arcadia Zoo</h1>
 
         <?php
-        // Connexion à la base de données
-        try {
-            $pdo = new PDO('mysql:host=localhost;dbname=arcadia_zoo', 'root', '', [
-                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-            ]);
-        } catch (PDOException $e) {
-            die("Erreur de connexion : " . $e->getMessage());
-        }
+include('./pdo.php');
+
 
         // Vérifiez si la requête est de type POST
         if ($_SERVER["REQUEST_METHOD"] == "POST") {

@@ -30,6 +30,7 @@ $role = getUserRole();
                 <li><a href="/Studi_ECF_Arcadia_Zoo/pages/Back-end/animals/addAnimal.php">Ajout d'animaux</a></li>
                 <li><a href="/Studi_ECF_Arcadia_Zoo/pages/Back-end/animals/animal.php">Gestion des animaux</a></li>
                 <li><a href="/Studi_ECF_Arcadia_Zoo/pages/Back-end/animals/habitats.php">Gestion des habitats</a></li>
+                <li><a href="/Studi_ECF_Arcadia_Zoo/pages/Back-end/gestion_services.php">Gestion des services</a></li>
                 <li><a href="/Studi_ECF_Arcadia_Zoo/pages/Back-end/gestion_horaires.php">Gestion des horaires</a></li>
                 <li><a href=".//avis/administration_avis.php">Gestion des avis</a></li>
                 <li><a href="/Studi_ECF_Arcadia_Zoo/pages/Back-end/contact_BG.php">Contact</a></li>

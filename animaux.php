@@ -1,6 +1,6 @@
 <?php
 session_start();
-$pdo = new PDO('mysql:host=localhost;dbname=arcadia_zoo', 'root', '');
+include('./pages/Back-end/pdo.php');
 
 $habitat_id = $_GET['habitat_id'] ?? 0;
 $race_id = $_GET['race_id'] ?? 0;
@@ -75,7 +75,7 @@ function openModal(prenom, image, etat, race) {
 // Envoyer la requête pour récupérer les consultations
 function incrementConsultations(animalName) {
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://localhost:3000/consultations/increment-consultations/" + animalName, true);
+    xhr.open("POST", "http://localhost:3000/Arcadia_zoo/increment-consultations/" + encodeURIComponent(animalName), true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send();
 
@@ -87,10 +87,11 @@ function incrementConsultations(animalName) {
         }
     };
 
-    fetch("http://localhost:3000/consultations/get-consultations/" + animalName)
-      .then(response => response.json())
+    fetch("http://localhost:3000/get-consultations/" + encodeURIComponent(animalName))
+      .then(response => response.text())
       .then(data => {
-          document.getElementById('modalConsultations').textContent = 'Consultations: ' + data.consultations;
+        console.log(data);
+        //   document.getElementById('modalConsultations').textContent = 'Consultations: ' + data.consultations;
       })
       .catch(error => {
           console.error('Erreur lors de la récupération des consultations', error);
@@ -162,6 +163,7 @@ function closeModal() {
             <p id="modalConsultations">Consultations : chargement...</p>  <!-- Ligne ajoutée pour les consultations -->
         </div>
     </div>
+    <script src="./Arcadia_zoo/app.js"></script>
     <?php include 'assets/includes/footer.php'; ?>
 </body>
 </html>
