@@ -59,11 +59,9 @@ body {
     text-align: center;
 }
 
-.menu a{
-    text-decoration: none;
-    color: var(--color-background);
-}
+
 .menu ul li {
+    display: inline;
     margin-right: 20px;
     position: relative;
     text-transform: uppercase;
@@ -72,6 +70,8 @@ body {
 .menu li a{
     text-decoration: none;
     position: relative;
+    color: var(--color-background);
+    display: inline-block;
 }
 
 .menu ul ul{
@@ -86,25 +86,26 @@ body {
     background-color: var(--color-secondary);
 }
 
-.menu ul li:hover > ul{
-    display: block;
-    border-radius: 0 0 10px 10px;
-}
-.menu ul li a:hover{
-    text-decoration: none;
-    margin-bottom: 2px;
-}
 
 
-/* Style pour les images des sous-menus */
-.menu li ul li img {
-    border-radius: 50%; /* Bordure arrondie pour créer une forme circulaire */
-    width: 30px; /* Largeur de l'image */
-    height: 30px; /* Hauteur de l'image */
-    margin-right: 10px; /* Marge à droite pour séparer l'image du texte */
-    margin-top: 5px; /* Marge au-dessus pour aligner verticalement */
-    vertical-align: middle; /* Alignement vertical */
+.menu ul li a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
 }
+
+menu ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
 
 /* Style pour le bouton de connexion */
 .connexion {
@@ -161,6 +162,10 @@ body {
   text-decoration: none;
   margin: 8px; /* Espacement entre les liens */
   transition: color 0.3s; /* Animation de transition de couleur */
+}
+
+.footer__column-info a{
+color: var(--color-background);
 }
 
 .footer__column-info:hover {

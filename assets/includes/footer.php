@@ -9,14 +9,14 @@
           <h3 class="footer__column-title">Liens Rapides</h3>
           <div class="footer__info-wrapper">
             <div class="footer__info-container">
-              <a href="index.html" class="footer__column-info">Accueil</a>
-              <a href="./pages/habitats/jungle.html" class="footer__column-info">Habitats</a>
-              <a href="#engagement" class="footer__column-info">Engagement</a>
+              <a href="/Studi_ECF_Arcadia_Zoo/index.php" class="footer__column-info">Accueil</a>
+              <a href="/Studi_ECF_Arcadia_Zoo/habitats.php" class="footer__column-info">Habitats</a>
+              <a href="/Studi_ECF_Arcadia_Zoo/animaux.php" class="footer__column-info">Animaux</a>
             </div>
             <div class="footer__info-container">
-              <a href="#animaux" class="footer__column-info">Animaux</a>
-              <a href="services.php" class="footer__column-info">Services</a>
-              <a href="avis.php" class="footer__column-info">Avis</a>
+              <a href="/Studi_ECF_Arcadia_Zoo/services.php" class="footer__column-info">Services</a>
+              <a href="/Studi_ECF_Arcadia_Zoo/avis.php" class="footer__column-info">Avis</a>
+              <a href="/Studi_ECF_Arcadia_Zoo/contact.php" class="footer__column-info">Contact</a>
             </div>
           </div>
         </div>
@@ -38,7 +38,7 @@
           <path d="M21.5049 0H2.49505C1.14851 0 0 1.12 0 2.52V15.48C0 16.84 1.10891 18 2.49505 18H21.5049C22.8515 18 24 16.88 24 15.48V2.48C24 1.12 22.8515 0 21.5049 0ZM21.5049 1.8C21.5446 1.8 21.5842 1.8 21.6238 1.8L12 8.04L2.37624 1.8C2.41584 1.8 2.45545 1.8 2.49505 1.8H21.5049ZM21.5049 16.12H2.49505C2.09901 16.12 1.78218 15.8 1.78218 15.4V3.56L11.0495 9.56C11.3267 9.76 11.6436 9.84 11.9604 9.84C12.2772 9.84 12.5941 9.76 12.8713 9.56L22.1386 3.56V15.44C22.2178 15.84 21.901 16.12 21.5049 16.12Z" fill="#FF9F1C"/>
         </svg>
           <h3 class="footer__column-title">Besoin d'aide ?</h3>
-          <p class="footer__column-info">info@arcadia.fr</p>
+          <p class="footer__column-info"><a href="mailto:info@arcadia.fr">info@arcadia.fr</a></p>
         </div>
       </div>
     </div>
