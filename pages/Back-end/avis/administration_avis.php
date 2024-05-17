@@ -1,6 +1,6 @@
 <?php
 include('../header.php');
-include('../pdo.php');
+include('pdo.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['action'])) {
     $avis_id = $_POST['avis_id'];

@@ -44,6 +44,6 @@ $role = getUserRole();
                 <li><a href=".//avis/administration_avis.php">Gestion des avis</a></li>
                 <li><a href="/Studi_ECF_Arcadia_Zoo/pages/Back-end/contact_BG.php">Contact</a></li>
             <?php endif; ?>
-            <li><a href="/pages/Back-end/logout.php">Déconnexion</a></li>
+            <li><a href="./logout.php">Déconnexion</a></li>
         </ul>
     </nav>

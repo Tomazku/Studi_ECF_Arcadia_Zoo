@@ -1,7 +1,6 @@
 <?php
-session_start();
 include('../header.php');
-include('../pdo.php');
+include('pdo.php');
 
 // Gérer les requêtes POST pour l'ajout, la modification des animaux et des rapports, et la suppression
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

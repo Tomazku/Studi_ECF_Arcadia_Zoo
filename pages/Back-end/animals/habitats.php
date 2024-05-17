@@ -1,7 +1,6 @@
 <?php
-session_start();
 include('../header.php');
-include('../pdo.php');
+include('pdo.php');
 
 function fetchAllHabitats() {
     global $pdo;
