@@ -79,10 +79,19 @@ body {
     padding: 10px 30px; 
     border-radius: 20px; 
     cursor: pointer; 
-    
+    text-decoration: none; 
   }
 
   .button:hover {
+    background-color: var(--color-secondary); 
+    color: var(--color-text); 
+  }
+
+  .button a{
+    text-decoration: none;
+  }
+  
+  .button a:hover {
     background-color: var(--color-secondary); 
     color: var(--color-text); 
   }
@@ -297,6 +306,8 @@ margin: auto;
 
 .text-content button{
   padding: 10px ;
+  text-decoration: none; 
+
 }
 
 /* section opinions */
@@ -414,6 +425,8 @@ form textarea {
 
 .container_droite .button {
   margin-left: auto;
+  text-decoration: none; 
+
 }
 
 
@@ -738,6 +751,8 @@ max-height: 400px;
   select, button { 
     padding: 10px; 
     margin-right: 10px; 
+    text-decoration: none; 
+
   }
         
   .modal { 
@@ -843,6 +858,8 @@ text-align: center;
 .habitat-button{
   align-self: center;
   margin-top: 10px;
+  text-decoration: none; 
+
 }
 
 

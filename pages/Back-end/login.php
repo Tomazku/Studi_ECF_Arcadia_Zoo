@@ -39,16 +39,18 @@ if (isset($_POST['email']) && isset($_POST['motDePasse'])) {
     <link rel="stylesheet" href="interfaces.css">
 </head>
 <body>
+    
     <div class="container-connexion">
         <h1 class="connexion">Connexion pour les employés</h1>
+        
         <form method="post" action="login.php">
             <label for="email">E-mail :</label>
             <input type="email" id="email" name="email" required><br>
             <label for="motDePasse">Mot de passe :</label>
             <input type="password" id="motDePasse" name="motDePasse" required><br>
             <input type="submit" value="Se connecter">
+            <button class="button"><a href="/Studi_ECF_Arcadia_Zoo/index.php">Retour à l'accueil</a></button>
         </form>
-        <button><a href="/index.php" class="button">Retour à l'accueil</a></button>
         <?php
         if (!empty($erreur)) {
             echo "<p>$erreur</p>";

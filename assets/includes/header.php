@@ -19,7 +19,7 @@
             </nav>
         </div>
             <div class="connexion">
-                <button onclick="window.location.href='./pages/Back-end/login.php'">Connexion</button>
+            <button class="button-link" onclick="window.open('./pages/Back-end/login.php', '_blank')">Connexion</button>
             </div>
     </div>
 </header>
