@@ -53,6 +53,7 @@ if (isset($_POST['email']) && isset($_POST['motDePasse'])) {
             echo "<p>$erreur</p>";
         }
         ?>
+        <button type="button" onclick="window.location.href='index.php';">Retour à l'accueil</button>
     </div>
 </body>
 </html>

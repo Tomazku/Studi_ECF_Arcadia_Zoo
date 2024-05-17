@@ -10,7 +10,11 @@
 </head>
 <body>
     <?php include 'assets/includes/header.php'; ?>
-    
+    <div class="container-breadcrumb">
+        <div class="breadcrumb">
+            <a href="index.php">Accueil</a> &gt; <a href="horaires.php">Horaires</a>
+        </div>
+    </div>
         <h1 class="horaire-title">Horaires <span class="orange-text"> d'Ouverture</span></h1>
     <p class="text_horaires">À l'Arcadia Zoo, nous sommes ravis de vous accueillir tout au long de l'année et offrons des horaires d'ouverture adaptés pour garantir une expérience inoubliable à tous nos visiteurs. <strong>Nos portes sont ouvertes du lundi de 12h à 18h, du mardi au vendredi de 10h à 19h et le samedi de 9h à 19h</strong>. Pendant les vacances scolaires et les jours fériés, nous ajustons nos horaires pour mieux vous servir, avec des informations détaillées disponibles sur notre site web et aux entrées du zoo.
     <br>

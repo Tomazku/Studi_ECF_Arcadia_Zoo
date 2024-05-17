@@ -27,6 +27,11 @@ foreach ($results as $row) {
 </head>
 <body>
 <?php include 'assets/includes/header.php'; ?>
+<div class="container-breadcrumb">
+        <div class="breadcrumb">
+            <a href="index.php">Accueil</a> &gt; <a href="services.php">Services</a>
+        </div>
+</div>
 
 <h1 class="service_title">Services disponibles au <span class="orange-text">Zoo Arcadia</span></h1>
 <div class="service-card">

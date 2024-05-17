@@ -5,7 +5,6 @@ $pdo = new PDO('mysql:host=localhost;dbname=arcadia_zoo', 'root', '');
 $habitat_id = $_GET['habitat_id'] ?? 0;
 $race_id = $_GET['race_id'] ?? 0;
 
-// $baseImagePath = "http://arcadia-zoo/Studi_ECF_Arcadia_Zoo/pages/Back-end/animals/";
 $baseImagePath = "./pages/Back-end/animals/";
 
 // Récupération des données pour les filtres
@@ -69,32 +68,6 @@ function openModal(prenom, image, etat, race, animal_id) {
     incrementConsultations(prenom + "_" + animal_id);
 	
 }
-
-// Envoyer la requête pour récupérer les consultations
-// function incrementConsultations(animalName) {
-    // var xhr = new XMLHttpRequest();
-    // xhr.open("POST", "http://localhost:3000/consultations/increment-consultations/" + animalName, true);
-    // xhr.setRequestHeader('Content-Type', 'application/json');
-    // xhr.send();
-
-    // xhr.onload = function() {
-        // if (xhr.status === 200) {
-            // console.log('Consultations mises à jour');
-        // } else {
-            // console.error('Erreur lors de la mise à jour des consultations');
-        // }
-    // };
-
-    // fetch("http://localhost:3000/consultations/get-consultations/" + animalName)
-      // .then(response => response.json())
-      // .then(data => {
-          // document.getElementById('modalConsultations').textContent = 'Consultations: ' + data.consultations;
-      // })
-      // .catch(error => {
-          // console.error('Erreur lors de la récupération des consultations', error);
-          // document.getElementById('modalConsultations').textContent = 'Consultations: Non disponible';
-      // });
-// }
 
 // Envoyer la requête pour récupérer les consultations
 function incrementConsultations(animalName) {

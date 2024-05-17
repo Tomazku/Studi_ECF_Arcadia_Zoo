@@ -2,6 +2,17 @@
 include('../header.php');
 include('pdo.php');
 
+// Fonction pour récupérer le nombre de consultations
+function getConsultations($animalName) {
+    $filePath = "./noSQL/nview_animal.json";
+    if (!file_exists($filePath)) {
+        return 0;
+    }
+    $fileContent = file_get_contents($filePath);
+    $data = json_decode($fileContent, true);
+    return isset($data[$animalName]) ? $data[$animalName] : 0;
+}
+
 // Gérer les requêtes POST pour l'ajout, la modification des animaux et des rapports, et la suppression
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Ajouter un rapport vétérinaire
@@ -62,7 +73,6 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute($params);
 $animals = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -107,6 +117,7 @@ $animals = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <span>Race: <?= htmlspecialchars($animal['race']) ?></span><br>
                     <span>Habitat: <?= htmlspecialchars($animal['habitat']) ?></span><br>
                     <span>Commentaire: <?= htmlspecialchars($animal['commentaire_habitat']) ?></span><br>
+                    <span>Consultations: <?= getConsultations(htmlspecialchars($animal['prenom']) . "_" . htmlspecialchars($animal['animal_id'])) ?> fois</span><br>
 
                     <form class="edit-form" method="post">
                         <input type="hidden" name="animal_id" value="<?= $animal['animal_id'] ?>">

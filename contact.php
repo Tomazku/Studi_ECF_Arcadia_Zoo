@@ -1,15 +1,20 @@
-<?php include 'assets/includes/header.php'; ?>
 
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restons en contact - Arcadia Zoo</title>
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="header_footer.css">
-    <link rel="shortcut icon" href="/assets/images/fav_icon.png" type="image/x-icon">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Restons en contact - Arcadia Zoo</title>
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="header_footer.css">
+        <link rel="shortcut icon" href="/assets/images/fav_icon.png" type="image/x-icon">
+    </head>
+    <?php include 'assets/includes/header.php'; ?>
+    <div class="container-breadcrumb">
+        <div class="breadcrumb">
+            <a href="index.php">Accueil</a> &gt; <a href="contact.php">Contact</a>
+        </div>
+    </div>
 <body>
     <div class="container_contact">
         <div class="container_gauche">
