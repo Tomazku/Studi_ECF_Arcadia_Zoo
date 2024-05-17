@@ -4,10 +4,11 @@ include('pdo.php');
 
 // Fonction pour récupérer le nombre de consultations
 function getConsultations($animalName) {
-    $filePath = "./noSQL/nview_animal.json";
+    $filePath = __DIR__ . "../noSQL/nview_animal.json"; 
     if (!file_exists($filePath)) {
-        return 0;
+        return 10;
     }
+
     $fileContent = file_get_contents($filePath);
     $data = json_decode($fileContent, true);
     return isset($data[$animalName]) ? $data[$animalName] : 0;
@@ -65,7 +66,7 @@ if (!empty($_GET['filter_habitat'])) {
     $where[] = "animal.habitat_id = ?";
     $params[] = $_GET['filter_habitat'];
 }
-$sql = "SELECT animal.animal_id, animal.prenom, animal.etat, animal.image, race.label as race, habitat.nom as habitat, habitat.commentaire_habitat FROM animal JOIN race ON animal.race_id = race.race_id JOIN habitat ON animal.habitat_id = habitat.habitat_id";
+$sql = "SELECT animal.animal_id, animal.prenom, animal.etat, animal.image, race.label as race, habitat.nom as habitat FROM animal JOIN race ON animal.race_id = race.race_id JOIN habitat ON animal.habitat_id = habitat.habitat_id";
 if ($where) {
     $sql .= " WHERE " . implode(" AND ", $where);
 }
@@ -75,7 +76,7 @@ $animals = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
-<head>
+<head><a href=""></a>
     <meta charset="UTF-8">
     <title>Gestion des Animaux</title>
     <link rel="stylesheet" href="../interfaces.css">
@@ -116,7 +117,6 @@ $animals = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <span>État: <?= htmlspecialchars($animal['etat']) ?></span><br>
                     <span>Race: <?= htmlspecialchars($animal['race']) ?></span><br>
                     <span>Habitat: <?= htmlspecialchars($animal['habitat']) ?></span><br>
-                    <span>Commentaire: <?= htmlspecialchars($animal['commentaire_habitat']) ?></span><br>
                     <span>Consultations: <?= getConsultations(htmlspecialchars($animal['prenom']) . "_" . htmlspecialchars($animal['animal_id'])) ?> fois</span><br>
 
                     <form class="edit-form" method="post">

@@ -48,12 +48,12 @@ if (isset($_POST['email']) && isset($_POST['motDePasse'])) {
             <input type="password" id="motDePasse" name="motDePasse" required><br>
             <input type="submit" value="Se connecter">
         </form>
+        <button><a href="/index.php" class="button">Retour à l'accueil</a></button>
         <?php
         if (!empty($erreur)) {
             echo "<p>$erreur</p>";
         }
         ?>
-        <button type="button" onclick="window.location.href='index.php';">Retour à l'accueil</button>
     </div>
 </body>
 </html>
