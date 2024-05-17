@@ -11,9 +11,6 @@ include('./pages/Back-end/pdo.php');
     // Section habitat
     $habitats = $pdo->query("SELECT habitat_id, nom, description, image FROM habitat")->fetchAll(PDO::FETCH_ASSOC);
 
-} catch (PDOException $e) {
-    die("Erreur de connexion à la base de données: " . $e->getMessage());
-}
 ?>
 
 <!DOCTYPE html>
