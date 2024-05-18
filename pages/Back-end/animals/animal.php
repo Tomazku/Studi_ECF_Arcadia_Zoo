@@ -4,9 +4,9 @@ include('pdo.php');
 
 // Fonction pour récupérer le nombre de consultations
 function getConsultations($animalName) {
-    $filePath = __DIR__ . "/../../noSQL/nview_animal.json";  
+    $filePath = __DIR__ . '/../../noSQL/nview_animal.json';  // Assurez-vous que ce chemin est correct
     if (!file_exists($filePath)) {
-        return 00;
+        return 0;
     }
     $fileContent = file_get_contents($filePath);
     $data = json_decode($fileContent, true);
@@ -75,7 +75,7 @@ $animals = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
-<head><a href=""></a>
+<head>
     <meta charset="UTF-8">
     <title>Gestion des Animaux</title>
     <link rel="stylesheet" href="../interfaces.css">
