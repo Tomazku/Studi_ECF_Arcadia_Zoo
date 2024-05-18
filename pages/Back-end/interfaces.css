@@ -11,7 +11,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 
-/* Global Styles */
+/* Styles global */
 body {
     font-family: 'Raleway', sans-serif; 
     background-color: var(--color-background);
@@ -76,7 +76,7 @@ p {
     font-weight: bold;
 }
 
-/* Sidebar Styles */
+/* bar gauche */
 .sidebar {
     width: 200px;
     background-color: var(--color-secondary);
@@ -158,7 +158,7 @@ footer {
     max-width: 800px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin-bottom: 20px;
-    margin-top: 20%;
+    margin-top: 10%;
 }
 
 .nouveaux_comptes h1 {
@@ -265,7 +265,7 @@ footer {
     width: 100%;
     max-width: 600px;
     text-align: center;
-    margin-top: 20%;
+    margin-top: 10%;
 }
 
 .add-animal-container h1 {
@@ -645,7 +645,7 @@ h1, h2 {
 }
 
 .reject-btn:hover {
-    background-color: #E74C3C; /* Rouge pour le bouton de rejet */
+    background-color: #E74C3C; 
 }
 
 .review-table {
@@ -737,7 +737,7 @@ h1, h2 {
 }
 
 .delete-btn:hover {
-    background-color: #E74C3C; /* Rouge pour le bouton de suppression */
+    background-color: #E74C3C; 
 }
 
 /* Gestion des services */

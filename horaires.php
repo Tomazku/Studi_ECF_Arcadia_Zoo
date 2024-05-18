@@ -33,7 +33,6 @@
         </thead>
         <tbody id="horaires-table">
             <?php
-            // Connexion à la base de données
             $pdo = new PDO('mysql:host=localhost;dbname=arcadia_zoo', 'root', '');
             // Requête pour récupérer les horaires
             $stmt = $pdo->query("SELECT * FROM horaires_ouverture");

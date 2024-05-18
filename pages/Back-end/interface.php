@@ -1,7 +1,5 @@
 <?php
 include('header.php');
-
-// Contenu spécifique de la page principale
 ?>
 
 <div class="content">

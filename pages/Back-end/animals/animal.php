@@ -4,11 +4,10 @@ include('pdo.php');
 
 // Fonction pour récupérer le nombre de consultations
 function getConsultations($animalName) {
-    $filePath = __DIR__ . "../noSQL/nview_animal.json"; 
+    $filePath = __DIR__ . "/../../noSQL/nview_animal.json";  
     if (!file_exists($filePath)) {
-        return 10;
+        return 00;
     }
-
     $fileContent = file_get_contents($filePath);
     $data = json_decode($fileContent, true);
     return isset($data[$animalName]) ? $data[$animalName] : 0;

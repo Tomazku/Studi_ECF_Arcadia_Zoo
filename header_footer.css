@@ -1,4 +1,3 @@
-/* Réinitialisation des marges, paddings et utilisation de box-sizing pour le modèle de boîte border-box */
 * {
     margin: 0;
     padding: 0;
@@ -9,28 +8,26 @@
     --color-background: #FBFBFF;
 }
 
-/* Import de la police Raleway depuis Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* Style de base pour le corps de la page */
 body {
-    font-family: 'Raleway', sans-serif; /* Utilisation de la police Raleway pour le texte */
-    background-color: var(--color-background); /* Couleur de fond de la page */
+    font-family: 'Raleway', sans-serif; 
+    background-color: var(--color-background); 
 }
 
-/* Style pour le conteneur du header */
+/* header */
 .container-header {
-    background-color: var(--color-primary); /* Couleur de fond du header */
-    width: 100%; /* Largeur du header */
-    height: 110px; /* Hauteur du header */
-    display: flex; /* Utilisation de flexbox pour aligner les éléments */
-    padding: 0 5%; /* Ajout de padding sur les côtés */
+    background-color: var(--color-primary); 
+    width: 100%; 
+    height: 110px; 
+    display: flex; 
+    padding: 0 5%; 
     align-items: center;
     justify-content: flex-start;
   }
 
 .container-header {
-    top: -120px; /* Masque le header en le déplaçant vers le haut*/
+    top: -120px; 
 }
 
 .header{
@@ -42,14 +39,11 @@ body {
     z-index: 1000;
 }
 
-/* Style pour le logo */
 .logo img {
     width: 130px;
     height: 80px;
     padding: px 0;
     }
-
-
 
 .menu ul{
     list-style-type: none;
@@ -107,27 +101,25 @@ menu ul li a:hover::after {
 }
 
 
-/* Style pour le bouton de connexion */
 .connexion {
-    margin-left: 20px; /* Marge à gauche du bouton */
+    margin-left: 20px; 
     
 }
 
 .connexion button {
-    background-color: var(--color-text); /* Couleur de fond du bouton */
-    color: var(--color-secondary); /* Couleur du texte du bouton */
-    size: 2rem; /* Taille du texte */
-    border: none; /* Suppression de la bordure */
-    padding: 10px 30px; /* Espacement intérieur du bouton */
-    border-radius: 20px; /* Bordure arrondie */
-    cursor: pointer; /* Curseur de type pointer au survol */
+    background-color: var(--color-text); 
+    color: var(--color-secondary); 
+    size: 2rem;
+    border: none; 
+    padding: 10px 30px; 
+    border-radius: 20px; 
+    cursor: pointer; 
     
 }
 
-/* Style pour le survol du bouton de connexion */
 .connexion button:hover {
-    background-color: var(--color-secondary); /* Changement de couleur de fond au survol */
-    color: var(--color-text); /* Changement de couleur du texte au survol */
+    background-color: var(--color-secondary); 
+    color: var(--color-text); 
 }
 
 
@@ -154,14 +146,14 @@ menu ul li a:hover::after {
 }
 
 .footer__column svg {
-  margin-right: 10px; /* Espacement entre l'icône et le texte */
+  margin-right: 10px; 
 }
 
 .footer__column-info {
   color: var(--color-background);
   text-decoration: none;
-  margin: 8px; /* Espacement entre les liens */
-  transition: color 0.3s; /* Animation de transition de couleur */
+  margin: 8px; 
+  transition: color 0.3s; 
 }
 
 .footer__column-info a{
@@ -169,7 +161,7 @@ color: var(--color-background);
 }
 
 .footer__column-info:hover {
-  color: #FF9F1C; /* Couleur orange au survol */
+  color: #FF9F1C;
 }
 
 
@@ -218,7 +210,7 @@ color: var(--color-background);
 }
 
 .footer__socials path {
-  fill: #FF9F1C; /* Couleur orange pour les SVG */
+  fill: #FF9F1C; 
 }
 
 hr{

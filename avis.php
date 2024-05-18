@@ -1,30 +1,29 @@
 <?php
-// Connexion à la base de données (à adapter selon vos paramètres)
 include('./pages/Back-end/pdo.php');
 
 // Traitement de l'avis soumis depuis le formulaire
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Vérifiez d'abord que les données du formulaire existent et ne sont pas vides
+    // Vérifi d'abord que les données du formulaire existent et ne sont pas vides
     if (isset($_POST['pseudo'], $_POST['commentaire']) && !empty($_POST['pseudo']) && !empty($_POST['commentaire'])) {
-        // Récupérez les données du formulaire
+        // Récupére les données du formulaire
         $pseudo = $_POST['pseudo'];
         $commentaire = $_POST['commentaire'];
 
-        // Préparez la requête SQL pour insérer l'avis dans la base de données
+        // Prépare la requête SQL pour insérer l'avis dans la base de données
         $query = "INSERT INTO avis (pseudo, commentaire, isVisible) VALUES (:pseudo, :commentaire, 0)";
         $statement = $pdo->prepare($query);
 
-        // Exécutez la requête SQL en liant les valeurs des paramètres
+        // Exécute la requête SQL en liant les valeurs des paramètres
         $statement->execute(array(':pseudo' => $pseudo, ':commentaire' => $commentaire));
 
-        // Afficher une boîte de dialogue modale (popup) après la soumission du formulaire
+        // Affiche une popup après la soumission du formulaire
         echo "<script>
                 if (confirm('Votre avis a été soumis avec succès. Il est en cours de validation.')) {
                     window.location.href = 'avis.php'; // Actualiser la page pour afficher les avis mis à jour
                 }
             </script>";
     } else {
-        // Si des données sont manquantes, vous pouvez gérer le cas ici
+        // Erreur en cas de données manquantes
         echo "Erreur : Tous les champs du formulaire doivent être remplis.";
     }
 }
@@ -77,10 +76,10 @@ $avis_visibles = $statement_visibles->fetchAll(PDO::FETCH_ASSOC);
     <?php include 'assets/includes/footer.php'; ?>
 
     <script>
-        // Afficher une boîte de dialogue modale (popup) après la soumission du formulaire
+        // Pop up après la soumission du formulaire
         document.getElementById('avisForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Empêcher l'envoi du formulaire par défaut
-            document.getElementById('avisForm').submit(); // Soumettre le formulaire
+            event.preventDefault(); // Empêche l'envoi du formulaire par défaut
+            document.getElementById('avisForm').submit(); // Soumission du formulaire
         });
     </script>
 

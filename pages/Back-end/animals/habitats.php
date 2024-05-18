@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $comment = $_POST['comment'];
         $imagePath = $habitats[array_search($habitat_id, array_column($habitats, 'habitat_id'))]['image'];
 
-        // Process image upload
+        // Upload de l'image
         if (!empty($_FILES['image']['name'])) {
             $uploadDir = 'uploads/';
             $imageName = basename($_FILES['image']['name']);

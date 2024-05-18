@@ -64,12 +64,12 @@ function openModal(prenom, image, etat, race, animal_id) {
     document.getElementById('modalRace').textContent = 'Race: ' + race;
     modal.style.display = "block";
 
-    // Envoyer la requête pour incrémenter les consultations
+    // Envoi de la requête pour incrémenter les consultations
     incrementConsultations(prenom + "_" + animal_id);
 	
 }
 
-// Envoyer la requête pour récupérer les consultations
+// Envoi la requête pour récupérer les consultations
 function incrementConsultations(animalName) {
 
 	formData = new FormData();
