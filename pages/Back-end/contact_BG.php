@@ -16,7 +16,7 @@ include('header.php');
 include('./pdo.php');
 
 
-        // Vérifiez si la requête est de type POST
+        // Vérifie si la requête est de type POST
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (isset($_POST['delete_message'])) {
                 $id_message = $_POST['id_message'];
@@ -37,7 +37,7 @@ include('./pdo.php');
 
                 if ($nom && $prenom && $email && $message) {
                     try {
-                        // Préparez et exécutez l'insertion SQL
+                        // Prépare et exécute l'insertion SQL
                         $sql = "INSERT INTO messages (nom, prenom, email, messages) VALUES (:nom, :prenom, :email, :messages)";
                         $stmt = $pdo->prepare($sql);
                         $stmt->bindParam(':nom', $nom);

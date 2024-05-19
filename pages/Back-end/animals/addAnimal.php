@@ -2,7 +2,6 @@
 include('../header.php');
 include('pdo.php');
 
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['image'])) {
     $prenom = $_POST['prenom'];
     $etat = $_POST['etat'];
@@ -10,18 +9,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['image'])) {
     $habitat_id = $_POST['habitat_id'];
 
     // Gérer le téléchargement de l'image
+    $allowedExtensions = ['jpg', 'jpeg', 'png'];
+    $allowedMimeTypes = ['image/jpeg', 'image/png'];
     $uploadDir = 'uploads/';
     $tmpName = $_FILES['image']['tmp_name'];
     $filename = basename($_FILES['image']['name']);
-    $uploadFile = $uploadDir . $filename;
+    $fileExtension = pathinfo($filename, PATHINFO_EXTENSION);
 
-    if (move_uploaded_file($tmpName, $uploadFile)) {
-        // Insertion dans la base de données
-        $stmt = $pdo->prepare("INSERT INTO animal (prenom, etat, race_id, habitat_id, image) VALUES (?, ?, ?, ?, ?)");
-        $stmt->execute([$prenom, $etat, $race_id, $habitat_id, $uploadFile]);
-        $successMessage = "Animal ajouté avec succès.";
+    if ($tmpName && $filename) {
+        $mimeType = mime_content_type($tmpName);
+        $uniqueFilename = uniqid() . '.' . $fileExtension;
+
+        // Validation de l'extension du fichier et du type MIME
+        if (in_array($fileExtension, $allowedExtensions) && in_array($mimeType, $allowedMimeTypes)) {
+            $uploadFile = $uploadDir . $uniqueFilename;
+            // Move file to secure location
+            if (move_uploaded_file($tmpName, $uploadFile)) {
+                // Insertion dans la base de données
+                $stmt = $pdo->prepare("INSERT INTO animal (prenom, etat, race_id, habitat_id, image) VALUES (?, ?, ?, ?, ?)");
+                $stmt->execute([$prenom, $etat, $race_id, $habitat_id, $uploadFile]);
+                $successMessage = "Animal ajouté avec succès.";
+            } else {
+                $errorMessage = "Erreur lors du téléchargement de l'image.";
+            }
+        } else {
+            $errorMessage = "Type de fichier non autorisé.";
+        }
     } else {
-        $errorMessage = "Erreur lors du téléchargement de l'image.";
+        $errorMessage = "Fichier non valide.";
     }
 }
 
