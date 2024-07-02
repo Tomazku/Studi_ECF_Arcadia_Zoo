@@ -1,0 +1,228 @@
+/* Mobile page principale (jusqu'à 480px) */
+@media (max-width: 480px) {
+    .welcome-text {
+        width: 100%;
+    }
+
+    .welcome-text h1 {
+        font-size: 1.5rem;
+        margin-left: 0;
+    }
+
+    .container-habitat {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .title-habitat p {
+        width: 100%;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .card img {
+        max-width: 100%;
+    }
+
+    .animals,
+    .lower-animals {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .animal {
+        width: 80%;
+    }
+
+    .lower-animals .animal {
+        width: 80%;
+    }
+
+    .service-card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .service-content img {
+        max-width: 100%;
+    }
+
+    .text-content {
+        width: 100%;
+    }
+
+    .opinion-card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .opinion-content {
+        width: 90%;
+    }
+}
+
+/* Tablettes page principale (de 481px à 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .welcome-text {
+        width: 80%;
+    }
+
+    .welcome-text h1 {
+        font-size: 1.75rem;
+        margin-left: 0;
+    }
+
+    .container-habitat {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .title-habitat p {
+        width: 100%;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .card img {
+        max-width: 100%;
+    }
+
+    .animals,
+    .lower-animals {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .animal {
+        width: 60%;
+    }
+
+    .lower-animals .animal {
+        width: 60%;
+    }
+
+    .service-card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .service-content img {
+        max-width: 100%;
+    }
+
+    .text-content {
+        width: 100%;
+    }
+
+    .opinion-card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .opinion-content {
+        width: 80%;
+    }
+}
+
+/* Ordi page principale(De 769px à +) */
+@media (min-width: 769px) {
+    .welcome-text {
+        width: 50%;
+    }
+
+    .welcome-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .container-habitat {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .title-habitat p {
+        width: 60%;
+    }
+
+    .card-container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .card {
+        flex-direction: row;
+        height: 300px;
+    }
+
+    .card img {
+        max-width: 40%;
+    }
+
+    .animals,
+    .lower-animals {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .animal {
+        width: 30%;
+    }
+
+    .lower-animals .animal {
+        width: 30%;
+    }
+
+    .service-card {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .service-content {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .service-content img {
+        max-width: 50%;
+    }
+
+    .text-content {
+        width: 50%;
+    }
+
+    .opinion-card {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .opinion-content {
+        width: calc(33.33% - 20px);
+    }
+}

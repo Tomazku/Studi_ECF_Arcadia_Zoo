@@ -121,6 +121,156 @@ menu ul li a:hover::after {
     background-color: var(--color-secondary); 
     color: var(--color-text); 
 }
+/*------------------- Header Meddia queries-----------------*/
+
+/* General styles */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: var(--color-text);
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.menu {
+  display: flex;
+}
+
+/* Mobile devices (up to 480px) */
+@media (max-width: 480px) {
+  .header {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .logo {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 10px;
+  }
+
+  .hamburger {
+      display: block;
+  }
+
+  .menu {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: var(--color-primary);
+      position: absolute;
+      top: 60px;
+      left: 0;
+  }
+
+  .menu.active {
+      display: flex;
+  }
+
+  .menu ul {
+      flex-direction: column;
+      width: 100%;
+      padding: 0;
+  }
+
+  .menu ul li {
+      margin: 10px 0;
+      width: 100%;
+      text-align: center;
+  }
+
+  .menu ul li a {
+      padding: 10px 20px;
+      display: block;
+      color: var(--color-background);
+  }
+
+  .connexion {
+      display: none;
+  }
+}
+
+/* Tablets (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .header {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .logo {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 10px;
+  }
+
+  .hamburger {
+      display: block;
+  }
+
+  .menu {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: var(--color-primary);
+      position: absolute;
+      top: 60px;
+      left: 0;
+  }
+
+  .menu.active {
+      display: flex;
+  }
+
+  .menu ul {
+      flex-direction: column;
+      width: 100%;
+      padding: 0;
+  }
+
+  .menu ul li {
+      margin: 10px 0;
+      width: 100%;
+      text-align: center;
+  }
+
+  .menu ul li a {
+      padding: 10px 20px;
+      display: block;
+      color: var(--color-background);
+  }
+
+  .connexion {
+      display: none;
+  }
+}
+
+/* Desktops (769px and up) */
+@media (min-width: 769px) {
+  .header {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+  }
+
+  .logo {
+      width: auto;
+      text-align: left;
+  }
+
+  .hamburger {
+      display: none;
+  }
+
+  .menu {
+      display: flex;
+  }
+
+  .connexion {
+      display: block;
+  }
+}
 
 
 /* footer */
