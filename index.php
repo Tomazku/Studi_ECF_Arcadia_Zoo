@@ -21,7 +21,7 @@ include('./pages/Back-end/pdo.php');
     <title>Découvrez le zoo Arcadia</title>
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="header_footer.css">
-    <!-- <link rel="stylesheet" href="responsive.css"> -->
+    <link rel="stylesheet" href="responsive.css">
     <link rel="shortcut icon" href="assets/images/fav_icon.png" type="image/x-icon">
 </head>
 <body>
@@ -128,5 +128,15 @@ include('./pages/Back-end/pdo.php');
     </section>
 
     <?php include 'assets/includes/footer.php'; ?>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const menu = document.querySelector('.menu');
+
+            hamburger.addEventListener('click', function() {
+                menu.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>

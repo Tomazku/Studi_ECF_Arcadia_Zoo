@@ -1,4 +1,4 @@
-/* Mobile page principale (jusqu'à 480px) */
+/* Mobile page principale (480px) */
 @media (max-width: 480px) {
     .welcome-text {
         width: 100%;
@@ -37,14 +37,22 @@
     .lower-animals {
         flex-direction: column;
         align-items: center;
+        margin: auto;
     }
 
     .animal {
         width: 80%;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 
     .lower-animals .animal {
         width: 80%;
+    }
+
+    .container-services p {
+        width: 90%;
+        margin: auto;
     }
 
     .service-card {
@@ -65,6 +73,10 @@
         width: 100%;
     }
 
+    .avis_confirmed{
+        height: auto    ;
+    }
+
     .opinion-card {
         flex-direction: column;
         align-items: center;
@@ -75,8 +87,8 @@
     }
 }
 
-/* Tablettes page principale (de 481px à 768px) */
-@media (min-width: 481px) and (max-width: 768px) {
+/* Tablettes page principale (de 481px à 1000px) */
+@media (min-width: 481px) and (max-width: 1000px) {
     .welcome-text {
         width: 80%;
     }
@@ -107,6 +119,7 @@
     }
 
     .card img {
+        margin-top: 10px;
         max-width: 100%;
     }
 
@@ -152,14 +165,25 @@
     }
 }
 
-/* Ordi page principale(De 769px à +) */
-@media (min-width: 769px) {
+/* Ordi page principale(De 769px à 1350px) */
+@media (min-width: 1000px) and (max-width: 1350px) {
     .welcome-text {
-        width: 50%;
+        width: 90%;
+        background-color: rgba(7 7 7 /30%);
+        padding: 20px;
+        border-radius: 20px;
+        
     }
 
     .welcome-text h1 {
+        width: 90%;
         font-size: 2.5rem;
+        margin:auto;
+    }
+
+    .welcome-text p {
+        width: 90%;
+        margin:auto;
     }
 
     .container-habitat {
@@ -168,21 +192,40 @@
     }
 
     .title-habitat p {
-        width: 60%;
+        width: 90%;
     }
 
     .card-container {
-        flex-direction: row;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
         align-items: flex-start;
+        gap: 10px;
     }
 
     .card {
-        flex-direction: row;
-        height: 300px;
+        flex-direction: column;
+        height: auto;
+        overflow: hidden;
     }
 
     .card img {
-        max-width: 40%;
+        max-width: 100%;
+        height: auto;
+        padding-top: 10px;
+    }
+
+    .card-content {
+        padding: 20px;
+        text-align: center; /* Centrez le texte */
+    }
+
+    .text-carte {
+        margin: 10px 0;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
     }
 
     .animals,
@@ -199,23 +242,73 @@
         width: 30%;
     }
 
+    .animals-footer p{
+        font-size: 1.8rem;
+    }
+
+    .container-services {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-width: 90%;
+        margin: auto;
+    }
+
     .service-card {
+        display: flex;
         flex-direction: row;
         align-items: flex-start;
+        justify-content: space-between;
+        gap: 20px;
+        width: 100%;
     }
 
     .service-content {
-        flex-direction: row;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         text-align: left;
+        width: 48%; /* 50% - gap */
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0px 4px 4px 0px #08415C;
+        transition: transform 0.3s ease;
+        padding: 20px;
+        box-sizing: border-box;
     }
 
     .service-content img {
-        max-width: 50%;
+        width: 100%;
+        height: auto;
+        border-bottom: 1px solid #ccc;
     }
 
     .text-content {
-        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 150px; /* Adjust as necessary */
+        padding: 10px;
+        box-sizing: border-box;
     }
+
+    .service-content:nth-child(1) .text-content,
+    .service-content:nth-child(2) .text-content {
+        height: auto; /* Reset height for proper flexbox behavior */
+    }
+
+    .service-content:hover {
+        transform: translateY(-5px);
+    }
+
+    .service-card {
+        display: flex;
+    }
+
 
     .opinion-card {
         flex-direction: row;
@@ -225,4 +318,4 @@
     .opinion-content {
         width: calc(33.33% - 20px);
     }
-}
+    }

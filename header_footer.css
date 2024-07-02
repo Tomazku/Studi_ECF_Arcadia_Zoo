@@ -161,7 +161,7 @@ menu ul li a:hover::after {
       width: 100%;
       background-color: var(--color-primary);
       position: absolute;
-      top: 60px;
+      top: 110px;
       left: 0;
   }
 
@@ -192,8 +192,8 @@ menu ul li a:hover::after {
   }
 }
 
-/* Tablets (481px to 768px) */
-@media (min-width: 481px) and (max-width: 768px) {
+/* Tablets (481px to 900px) */
+@media (min-width: 481px) and (max-width: 900px) {
   .header {
       flex-direction: column;
       align-items: center;
@@ -247,7 +247,7 @@ menu ul li a:hover::after {
 }
 
 /* Desktops (769px and up) */
-@media (min-width: 769px) {
+@media (min-width: 900px) {
   .header {
       flex-direction: row;
       align-items: center;
@@ -366,3 +366,107 @@ color: var(--color-background);
 hr{
   max-width: 90%;
   margin: 0 auto;}
+
+  /*-------------Media queries footer-----------------*/
+  /* Mobile devices (up to 480px) */
+@media (max-width: 480px) {
+  .footer__flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer__column {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .footer__info-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer__info-container {
+    width: 100%;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer__logo {
+    margin-bottom: 10px;
+  }
+}
+
+/* Tablets (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .footer__flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer__column {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .footer__info-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer__info-container {
+    width: 100%;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer__logo {
+    margin-bottom: 10px;
+  }
+}
+
+/* Desktops (769px and up) */
+@media (min-width: 769px) {
+  .footer__flex {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .footer__column {
+    width: 30%;
+  }
+
+  .footer__info-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .footer__info-container {
+    flex-direction: column;
+  }
+
+  .footer__bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+  }
+
+  .footer__logo {
+    margin: 0;
+  }
+}
