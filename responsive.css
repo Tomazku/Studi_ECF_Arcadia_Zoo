@@ -1,3 +1,4 @@
+/*--------------Page principale---------------------*/
 /* Mobile page principale (480px) */
 @media (max-width: 480px) {
     .welcome-text {
@@ -16,7 +17,7 @@
     }
 
     .title-habitat p {
-        width: 100%;
+        width: 90%;
     }
 
     .card-container {
@@ -31,6 +32,8 @@
 
     .card img {
         max-width: 100%;
+        border-radius: 20px;
+        margin-top: 10px;
     }
 
     .animals,
@@ -74,7 +77,7 @@
     }
 
     .avis_confirmed{
-        height: auto    ;
+        height: auto;
     }
 
     .opinion-card {
@@ -105,7 +108,7 @@
     }
 
     .title-habitat p {
-        width: 100%;
+        width: 90%;
     }
 
     .card-container {
@@ -121,6 +124,7 @@
     .card img {
         margin-top: 10px;
         max-width: 100%;
+        border-radius: 20px;
     }
 
     .animals,
@@ -131,6 +135,8 @@
 
     .animal {
         width: 60%;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 
     .lower-animals .animal {
@@ -162,6 +168,10 @@
 
     .opinion-content {
         width: 80%;
+    }
+
+    .avis_confirmed{
+        height: auto;
     }
 }
 
@@ -213,11 +223,12 @@
         max-width: 100%;
         height: auto;
         padding-top: 10px;
+        border-radius: 20px;
     }
 
     .card-content {
         padding: 20px;
-        text-align: center; /* Centrez le texte */
+        text-align: center; 
     }
 
     .text-carte {
@@ -298,7 +309,7 @@
 
     .service-content:nth-child(1) .text-content,
     .service-content:nth-child(2) .text-content {
-        height: auto; /* Reset height for proper flexbox behavior */
+        height: auto; 
     }
 
     .service-content:hover {
@@ -309,6 +320,9 @@
         display: flex;
     }
 
+    .avis_confirmed{
+        height: auto;
+    }
 
     .opinion-card {
         flex-direction: row;

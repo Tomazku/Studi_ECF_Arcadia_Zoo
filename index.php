@@ -22,6 +22,7 @@ include('./pages/Back-end/pdo.php');
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="header_footer.css">
     <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="keyframe.css">
     <link rel="shortcut icon" href="assets/images/fav_icon.png" type="image/x-icon">
 </head>
 <body>
