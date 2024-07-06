@@ -24,15 +24,15 @@ $habitats = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <a href="index.php">Accueil</a> &gt; <a href="habitats.php">Habitats</a>
         </div>
     </div>
-    <div class="slider-habitat">
+    <div class="habitat-title">
+    <h1>Découvrez nos <span class="orange-text">Habitats</span></h1>
     </div>
-    <h1 class="habitat-title">Découvrez nos <span class="orange-text">Habitats</span></h1>
     <div class="habitat-container">
         <?php foreach ($habitats as $habitat): ?>
             <div class="habitat-card">
                 <img src="./pages/Back-end/animals/<?= htmlspecialchars($habitat['image']) ?>" alt="Habitat de <?= htmlspecialchars($habitat['nom']) ?>" class="habitat-image">
                 <div class="habitat-info">
-                    <h2 class="habitat-title"><?= htmlspecialchars($habitat['nom']); ?></h2>
+                    <h2><?= htmlspecialchars($habitat['nom']); ?></h2>
                     <p><?= htmlspecialchars($habitat['description']); ?></p>
                     <a href="animaux.php?habitat_id=<?= $habitat['habitat_id'] ?>" class="button habitat-button">Découvrez les animaux</a>
                 </div>

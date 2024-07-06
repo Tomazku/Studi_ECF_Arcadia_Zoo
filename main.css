@@ -21,7 +21,7 @@ body {
     background-image: url('assets/images/Main.svg'); 
     background-size: cover; 
     background-position: center; 
-    padding: 50px; 
+    padding: 30px; 
     color: var(--color-background);
     height: 500px;
     clip-path: polygon(0 0, 100% 0%, 100% 90%, 0% 100%);
@@ -807,9 +807,24 @@ max-height: 400px;
   }
 
   .habitat-title{
+    position: relative;
+    background-image: url(./assets/images/slider_habitat_animaux.jpg);
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
     text-align: center;
-    margin: 30px;
-  }
+    margin: auto;
+   }
+
+   .habitat-title h1{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    color: var(--color-background);
+   }
   
   .habitat-container {
     width: 100%;
@@ -817,6 +832,11 @@ max-height: 400px;
     flex-wrap: wrap;
     justify-content: center;
     padding: 20px;
+}
+
+.habitat-info h2{
+  text-align: center;
+  margin: 10px 0;
 }
 
 .habitat-card {
