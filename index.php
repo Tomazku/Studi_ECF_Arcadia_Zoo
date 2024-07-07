@@ -24,6 +24,18 @@ include('./pages/Back-end/pdo.php');
     <link rel="stylesheet" href="responsive.css">
     <link rel="stylesheet" href="keyframe.css">
     <link rel="shortcut icon" href="assets/images/fav_icon.png" type="image/x-icon">
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YK85L5MJGN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YK85L5MJGN');
+</script>
+
+
 </head>
 <body>
     <?php include 'assets/includes/header.php'; ?>
@@ -129,15 +141,6 @@ include('./pages/Back-end/pdo.php');
     </section>
 
     <?php include 'assets/includes/footer.php'; ?>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-            const hamburger = document.querySelector('.hamburger');
-            const menu = document.querySelector('.menu');
-
-            hamburger.addEventListener('click', function() {
-                menu.classList.toggle('active');
-            });
-        });
-    </script>
+    <script src="hamburger.js"></script>
 </body>
 </html>

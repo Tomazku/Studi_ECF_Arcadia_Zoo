@@ -374,7 +374,7 @@
     }
 }
 
-/* Ordi page principale(De 769px à 1350px) */
+/* Ordi page services(De 769px à 1350px) */
 @media (min-width: 1000px) {
     .service-card {
         flex-direction: column;
@@ -407,4 +407,150 @@
     .service_image {
         width: 60%;
     }
+}
+
+/*--------Page habitats---------*/
+@media (max-width: 480px){
+    .section-importance-nature {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
+        margin: 0 auto;
+        }
+        .section-importance-nature img {
+        width: 100%;
+        border-radius: 10px;
+        margin: auto;
+        object-fit: cover;
+        min-width: 150px;
+        }
+
+        .section-importance-nature p{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+}
+
+@media (min-width: 481px) and (max-width: 1000px){
+    .section-importance-nature {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
+        margin: 0 auto;
+        }
+        .section-importance-nature img {
+        width: 100%;
+        border-radius: 10px;
+        margin: auto;
+        object-fit: cover;
+        min-width: 150px;
+        }
+
+        .section-importance-nature p{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+}
+/*--------- page horaires ----------*/
+@media (max-width: 480px){
+    .horaire-title{
+        font-size: 1.5rem;
+    }
+
+    .horaires-tables{
+        width: 90%;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 1000px){
+    .horaires-tables{
+        width: 90%;
+    }
+}
+
+/*----------Page contact-----------*/
+@media (max-width: 480px){
+    #image_contact{
+        display: none;
+    }
+    .container_contact {
+        flex-direction: column;
+    }
+    
+    .container_droite {
+        width: 100%;
+    }
+    #contactForm{
+        margin-top:75px;
+    }
+    .container_droite h2{
+        margin-bottom: 15px;
+    }
+    .container_droite .button {
+        width: 90%;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 1000px){
+    .container_droite{
+        margin-top: 0px;
+    }
+}
+
+/*---------- Page animaux-----------*/
+
+@media (max-width: 480px){
+    .filtre-animaux{
+        flex-direction: column;
+        width: 60%;
+        margin: auto;
+    }
+
+    .filtre-animaux select, .filtre-animaux label{
+        margin: 10px;
+    }
+
+    .animal-container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .animal-card{
+        width: 90%;
+    }
+
+    .modal-content{
+        width: 90%;
+    }
+
+    .img-modal-animal{
+        display: none;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 1000px){
+    .filtre-animaux{
+        flex-direction: column;
+        width: 80%;
+        margin: auto;
+        text-align: center;
+        padding: 0px;
+    }
+
+    .filtre-animaux .button{
+        width: 90%;
+        margin: auto;
+        margin-top: 30px;
+    }
+
+    .animal-card{
+        width: 48%;   
+        margin: 5px;
+     }
 }

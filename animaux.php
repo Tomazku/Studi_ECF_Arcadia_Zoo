@@ -50,6 +50,7 @@ $animals = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animaux du Zoo</title>
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="responsive.css">
     <link rel="stylesheet" href="header_footer.css">
     <link rel="shortcut icon" href="assets/images/fav_icon.png" type="image/x-icon">
     <style>
@@ -158,4 +159,21 @@ function closeModal() {
     </div>
     <?php include 'assets/includes/footer.php'; ?>
 </body>
+<script src="hamburger.js"></script>
+<script>
+    // Fonction pour fermer la modale
+    function closeModal(){
+        document.getElementById('myModal').style.display = 'none';
+    }
+
+    // Fermer la modale au clic en dehors de celle-ci //
+    window.onclick = function(event){
+        const modal = document.getElementById('myModal');
+        if(event.target == modal){
+            closeModal();
+        }
+    }
+    </script>
+
+
 </html>

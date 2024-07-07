@@ -6,6 +6,7 @@
     <title>Horaires du Zoo Arcadia</title>
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="header_footer.css">
+    <link rel="stylesheet" href="responsive.css">
     <link rel="shortcut icon" href="assets/images/fav_icon.png" type="image/x-icon">
 </head>
 <body>
@@ -47,6 +48,7 @@
         </tbody>
     </table>
     <?php include 'assets/includes/footer.php'; ?>
+    <script src="hamburger.js"></script>
 
 </body>
 </html>

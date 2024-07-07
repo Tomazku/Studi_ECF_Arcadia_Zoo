@@ -58,6 +58,7 @@ foreach ($results as $row) {
 </div>
 
 <?php include 'assets/includes/footer.php'; ?>
+<script src="hamburger.js"></script>
 
 </body>
 </html>

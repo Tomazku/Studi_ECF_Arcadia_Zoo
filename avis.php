@@ -82,6 +82,7 @@ $avis_visibles = $statement_visibles->fetchAll(PDO::FETCH_ASSOC);
             document.getElementById('avisForm').submit(); // Soumission du formulaire
         });
     </script>
+    <script src="hamburger.js"></script>
 
 </body>
 </html>

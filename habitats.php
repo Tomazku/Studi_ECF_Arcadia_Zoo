@@ -15,6 +15,7 @@ $habitats = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <title>Habitats du Zoo</title>
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="header_footer.css">
+    <link rel="stylesheet" href="responsive.css">
     <link rel="shortcut icon" href="assets/images/fav_icon.png" type="image/x-icon">    
 </head>
 <body>
@@ -46,7 +47,6 @@ $habitats = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <p>Offrir un habitat qui se rapproche au maximum du milieu naturel des animaux est essentiel pour leur bien-être psychologique et physique. Cela favorise des comportements naturels, essentiels à la santé de chaque espèce.</p>
     </div>
 </div>
-<a href="./pages/Back-end/animals/uploads/"></a>
 <div class="section-importance-nature">
     <div class="text-content">
         <h2>Conservation et éducation</h2>
@@ -56,5 +56,7 @@ $habitats = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </div>
 
     <?php include 'assets/includes/footer.php'; ?>
+    <script src="hamburger.js"></script>
+
 </body>
 </html>

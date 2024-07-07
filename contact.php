@@ -7,6 +7,7 @@
         <title>Restons en contact - Arcadia Zoo</title>
         <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" href="header_footer.css">
+        <link rel="stylesheet" href="responsive.css">
         <link rel="shortcut icon" href="/assets/images/fav_icon.png" type="image/x-icon">
     </head>
     <?php include 'assets/includes/header.php'; ?>
@@ -66,5 +67,7 @@
         .catch(error => console.error("Erreur lors de l'envoi du formulaire:", error));
 });
     </script>
+    <script src="hamburger.js"></script>
+
 </body>
 </html>
