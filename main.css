@@ -792,14 +792,7 @@ max-height: 400px;
 
   /* Page habitat */
 
-  .slider-habitat{
-    position: relative;
-    background-image: url(./assets/images/slider_habitat_animaux.jpg);
-    width: 100%;
-    height: 500px;
-    background-size: cover;
-    background-position: center;
-  }
+  
 
   .habitat-title{
     position: relative;
