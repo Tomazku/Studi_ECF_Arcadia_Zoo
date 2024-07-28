@@ -15,24 +15,7 @@ body {
     background-color: var(--color-background); 
 }
 
-.container-breadcrumb {
-  max-width: 1200px; 
-  margin: auto;
-  margin-top: 115px; 
- }
- 
- .breadcrumb { 
-   margin: 20px; 
- }
- 
- .breadcrumb a {
-   color: #0275d8; text-decoration: none;
- }
- 
- .breadcrumb a:hover { 
-   text-decoration: underline; 
- }
- 
+
 .welcome-section {
   position: relative;
     margin-top: 110px;
@@ -720,7 +703,23 @@ max-height: 400px;
 }
 
 /* Page animaux */
-
+.container-breadcrumb {
+   max-width: 1200px; 
+   margin: auto;
+   margin-top: 115px; 
+  }
+  
+  .breadcrumb { 
+    margin: 20px; 
+  }
+  
+  .breadcrumb a {
+    color: #0275d8; text-decoration: none;
+  }
+  
+  .breadcrumb a:hover { 
+    text-decoration: underline; 
+  }
         
   .animal-container { 
           display: flex; flex-wrap: wrap; justify-content: space-around; }
