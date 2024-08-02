@@ -13,6 +13,7 @@
 
 /* Styles global */
 body {
+    height: 100%;
     font-family: 'Raleway', sans-serif; 
     background-color: var(--color-background);
     margin: 0;
@@ -146,6 +147,7 @@ footer {
     position: fixed;
     width: 100%;
     border-radius: 0 0 10px 10px;
+    margin-top: 100px;
 }
 
 /* Gestion des utilisateurs */
@@ -821,4 +823,83 @@ h1, h2 {
 
 .action-form .delete-btn:hover {
     background-color: var(--color-text);
+}
+
+/* Dashboard */
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.dashboard-summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.dashboard-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    flex: 1 1 30%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-card h2 {
+    margin-top: 0;
+}
+
+.dashboard-card p {
+    font-size: 1.2em;
+}
+
+.dashboard-card button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dashboard-card button:hover {
+    background: #218838;
+}
+
+.dashboard-details {
+    margin-top: 30px;
+    margin-bottom: 10vh;
+}
+
+.dashboard-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.dashboard-table th, .dashboard-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.dashboard-table th {
+    background: #f4f4f4;
+}
+
+.dashboard-table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.dashboard-table tr:hover {
+    background: #f1f1f1;
 }

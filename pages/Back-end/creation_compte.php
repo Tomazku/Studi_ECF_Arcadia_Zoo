@@ -2,15 +2,17 @@
 include('header.php');
 include('./pdo.php');
 
-
 $successMessage = '';
 $errorMessage = '';
 
 // Traitement du formulaire pour ajouter un nouvel utilisateur
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
-    $motDePasse = password_hash($_POST['motDePasse'], PASSWORD_BCRYPT); // Hachage du mot de passe
+    $motDePasse = $_POST['motDePasse'];
     $role = $_POST['role'];
+
+    // Ne pas hacher le mot de passe pour le test
+    $hashedPassword = $motDePasse;
 
     // Vérifier si l'utilisateur existe déjà
     $stmt = $pdo->prepare('SELECT COUNT(*) FROM utilisateurs WHERE email = ?');
@@ -22,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         try {
             $stmt = $pdo->prepare('INSERT INTO utilisateurs (email, motDePasse, role) VALUES (?, ?, ?)');
-            $stmt->execute([$email, $motDePasse, $role]);
+            $stmt->execute([$email, $hashedPassword, $role]);
             $successMessage = 'Utilisateur ajouté avec succès !';
         } catch (PDOException $e) {
             $errorMessage = 'Erreur : ' . $e->getMessage();
@@ -62,7 +64,7 @@ $utilisateurs = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <label for="email">Courriel :</label>
                 <input type="email" id="email" name="email" required>
                 
-                <label for="mot_de_passe">Mot de passe :</label>
+                <label for="motDePasse">Mot de passe :</label>
                 <input type="password" id="motDePasse" name="motDePasse" required>
 
                 <label for="role">Rôle :</label>
