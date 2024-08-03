@@ -4,6 +4,7 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 
 include('./pdo.php');
+require_once __DIR__ . '/functions.php';
 
 function validateInput($data) {
     return htmlspecialchars(stripslashes(trim($data)));

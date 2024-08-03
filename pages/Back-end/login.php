@@ -1,3 +1,8 @@
+<?php
+require_once __DIR__ . '/config.php';
+$csrf_token = generateCSRFToken();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -11,6 +16,7 @@
         <h1 class="connexion">Connexion pour les employés</h1>
         
         <form method="post" action="login_process.php">
+            <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($csrf_token); ?>">
             <label for="email">E-mail :</label>
             <input type="email" id="email" name="email" required><br>
             <label for="motDePasse">Mot de passe :</label>

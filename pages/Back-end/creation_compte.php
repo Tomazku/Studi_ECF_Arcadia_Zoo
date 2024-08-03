@@ -7,28 +7,33 @@ $errorMessage = '';
 
 // Traitement du formulaire pour ajouter un nouvel utilisateur
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = $_POST['email'];
-    $motDePasse = $_POST['motDePasse'];
-    $role = $_POST['role'];
+    // Vérifiez que les champs de formulaire sont définis
+    if (isset($_POST['email']) && isset($_POST['motDePasse']) && isset($_POST['role'])) {
+        $email = $_POST['email'];
+        $motDePasse = $_POST['motDePasse'];
+        $role = $_POST['role'];
 
-    // Ne pas hacher le mot de passe pour le test
-    $hashedPassword = $motDePasse;
+        // Hacher le mot de passe
+        $hashedPassword = password_hash($motDePasse, PASSWORD_DEFAULT);
 
-    // Vérifier si l'utilisateur existe déjà
-    $stmt = $pdo->prepare('SELECT COUNT(*) FROM utilisateurs WHERE email = ?');
-    $stmt->execute([$email]);
-    $count = $stmt->fetchColumn();
+        // Vérifier si l'utilisateur existe déjà
+        $stmt = $pdo->prepare('SELECT COUNT(*) FROM utilisateurs WHERE email = ?');
+        $stmt->execute([$email]);
+        $count = $stmt->fetchColumn();
 
-    if ($count > 0) {
-        $errorMessage = 'Erreur : cet email est déjà utilisé !';
-    } else {
-        try {
-            $stmt = $pdo->prepare('INSERT INTO utilisateurs (email, motDePasse, role) VALUES (?, ?, ?)');
-            $stmt->execute([$email, $hashedPassword, $role]);
-            $successMessage = 'Utilisateur ajouté avec succès !';
-        } catch (PDOException $e) {
-            $errorMessage = 'Erreur : ' . $e->getMessage();
+        if ($count > 0) {
+            $errorMessage = 'Erreur : cet email est déjà utilisé !';
+        } else {
+            try {
+                $stmt = $pdo->prepare('INSERT INTO utilisateurs (email, motDePasse, role) VALUES (?, ?, ?)');
+                $stmt->execute([$email, $hashedPassword, $role]);
+                $successMessage = 'Utilisateur ajouté avec succès !';
+            } catch (PDOException $e) {
+                $errorMessage = 'Erreur : ' . $e->getMessage();
+            }
         }
+    } else {
+        $errorMessage = 'Erreur : tous les champs sont requis !';
     }
 }
 
