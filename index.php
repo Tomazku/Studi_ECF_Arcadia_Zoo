@@ -24,6 +24,7 @@ include('./pages/Back-end/pdo.php');
     <link rel="stylesheet" href="responsive.css">
     <link rel="stylesheet" href="keyframe.css">
     <link rel="shortcut icon" href="assets/images/fav_icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YK85L5MJGN"></script>
@@ -129,18 +130,52 @@ include('./pages/Back-end/pdo.php');
 
     <!-- Section avis -->
     <section class="avis_confirmed">
-        <div class="container_avis">
-            <h1 class="title">Ce qu'ils <span class="orange-text">disent de nous</span></h1>
-            <p>Les visiteurs du Zoo Arcadia partagent leur expérience inoubliable et leurs moments magiques passés au zoo.</p>
-            <ul class="avis_container">
+    <div class="container_avis">
+        <h1 class="title">Ce qu'ils <span class="orange-text">disent de nous</span></h1>
+        <p>Les visiteurs du Zoo Arcadia partagent leur expérience inoubliable et leurs moments magiques passés au zoo.</p>
+        <div class="avis_slider">
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <div class="avis_container">
                 <?php foreach ($avis_visibles as $avis) : ?>
-                    <li class="avis"><strong><?= htmlspecialchars($avis['pseudo']) ?>:</strong> <?= htmlspecialchars($avis['commentaire']) ?></li>
+                    <div class="avis_slide">
+                        <div class="avis"><strong><?= htmlspecialchars($avis['pseudo']) ?>:</strong> <?= htmlspecialchars($avis['commentaire']) ?></div>
+                    </div>
                 <?php endforeach; ?>
-            </ul>
+            </div>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
         </div>
-    </section>
+    </div>
+</section>
+
+
 
     <?php include 'assets/includes/footer.php'; ?>
     <script src="hamburger.js"></script>
+    <script>
+        let currentSlide = 0;
+    const slides = document.querySelectorAll('.avis_slide');
+    const totalSlides = slides.length;
+
+    function updateSlidePosition() {
+        const container = document.querySelector('.avis_container');
+        container.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    function changeSlide(direction) {
+        currentSlide += direction;
+
+        if (currentSlide < 0) {
+            currentSlide = totalSlides - 1;
+        } else if (currentSlide >= totalSlides) {
+            currentSlide = 0;
+        }
+
+        updateSlidePosition();
+    }
+
+    // Initialisation
+    updateSlidePosition();
+
+    </script>
 </body>
 </html>
