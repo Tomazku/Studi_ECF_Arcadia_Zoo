@@ -26,6 +26,7 @@ $role = getUserRole();
     <nav class="sidebar">
         <ul>
             <?php if ($role == 'admin'): ?>
+                <li><a href="/Studi_ECF_Arcadia_Zoo/pages/Back-end/dashboard.php">Dashboard</a></li>        
                 <li><a href="/Studi_ECF_Arcadia_Zoo/pages/Back-end/creation_compte.php">Gestion des utilisateurs</a></li>
                 <li><a href="/Studi_ECF_Arcadia_Zoo/pages/Back-end/animals/addAnimal.php">Ajout d'animaux</a></li>
                 <li><a href="/Studi_ECF_Arcadia_Zoo/pages/Back-end/animals/animal.php">Gestion des animaux</a></li>
