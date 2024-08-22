@@ -8,7 +8,7 @@ if (!function_exists('generateCSRFToken')) {
             setcookie('csrf_token', $token, [
                 'expires' => time() + 3600,
                 'path' => '/',
-                'secure' => false, // Changez en true si vous utilisez HTTPS
+                'secure' => false, // A changer en true lor du passage en HTTPS
                 'httponly' => true,
                 'samesite' => 'Strict'
             ]);
@@ -28,3 +28,4 @@ if (!function_exists('validateInput')) {
     }
 }
 ?>
+
