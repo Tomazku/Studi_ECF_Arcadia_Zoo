@@ -62,16 +62,22 @@ $avis_visibles = $statement_visibles->fetchAll(PDO::FETCH_ASSOC);
     </form>
     </div>
     <section class="avis_confirmed">
-        <div class="container_avis">
-            <h1 class="title">Ce qu'ils <span class="orange-text">disent de nous</span></h1>
-            <p>Les visiteurs du Zoo Arcadia partagent leur expérience inoubliable et leurs moments magiques passés au zoo.</p>
-            <ul class="avis_container">
+    <div class="container_avis">
+        <h1 class="title">Ce qu'ils <span class="orange-text">disent de nous</span></h1>
+        <p>Les visiteurs du Zoo Arcadia partagent leur expérience inoubliable et leurs moments magiques passés au zoo.</p>
+        <div class="avis_slider">
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <div class="avis_container">
                 <?php foreach ($avis_visibles as $avis) : ?>
-                    <li class="avis"><strong><?= $avis['pseudo'] ?>:</strong> <?= $avis['commentaire'] ?></li>
+                    <div class="avis_slide">
+                        <div class="avis"><strong><?= htmlspecialchars($avis['pseudo']) ?>:</strong> <?= htmlspecialchars($avis['commentaire']) ?></div>
+                    </div>
                 <?php endforeach; ?>
-            </ul>
+            </div>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
         </div>
-    </section>
+    </div>
+</section>
 
     <?php include 'assets/includes/footer.php'; ?>
 
@@ -83,6 +89,7 @@ $avis_visibles = $statement_visibles->fetchAll(PDO::FETCH_ASSOC);
         });
     </script>
     <script src="hamburger.js"></script>
+    <script src="slider.js"></script>
 
 </body>
 </html>

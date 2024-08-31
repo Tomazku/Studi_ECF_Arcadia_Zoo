@@ -118,6 +118,10 @@ body {
     box-shadow: #08415C 0px 4px 4px 0px;
   }
   
+  .card::nthchild(even) {
+    flex-direction: row-reverse; 
+  }
+  
   .card:hover {
     transform: translateY(-5px); 
   }
