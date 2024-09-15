@@ -20,5 +20,5 @@ function changeSlide(direction) {
 }
 
 // Initialisation
-updateSlidePosition();updateSlidePosition();updateSlidePosition();
+updateSlidePosition();updateSlidePosition();
 
