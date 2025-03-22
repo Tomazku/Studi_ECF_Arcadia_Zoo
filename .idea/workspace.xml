@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="a4321933-a323-43f2-946c-8f6edf680080" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/chatbot-widget.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/chatbot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chatbot.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chatbot.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,24 +29,25 @@
       <list>
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Tomazku"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Tomazku&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Tomazku/Studi_ECF_Arcadia_Zoo.git",
-    "accountId": "67c1f97b-0b55-4e1d-ab36-b37b6cbded27"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Tomazku/Studi_ECF_Arcadia_Zoo.git&quot;,
+    &quot;accountId&quot;: &quot;67c1f97b-0b55-4e1d-ab36-b37b6cbded27&quot;
   }
-}]]></component>
+}</component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="D:\php-8.2.11\php.exe">
     <include_path>
       <path value="$PROJECT_DIR$/php-getting-started/vendor/php-di/php-di" />
@@ -67,10 +76,10 @@
       <path value="$PROJECT_DIR$/php-getting-started/vendor/symfony/polyfill-ctype" />
     </include_path>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2ugGYEQT871KPzVFSbXc5uJPdgL" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -80,8 +89,12 @@
   "keyToString": {
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "chatbot",
     "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -103,6 +116,7 @@
       <option name="presentableId" value="Default" />
       <updated>1742662851591</updated>
       <workItem from="1742662853628" duration="246000" />
+      <workItem from="1742663150097" duration="831000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,11 @@
+<div class="chatbot-container">
+    <div class="chat-header" onclick="toggleChat()">💬 Chatbot IA</div>
+    <div class="chat-body" id="chat-body">
+        <div class="chat-box" id="chat-box"></div>
+        <input type="text" id="user-input" placeholder="Posez votre question..." onkeypress="handleKeyPress(event)">
+        <button onclick="sendMessage()">Envoyer</button>
+    </div>
+</div>
+
+<link rel="stylesheet" href="chatbot.css">
+<script src="chatbot.js"></script>

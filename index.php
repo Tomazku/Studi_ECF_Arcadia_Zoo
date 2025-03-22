@@ -11,6 +11,7 @@ include('./pages/Back-end/pdo.php');
     // Section habitat
     $habitats = $pdo->query("SELECT habitat_id, nom, description, image FROM habitat")->fetchAll(PDO::FETCH_ASSOC);
 
+    include 'chatbot-widget.html'
 ?>
 
 <!DOCTYPE html>
