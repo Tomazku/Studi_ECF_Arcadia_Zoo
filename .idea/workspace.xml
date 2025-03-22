@@ -1,6 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ComposerSettings">
-    <execution />
+  <component name="ChangeListManager">
+    <list default="true" id="a4321933-a323-43f2-946c-8f6edf680080" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/chatbot-widget.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chatbot.css" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/php-getting-started/composer.json</pharConfigPath>
+    <execution>
+      <executable path="composer" />
+    </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Tomazku"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Tomazku/Studi_ECF_Arcadia_Zoo.git",
+    "accountId": "67c1f97b-0b55-4e1d-ab36-b37b6cbded27"
+  }
+}]]></component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="D:\php-8.2.11\php.exe">
+    <include_path>
+      <path value="$PROJECT_DIR$/php-getting-started/vendor/php-di/php-di" />
+      <path value="$PROJECT_DIR$/php-getting-started/vendor/composer" />
+      <path value="$PROJECT_DIR$/php-getting-started/vendor/php-di/slim-bridge" />
+      <path value="$PROJECT_DIR$/php-getting-started/vendor/php-di/invoker" />
+      <path value="$PROJECT_DIR$/php-getting-started/vendor/heroku/heroku-buildpack-php" />
+      <path value="$PROJECT_DIR$/php-getting-started/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/php-getting-started/vendor/fig/http-message-util" />
+      <path value="$PROJECT_DIR$/php-getting-started/vendor/slim/slim" />
+      <path value="$PROJECT_DIR$/php-getting-started/vendor/slim/psr7" />
+      <path value="$PROJECT_DIR$/php-getting-started/vendor/slim/twig-view" />
+      <path value="$PROJECT_DIR$/php-getting-started/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/php-getting-started/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/php-getting-started/vendor/nikic/fast-route" />
+      <path value="$PROJECT_DIR$/php-getting-started/vendor/psr/http-server-middleware" />
+      <path value="$PROJECT_DIR$/php-getting-started/vendor/psr/http-server-handler" />
+      <path value="$PROJECT_DIR$/php-getting-started/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/php-getting-started/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/php-getting-started/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/php-getting-started/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/php-getting-started/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/php-getting-started/vendor/symfony/polyfill-php81" />
+      <path value="$PROJECT_DIR$/php-getting-started/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/php-getting-started/vendor/laravel/serializable-closure" />
+      <path value="$PROJECT_DIR$/php-getting-started/vendor/symfony/polyfill-ctype" />
+    </include_path>
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="2ugGYEQT871KPzVFSbXc5uJPdgL" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "list.type.of.created.stylesheet": "CSS",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PS-242.23726.107" />
+        <option value="bundled-php-predefined-a98d8de5180a-90914f2295cb-com.jetbrains.php.sharedIndexes-PS-242.23726.107" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a4321933-a323-43f2-946c-8f6edf680080" name="Changes" comment="" />
+      <created>1742662851591</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1742662851591</updated>
+      <workItem from="1742662853628" duration="246000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>
